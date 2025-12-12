@@ -13,3 +13,5 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+[tool.setuptools.package-data]
+b32k = ["*.json", "*.jsonl", "*.pdf"]

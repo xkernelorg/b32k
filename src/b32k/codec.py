@@ -1,28 +1,21 @@
-# spec/b32k/codec.py
-# Canonical Base32768 (B32K) codec
-# One symbol = 15 bits
-#
-# Canonical transport symbol (ASCII) is the INDEX token: "~00000" .. "~32767"
-# This keeps the codec numeric + deterministic, while leaving anchor/plane/r/c
-# as presentation metadata in b32k.json.
-#
-# IMPORTANT (length safety):
-# Base32768 is not byte-aligned. To make decoding lossless for all byte strings
-# (including leading 0x00 bytes), this codec prefixes the payload with a
-# 4-byte big-endian length before packing into 15-bit groups.
-# CAL-32K — B32K Canonical Action Lattice
--------------------------------------
-# This module implements the canonical bijection defining the
-# B32K Canonical Action Lattice (𝒜₃₂ₖ).
-# One symbol = 15 bits of action.
-# Odering, reversibility, and alignment are invariant.
-# Behavior is locked by golden vectors.
+"""
+Canonical Base32768 (B32K) codec
+
+One symbol = 15 bits
+Canonical transport symbol (ASCII) is the INDEX token: "~00000" .. "~32767"
+
+This module implements the canonical bijection defining the
+B32K Canonical Action Lattice (CAL-32K).
+Behavior is locked by golden vectors.
+"""
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import List, Dict
+from importlib import resources
+# CAL-32K — B32K Canonical Action Lattice
 
 BITS_PER_SYMBOL = 15
 SYMBOL_CHARS = 6  # "~" + 5 digits
@@ -32,41 +25,41 @@ SYMBOL_MASK = (1 << BITS_PER_SYMBOL) - 1  # 0x7FFF
 # ---------------------------------------------------------------------
 # Alphabet loading (canonical)
 # ---------------------------------------------------------------------
+def load_b32k_alphabet(path: str | None = None) -> tuple[list[str], dict[str, int]]:
+    """
+    Load the canonical B32K alphabet JSON.
 
-def load_b32k_alphabet(path: str | Path) -> Tuple[List[str], Dict[str, int]]:
-    path = Path(path)
-    with path.open("r", encoding="utf-8") as f:
-        spec = json.load(f)
+    Returns:
+        (symbols, index)
+        - symbols: list of 32768 fixed-width tokens (e.g. "~00001" .. "~32768")
+        - index:   dict mapping token -> 0-based integer value
+    """
+    if path is not None:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    else:
+        with resources.files("b32k").joinpath("b32k.json").open("r", encoding="utf-8") as f:
+            data = json.load(f)
 
-    rows = sorted(spec["alphabet"]["rows"], key=lambda r: r["index"])
-
-    # CANONICAL SYMBOL = INDEX, not anchor_id
-    symbols = [f"~{row['index']:05d}" for row in rows]
+    # Accept either {"symbols":[...]} or raw list [...]
+    symbols = data["symbols"] if isinstance(data, dict) else data
 
     if len(symbols) != 32768:
-        raise ValueError(f"B32K alphabet must have 32768 symbols, got {len(symbols)}")
-    if len(set(symbols)) != 32768:
-        raise ValueError("B32K alphabet symbols must be unique")
+        raise ValueError(f"Expected 32768 symbols, got {len(symbols)}")
 
     index = {sym: i for i, sym in enumerate(symbols)}
     return symbols, index
-
-
 # ---------------------------------------------------------------------
 # Encoding: bytes → B32K symbols
 # ---------------------------------------------------------------------
-
 def encode(data: bytes, symbols: List[str]) -> str:
     if not data:
         return ""
 
     # Length prefix for lossless decode (preserves leading 0x00 bytes)
-    length_prefix = len(data).to_bytes(4, "big")
-    payload = length_prefix + data
-
+    payload = len(data).to_bytes(4, "big") + data
     bit_len = len(payload) * 8
-    acc = int.from_bytes(payload, "big")
 
+    acc = int.from_bytes(payload, "big")
     groups = (bit_len + BITS_PER_SYMBOL - 1) // BITS_PER_SYMBOL
     pad_bits = groups * BITS_PER_SYMBOL - bit_len
     acc <<= pad_bits  # right-pad with zeros
@@ -83,7 +76,6 @@ def encode(data: bytes, symbols: List[str]) -> str:
 # ---------------------------------------------------------------------
 # Decoding: B32K symbols → bytes
 # ---------------------------------------------------------------------
-
 def decode(text: str, index: Dict[str, int]) -> bytes:
     """
     Decode Base32768 text (fixed-width symbols) back into bytes.
@@ -98,7 +90,7 @@ def decode(text: str, index: Dict[str, int]) -> bytes:
     symbols_count = len(text) // SYMBOL_CHARS
 
     for i in range(0, len(text), SYMBOL_CHARS):
-        sym = text[i:i + SYMBOL_CHARS]
+        sym = text[i : i + SYMBOL_CHARS]
         try:
             v = index[sym]
         except KeyError:
@@ -117,10 +109,7 @@ def decode(text: str, index: Dict[str, int]) -> bytes:
         raise ValueError("B32K payload too short for length prefix")
 
     data_len = int.from_bytes(raw[:4], "big")
-    if data_len < 0:
-        raise ValueError("Invalid length prefix")
-
-    out = raw[4:4 + data_len]
+    out = raw[4 : 4 + data_len]
     if len(out) != data_len:
         raise ValueError("Truncated payload (length prefix exceeds decoded bytes)")
 
