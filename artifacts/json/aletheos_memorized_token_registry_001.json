@@ -18,6 +18,29 @@
     {
       "aletheos_role": "First memorized external-token handshake carried through the Aletheos CLI route.",
       "class": "memorized_handshake_token",
+      "deterministic_body": {
+        "bytes_hex": "68656c6c6f20776f726c64",
+        "canonical_text": "hello world",
+        "compressed_form": "A:G1:HW:utf8=68656c6c6f20776f726c64:sha256=b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+        "deterministic_status": "externally_reproducible",
+        "digest_algorithm": "SHA-256",
+        "digest_hex": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+        "encoding": "UTF-8",
+        "normalization": "NFC",
+        "unicode_scalars": [
+          "U+0068",
+          "U+0065",
+          "U+006C",
+          "U+006C",
+          "U+006F",
+          "U+0020",
+          "U+0077",
+          "U+006F",
+          "U+0072",
+          "U+006C",
+          "U+0064"
+        ]
+      },
       "digest_check_pass": true,
       "digest_hex": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
       "display_name": "THE_HANDSHAKE",

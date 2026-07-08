@@ -20,6 +20,9 @@
     "tokens": {
       "items": {
         "properties": {
+          "deterministic_body": {
+            "type": "object"
+          },
           "digest_hex": {
             "type": "string"
           },
@@ -45,7 +48,8 @@
           "payload",
           "function",
           "digest_hex",
-          "lattice_placement"
+          "lattice_placement",
+          "deterministic_body"
         ],
         "type": "object"
       },
