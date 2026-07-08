@@ -1,35 +1,31 @@
 {
-  "id": "theology.project_manifest_001",
-  "project": "theology",
+  "id": "b32k.project_manifest_001",
+  "project": "b32k",
   "created": "2026-07-08",
   "status": "filesystem_ledger_initialized",
-  "public_name_candidates": [
-    "Structural Concordance",
-    "Concordance Ledger",
-    "Cross-Grammar Ledger",
-    "B32K Concordance Ledger"
-  ],
-  "preferred_public_name": "Structural Concordance",
-  "preferred_technical_name": "b32k_concordance_ledger",
+  "public_name": "Structural Concordance",
+  "technical_name": "B32K Concordance Ledger",
+  "first_training_corpus": {
+    "name": "King James Version of the Bible",
+    "short_name": "KJV",
+    "role": "source corpus",
+    "path": "data/source/kjv"
+  },
   "frame": {
     "method": "translation_mythology",
     "posture": "declared_correlation",
+    "dataset_role": "agnostic structural translation registry",
     "overclaim_boundary": "No claim that scripture secretly encodes modern physics.",
-    "dataset_role": "agnostic structural translation registry"
+    "doctrine_boundary": "No claim that the dataset enforces a theological interpretation."
+  },
+  "b32k_role": {
+    "canonical_address_space": true,
+    "symbolic_transport_layer": true,
+    "ledger_ready": true,
+    "database_required_now": false
   },
   "storage": {
     "current": "filesystem_json_artifacts",
     "future": "database_when_query_pressure_requires_it"
-  },
-  "directories": [
-    "artifacts/json",
-    "artifacts/schema",
-    "artifacts/csv",
-    "data/source",
-    "data/working",
-    "notes",
-    "scripts",
-    "reports",
-    "docs"
-  ]
+  }
 }

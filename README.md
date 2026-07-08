@@ -1,13 +1,32 @@
-# Theology
+# B32K Concordance Ledger
 
-A research workspace for mythic-structural translation, beginning with Genesis as a boundary, witness, receipt, grammar, and concordance study.
+A filesystem-first B32K research project for training a structural concordance from the King James Version of the Bible.
+
+## Purpose
+
+This project builds a machine-readable translation ledger for meaning-bearing structures.
+
+The first corpus is the King James Version of the Bible.
+
+The goal is not doctrinal enforcement, hidden-code numerology, or a claim that scripture secretly encodes modern physics. The goal is to build an agnostic structural concordance: a dataset that records how source images function across mythic, philosophical, physical, and Thalean grammars.
 
 ## Working frame
 
-This project builds an agnostic structural concordance.
+Public name:
 
-It does not claim that scripture secretly encodes modern physics.
-It records how source images function across mythic, philosophical, physical, and Thalean grammars.
+    Structural Concordance
+
+Technical name:
+
+    B32K Concordance Ledger
+
+Method:
+
+    translation mythology
+    declared correlation
+    structural function extraction
+    JSON artifact tracking first
+    database later, when query pressure requires it
 
 ## Current seed
 
@@ -21,18 +40,30 @@ Genesis 1 is being read as a grammar of emergence:
 - lights as recurrence clock
 - life as moving witness
 
-## Artifact policy
+## Data policy
 
-Human-readable drafts live in `notes/`.
+Raw source text goes in:
 
-Machine-readable research records live in `artifacts/json/`.
+    data/source/
 
-Schemas live in `artifacts/schema/`.
+Working extracts go in:
 
-Raw or copied source text goes in `data/source/`.
+    data/working/
 
-Working extracts go in `data/working/`.
+Machine-readable artifacts go in:
 
-Reports and rendered summaries go in `reports/`.
+    artifacts/json/
 
-The filesystem is the first ledger. A proper database can come later.
+Schemas go in:
+
+    artifacts/schema/
+
+Human notes go in:
+
+    notes/
+
+Reports go in:
+
+    reports/
+
+The filesystem is the first ledger.

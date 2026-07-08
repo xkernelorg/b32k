@@ -1,0 +1,32 @@
+{
+  "id": "kjv_training_corpus_manifest_001",
+  "project": "b32k",
+  "corpus": "King James Version of the Bible",
+  "status": "source_corpus_declared",
+  "created": "2026-07-08",
+  "source_path": "data/source/kjv",
+  "working_path": "data/working/kjv",
+  "artifact_role": "training corpus manifest",
+  "intended_extracts": [
+    "book",
+    "chapter",
+    "verse",
+    "phrase",
+    "image",
+    "action",
+    "boundary",
+    "witness",
+    "receipt",
+    "grammar",
+    "structural_key",
+    "keeper_line"
+  ],
+  "training_posture": {
+    "agnostic": true,
+    "translation_mythology": true,
+    "declared_correlation": true,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "doctrine_claim": false
+  }
+}

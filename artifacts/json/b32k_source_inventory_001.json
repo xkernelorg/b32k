@@ -1,0 +1,41 @@
+{
+  "boundary": {
+    "database_required_now": false,
+    "overclaim_boundary": "No hidden-code, doctrine-engine, or physics-claim status is granted by this inventory.",
+    "storage_mode": "filesystem_json_artifacts",
+    "training_corpus_001": "King James Version of the Bible"
+  },
+  "created": "2026-07-08T12:55:57",
+  "files": [
+    {
+      "path": "data/source/b32k/alphabet/B32K_canonical_alphabet.pdf",
+      "sha256": "88668a07e09c3245f4c7a4c41301a453ccc2020534983764be1ca4bda68f9eb1",
+      "size_bytes": 3054455
+    },
+    {
+      "path": "data/source/b32k/spec/B32K_Manuscript_v1_0_1.pdf",
+      "sha256": "2e23089896cb9d0b419a47fccd309d894e8b8134858c69acb2e2aa57ccdf41f7",
+      "size_bytes": 120672
+    },
+    {
+      "path": "data/source/b32k/spec/B32K_spec_v1_1_0.pdf",
+      "sha256": "ce16bf3f1f397db43d18b68f7abad82d82189396395266c38fb8cbd0ff4e84e6",
+      "size_bytes": 146962
+    },
+    {
+      "path": "data/source/kjv/README.md",
+      "sha256": "b0b441f33b8d890a3de03a770ca19c51303642516b721c29e3f6e818c03bb340",
+      "size_bytes": 457
+    },
+    {
+      "path": "artifacts/csv/b32k_canonical_alphabet.csv",
+      "sha256": "a41cb71a24fe719621caac7b940f203c106d0d2c2fbc441668a927794b0eb470",
+      "size_bytes": 1742947
+    }
+  ],
+  "id": "b32k_source_inventory_001",
+  "project": "b32k",
+  "role": "filesystem ledger inventory for imported B32K and KJV source materials",
+  "source_file_count": 5,
+  "status": "source_inventory_recorded"
+}
