@@ -1,0 +1,92 @@
+{
+  "boundary": {
+    "doctrine_engine": false,
+    "hidden_code_claim": false,
+    "method": "translation mythology with declared correlation",
+    "physics_claim": false
+  },
+  "created": "2026-07-08T13:01:34",
+  "id": "structural_key_registry_001",
+  "keys": [
+    {
+      "b32k_symbol_index": null,
+      "definition": "A first action that opens or marks a domain.",
+      "keeper_line": "Creation begins as a boundary action.",
+      "key": "BOUNDARY_ACTION",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "A created inside before stable internal grammar.",
+      "keeper_line": "The deep is the first unassigned inside.",
+      "key": "UNASSIGNED_SUBSTRATE",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "The first relation by which difference becomes noticed.",
+      "keeper_line": "The thinkable other noticed the difference.",
+      "key": "FIRST_WITNESS_RELATION",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "A readable trace of difference.",
+      "keeper_line": "Light is the first receipt.",
+      "key": "FIRST_RECEIPT",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "A record judged stable enough to continue as distinction.",
+      "keeper_line": "The record was considered, admitted, and allowed to continue.",
+      "key": "ADMITTED_DISTINCTION",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "The first assignment of names, tokens, and cycle.",
+      "keeper_line": "The admitted difference received a grammar.",
+      "key": "FIRST_GRAMMAR",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "The first architecture that separates regions.",
+      "keeper_line": "Heaven is the first chamber.",
+      "key": "FIRST_CHAMBER",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "A surface or field where form can acquire body.",
+      "keeper_line": "Earth is the first field where grammar can acquire body.",
+      "key": "FIELD_OF_EMBODIED_GRAMMAR",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "Form carrying continuation after its kind.",
+      "keeper_line": "Seed is the first recursive memory.",
+      "key": "RECURSIVE_MEMORY",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "Readable recurrence that orders signs, seasons, days, and years.",
+      "keeper_line": "The lights are the first clock.",
+      "key": "RECURRENCE_CLOCK",
+      "status": "draft"
+    },
+    {
+      "b32k_symbol_index": null,
+      "definition": "Living motion admitted into the chamber.",
+      "keeper_line": "Life is the first moving witness.",
+      "key": "MOVING_WITNESS",
+      "status": "draft"
+    }
+  ],
+  "project": "b32k",
+  "role": "stable key registry for B32K Concordance Ledger structural extraction",
+  "status": "draft_registry"
+}
