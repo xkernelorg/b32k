@@ -1,5 +1,5 @@
 {
-  "artifact_count": 18,
+  "artifact_count": 19,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -35,6 +35,13 @@
       "ratification_status": "pre_ratification",
       "role": "First minimal witness packet proving the Aletheos canonical profile can run one accountable path.",
       "status": "pre_ratification_test_vector_passed"
+    },
+    {
+      "id": "aletheos_negative_witness_packet_001",
+      "path": "artifacts/json/aletheos_negative_witness_packet_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Negative witness packet proving the Aletheos canonical profile can fail closed when index 0 is treated as positive authority.",
+      "status": "pre_ratification_negative_test_vector_passed"
     },
     {
       "id": "aletheos_operator_profile_001",
@@ -132,5 +139,5 @@
   "project": "b32k",
   "ratification_status": "pre_ratification",
   "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:26:12"
+  "updated": "2026-07-08T14:27:27"
 }

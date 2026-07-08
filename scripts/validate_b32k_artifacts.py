@@ -144,7 +144,7 @@ for rel, obj in objs.items():
                     bad(f"{rel} {eid} missing {req}")
 
 def validate_witness_packet(rel, obj):
-    if obj.get("title") != "Aletheos Minimal Witness Packet":
+    if obj.get("title") not in ["Aletheos Minimal Witness Packet", "Aletheos Negative Witness Packet"]:
         return
     route = obj.get("route", [])
     if not route:
@@ -154,18 +154,31 @@ def validate_witness_packet(rel, obj):
         bad(f"{rel} witness route must start from NULL")
     if obj.get("final_state") != route[-1].get("state_after"):
         bad(f"{rel} final_state does not match route end")
-    if obj.get("final_state") != "VERIFIED":
-        bad(f"{rel} final_state must be VERIFIED for positive witness packet")
-    expected_states = ["NULL", "MARKED", "ADMITTED", "RETURNED", "RECEIPTED", "BOUND", "VERIFIED"]
-    if obj.get("normal_positive_route") != expected_states:
-        bad(f"{rel} normal_positive_route mismatch")
-    expected_instructions = ["MARK", "ADMIT", "RETURN", "RECEIPT", "BIND", "VERIFY"]
-    if obj.get("normal_instruction_route") != expected_instructions:
-        bad(f"{rel} normal_instruction_route mismatch")
-    opcodes = [x.get("instruction") for x in route]
-    for req in ["MARK", "ADMIT", "RETURN", "RECEIPT", "BIND", "VERIFY"]:
-        if req not in opcodes:
-            bad(f"{rel} witness route missing instruction {req}")
+
+    if obj.get("title") == "Aletheos Minimal Witness Packet":
+        if obj.get("final_state") != "VERIFIED":
+            bad(f"{rel} final_state must be VERIFIED for positive witness packet")
+        expected_states = ["NULL", "MARKED", "ADMITTED", "RETURNED", "RECEIPTED", "BOUND", "VERIFIED"]
+        if obj.get("normal_positive_route") != expected_states:
+            bad(f"{rel} normal_positive_route mismatch")
+        expected_instructions = ["MARK", "ADMIT", "RETURN", "RECEIPT", "BIND", "VERIFY"]
+        if obj.get("normal_instruction_route") != expected_instructions:
+            bad(f"{rel} normal_instruction_route mismatch")
+        opcodes = [x.get("instruction") for x in route]
+        for req in ["MARK", "ADMIT", "RETURN", "RECEIPT", "BIND", "VERIFY"]:
+            if req not in opcodes:
+                bad(f"{rel} witness route missing instruction {req}")
+
+    if obj.get("title") == "Aletheos Negative Witness Packet":
+        if obj.get("final_state") != "REJECTED":
+            bad(f"{rel} final_state must be REJECTED for negative witness packet")
+        if obj.get("attempted_index") == 0 and obj.get("attempted_positive_authority") is not True:
+            bad(f"{rel} index 0 negative test must attempt positive authority")
+        if not obj.get("rejection_reason"):
+            bad(f"{rel} negative witness packet missing rejection_reason")
+        opcodes = [x.get("instruction") for x in route]
+        if "REJECT" not in opcodes:
+            bad(f"{rel} negative witness packet missing REJECT")
     if obj.get("trust_rule", {}).get("no_q_no_trust") is not True:
         bad(f"{rel} must assert no_q_no_trust")
     if obj.get("trust_rule", {}).get("verified_only") is not True:

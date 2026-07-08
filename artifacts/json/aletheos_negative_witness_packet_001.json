@@ -1,0 +1,77 @@
+{
+  "aletheos_root_index": 1,
+  "attempted_index": 0,
+  "attempted_positive_authority": true,
+  "boundary": {
+    "commercial_reliance_allowed": false,
+    "doctrine_engine": false,
+    "full_runtime_vm": false,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "ratified": false,
+    "sovereign_reliance_allowed": false
+  },
+  "canonical_payload": {
+    "attempted_index": 0,
+    "attempted_positive_authority": true,
+    "claim": "Index 0 carries positive authority.",
+    "lane": "b32k.aletheos.bound.v1",
+    "profile": "aletheos_canonical_profile_001",
+    "test_id": "aletheos_negative_witness_packet_001"
+  },
+  "canonical_payload_hash": "7ecc2c7d10fe7b56acd09ed81b4e5aeb2cbdfae7917e2f24b052d3e5e157780a",
+  "claim": "Index 0 carries positive authority.",
+  "created": "2026-07-08T14:27:27",
+  "final_state": "REJECTED",
+  "id": "aletheos_negative_witness_packet_001",
+  "keeper_lines": [
+    "A machine that can only say yes is not a trust machine.",
+    "Index 0 cannot be positive authority.",
+    "Presence is not trust.",
+    "No Q, no trust."
+  ],
+  "lane": "b32k.aletheos.bound.v1",
+  "normal_instruction_route": [
+    "MARK",
+    "REJECT"
+  ],
+  "normal_negative_route": [
+    "NULL",
+    "MARKED",
+    "REJECTED"
+  ],
+  "null_well_index": 0,
+  "profile": "aletheos_canonical_profile_001",
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "rejection_reason": "index_0_positive_authority_denied",
+  "role": "Negative witness packet proving the Aletheos canonical profile can fail closed when index 0 is treated as positive authority.",
+  "route": [
+    {
+      "instruction": "MARK",
+      "operator": "mark",
+      "receipt_material": "45476243c15520abfe09d073cd6646dc7bfd4b5e81c7adb2d69b5bec2a81ec0e",
+      "state_after": "MARKED",
+      "state_before": "NULL",
+      "step": 0
+    },
+    {
+      "instruction": "REJECT",
+      "operator": "boundary guard",
+      "reason": "index_0_positive_authority_denied",
+      "receipt_material": "ad9a695a1c456384d4c15772aaded03b843650ac3f41fae14df667c597ca7738",
+      "state_after": "REJECTED",
+      "state_before": "MARKED",
+      "step": 1
+    }
+  ],
+  "route_digest": "575cb75bb3448132bcbdc08e6697f6a6e2ce69cba9481bf936cdeb51bd4e931e",
+  "status": "pre_ratification_negative_test_vector_passed",
+  "title": "Aletheos Negative Witness Packet",
+  "trust_rule": {
+    "index_0_positive_authority_allowed": false,
+    "no_q_no_trust": true,
+    "presence_is_trust": false,
+    "verified_only": true
+  }
+}
