@@ -1,0 +1,185 @@
+{
+  "aletheos_root_index": 1,
+  "boundary": {
+    "b32k_index_assignment": false,
+    "commercial_reliance_allowed": false,
+    "doctrine_engine": false,
+    "full_runtime_vm": false,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "sovereign_reliance_allowed": false
+  },
+  "created": "2026-07-08T14:20:49",
+  "document_path": "docs/spec/aletheos_execution_state_model_001.md",
+  "failure_state": "REJECTED",
+  "id": "aletheos_execution_state_model_001",
+  "keeper_lines": [
+    "Boundary gives the machine an inside.",
+    "Language gives the inside a callable action.",
+    "State tells us where the action stands.",
+    "Receipt proves the call returned.",
+    "Verification decides whether reliance is allowed."
+  ],
+  "normal_instruction_route": [
+    "MARK",
+    "ADMIT",
+    "RETURN",
+    "RECEIPT",
+    "BIND",
+    "VERIFY"
+  ],
+  "normal_positive_route": [
+    "NULL",
+    "MARKED",
+    "ADMITTED",
+    "RETURNED",
+    "RECEIPTED",
+    "BOUND",
+    "VERIFIED"
+  ],
+  "null_well_index": 0,
+  "positive_reliance_state": "VERIFIED",
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "revocation_state": "REVOKED",
+  "role": "Defines the first execution state model for the Aletheos minimal apparatus.",
+  "root_lane": "b32k.aletheos.bound.v1",
+  "rules": {
+    "bound_is_not_enough": true,
+    "no_q_no_trust": true,
+    "only_verified_can_carry_positive_reliance": true,
+    "presence_is_trust": false,
+    "receipted_is_not_enough": true,
+    "revocation_does_not_delete_receipt": true
+  },
+  "states": [
+    {
+      "meaning": "Unbound. No admitted binding. No positive claim. No authority.",
+      "positive_authority": false,
+      "state": "NULL",
+      "terminal": false
+    },
+    {
+      "meaning": "A first positive symbol or object exists after the Null Well, but is not yet trusted.",
+      "positive_authority": false,
+      "state": "MARKED",
+      "terminal": false
+    },
+    {
+      "meaning": "The object has entered the admission operator M under a declared boundary, lane, and schema.",
+      "positive_authority": false,
+      "state": "ADMITTED",
+      "terminal": false
+    },
+    {
+      "meaning": "The object has passed through the return relation M^T for comparison, verification, or closure.",
+      "positive_authority": false,
+      "state": "RETURNED",
+      "terminal": false
+    },
+    {
+      "meaning": "The object has produced a reproducible receipt Q.",
+      "positive_authority": false,
+      "state": "RECEIPTED",
+      "terminal": false
+    },
+    {
+      "meaning": "The object is bound to a nonzero B32K address inside a declared Aletheos lane.",
+      "positive_authority": false,
+      "state": "BOUND",
+      "terminal": false
+    },
+    {
+      "meaning": "The object has passed verification under the relevant subscriber, lane, receipt, authority, and revocation policy.",
+      "positive_authority": true,
+      "state": "VERIFIED",
+      "terminal": false
+    },
+    {
+      "meaning": "The object failed closed and must not be treated as positive authority.",
+      "positive_authority": false,
+      "state": "REJECTED",
+      "terminal": true
+    },
+    {
+      "meaning": "A previously valid or relied-upon object has been revoked. Its receipt remains, but reliance is denied.",
+      "positive_authority": false,
+      "state": "REVOKED",
+      "terminal": true
+    }
+  ],
+  "status": "pre_ratification_technical_profile",
+  "title": "Aletheos Execution State Model",
+  "transitions": [
+    {
+      "from": "NULL",
+      "instruction": "NOOP",
+      "to": "NULL"
+    },
+    {
+      "from": "NULL",
+      "instruction": "MARK",
+      "to": "MARKED"
+    },
+    {
+      "from": "MARKED",
+      "instruction": "ADMIT",
+      "to": "ADMITTED"
+    },
+    {
+      "from": "ADMITTED",
+      "instruction": "RETURN",
+      "to": "RETURNED"
+    },
+    {
+      "from": "RETURNED",
+      "instruction": "RECEIPT",
+      "to": "RECEIPTED"
+    },
+    {
+      "from": "RECEIPTED",
+      "instruction": "BIND",
+      "to": "BOUND"
+    },
+    {
+      "from": "BOUND",
+      "instruction": "VERIFY",
+      "to": "VERIFIED"
+    },
+    {
+      "from": "NULL",
+      "instruction": "REJECT",
+      "to": "REJECTED"
+    },
+    {
+      "from": "MARKED",
+      "instruction": "REJECT",
+      "to": "REJECTED"
+    },
+    {
+      "from": "ADMITTED",
+      "instruction": "REJECT",
+      "to": "REJECTED"
+    },
+    {
+      "from": "RETURNED",
+      "instruction": "REJECT",
+      "to": "REJECTED"
+    },
+    {
+      "from": "RECEIPTED",
+      "instruction": "REJECT",
+      "to": "REJECTED"
+    },
+    {
+      "from": "BOUND",
+      "instruction": "REJECT",
+      "to": "REJECTED"
+    },
+    {
+      "from": "VERIFIED",
+      "instruction": "REVOKE",
+      "to": "REVOKED"
+    }
+  ]
+}
