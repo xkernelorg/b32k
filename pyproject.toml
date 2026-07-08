@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "b32k"
+version = "0.0.2"
+description = "Canonical Base32768 (B32K) lattice + codec"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+b32k = ["*.json", "*.jsonl", "*.pdf"]

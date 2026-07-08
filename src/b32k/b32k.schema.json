@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b32k.schema.json",
+  "title": "B32K Canon Registry (strict)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "planes", "anchors", "alphabet", "grammar", "compat", "hashes"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "schema_version",
+        "epoch",
+        "abi_major",
+        "abi_minor",
+        "generated_utc",
+        "ordering"
+      ],
+      "properties": {
+        "schema": { "const": "b32k.canon" },
+        "schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "epoch": { "type": "string", "minLength": 1 },
+        "abi_major": { "type": "integer", "minimum": 0, "maximum": 255 },
+        "abi_minor": { "type": "integer", "minimum": 0, "maximum": 255 },
+        "generated_utc": { "type": "integer", "minimum": 0 },
+        "ordering": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["canonical_sort", "map_sort"],
+          "properties": {
+            "canonical_sort": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "enum": ["meta", "alphabet", "anchors", "planes", "grammar", "compat", "hashes"]
+              }
+            },
+            "map_sort": { "type": "string", "enum": ["lexicographic_keys"] }
+          }
+        }
+      }
+    },
+
+    "planes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["0", "1", "2", "3", "4"],
+      "properties": {
+        "0": { "$ref": "#/$defs/planeDef" },
+        "1": { "$ref": "#/$defs/planeDef" },
+        "2": { "$ref": "#/$defs/planeDef" },
+        "3": { "$ref": "#/$defs/planeDef" },
+        "4": { "$ref": "#/$defs/planeDef" }
+      }
+    },
+
+    "anchors": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/anchorDef" },
+      "propertyNames": { "type": "string", "pattern": "^A[0-9]{2}$" }
+    },
+
+    "alphabet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "rows"],
+      "properties": {
+        "shape": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lattice", "fields"],
+          "properties": {
+            "lattice": { "type": "string", "enum": ["rxc"] },
+            "fields": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "enum": ["index", "hex", "unicode_point", "plane", "r", "c", "anchor_id"]
+              }
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/alphabetRow" }
+        }
+      }
+    },
+
+    "grammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tokenization", "primitive_classes", "atoms"],
+      "properties": {
+        "tokenization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["alphabet", "forbid", "hyphen_grouping"],
+          "properties": {
+            "alphabet": { "type": "string", "enum": ["A-Z2-7"] },
+            "forbid": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "pattern": "^[0-9]$" }
+            },
+            "hyphen_grouping": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["enabled", "every"],
+              "properties": {
+                "enabled": { "type": "boolean" },
+                "every": { "type": "integer", "minimum": 1, "maximum": 64 }
+              }
+            }
+          }
+        },
+
+        "primitive_classes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["A", "B", "C", "D", "E", "F", "G", "H"],
+          "properties": {
+            "A": { "type": "string" },
+            "B": { "type": "string" },
+            "C": { "type": "string" },
+            "D": { "type": "string" },
+            "E": { "type": "string" },
+            "F": { "type": "string" },
+            "G": { "type": "string" },
+            "H": { "type": "string" }
+          }
+        },
+
+        "atoms": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["feature_precision", "quantum", "pipeline", "examples"],
+          "properties": {
+            "feature_precision": { "type": "number", "exclusiveMinimum": 0 },
+            "quantum": { "type": "number", "exclusiveMinimum": 0 },
+            "pipeline": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": { "type": "string", "enum": ["float", "canonical", "quantized", "atom", "b32k_symbol"] }
+            },
+            "examples": {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["atom", "symbol"],
+                "properties": {
+                  "atom": { "type": "string", "minLength": 1 },
+                  "symbol": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 7,
+                    "pattern": "^[A-Z2-7]+$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "compat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["forward", "backward"],
+      "properties": {
+        "forward": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["unknown_symbol_behavior", "opaque_preservation"],
+          "properties": {
+            "unknown_symbol_behavior": { "type": "string", "enum": ["opaque-segment"] },
+            "opaque_preservation": { "type": "string", "enum": ["decode_encode_stable"] }
+          }
+        },
+        "backward": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["deprecated_primitives_allowed", "historical_algo_ids_replayable"],
+          "properties": {
+            "deprecated_primitives_allowed": { "type": "boolean" },
+            "historical_algo_ids_replayable": { "type": "boolean" }
+          }
+        }
+      }
+    },
+
+    "hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canon_hash_algo", "alphabet_hash", "anchors_hash", "full_hash"],
+      "properties": {
+        "canon_hash_algo": { "type": "string", "enum": ["SHA-256"] },
+        "alphabet_hash": { "$ref": "#/$defs/hashHex" },
+        "anchors_hash": { "$ref": "#/$defs/hashHex" },
+        "full_hash": { "$ref": "#/$defs/hashHex" }
+      }
+    }
+  },
+
+  "$defs": {
+    "planeDef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "notes"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": ["x-plane", "y-plane", "z-plane", "t-plane", "i-plane"]
+        },
+        "notes": { "type": "string" }
+      }
+    },
+
+    "anchorDef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "label"],
+      "properties": {
+        "domain": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "alphabetRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "hex", "unicode_point", "plane", "r", "c", "anchor_id"],
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "hex": { "type": "string", "pattern": "^0x[0-9A-Fa-f]+$" },
+        "unicode_point": { "type": "string", "pattern": "^U\\+[0-9A-F]{4,6}$" },
+        "plane": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "r": { "type": "integer", "minimum": 0 },
+        "c": { "type": "integer", "minimum": 0 },
+        "anchor_id": { "type": "string", "pattern": "^A[0-9]{2}$" }
+      }
+    },
+
+    "hashHex": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    }
+  },
+
+  "$comment": "STRICTNESS: additionalProperties=false everywhere. NOTE: Uniqueness constraints like unique (hex) or unique (plane,r,c) across rows must be enforced by the verifier (JSON Schema cannot express multi-field uniqueness portably)."
+}
