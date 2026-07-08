@@ -1,0 +1,49 @@
+{
+  "$id": "aletheos_cli_route_checkpoint.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_id": {
+      "const": "aletheos_cli_route_checkpoint_001"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "final_state": {
+      "type": "string"
+    },
+    "id": {
+      "const": "aletheos_cli_route_checkpoint_001"
+    },
+    "lane": {
+      "const": "b32k.aletheos.bound.v1"
+    },
+    "receipt_chain": {
+      "type": "object"
+    },
+    "route": {
+      "type": "array"
+    },
+    "route_status": {
+      "enum": [
+        "pass",
+        "fail"
+      ]
+    },
+    "status": {
+      "const": "pre_ratification"
+    }
+  },
+  "required": [
+    "id",
+    "artifact_id",
+    "status",
+    "lane",
+    "route_status",
+    "route",
+    "final_state",
+    "boundary",
+    "receipt_chain"
+  ],
+  "title": "Aletheos CLI Route Checkpoint",
+  "type": "object"
+}

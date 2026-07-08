@@ -1,0 +1,72 @@
+{
+  "artifact_id": "aletheos_cli_route_checkpoint_001",
+  "boundary": {
+    "b32k_indices_assigned_here": false,
+    "commercial_reliance_allowed": false,
+    "python_hosted": true,
+    "ratified": false,
+    "self_hosting": false,
+    "sovereign_reliance_allowed": false,
+    "trust_bearing": false
+  },
+  "created_at": "2026-07-08T15:36:28",
+  "final_state": "BOUND",
+  "id": "aletheos_cli_route_checkpoint_001",
+  "keeper": "The door can be marked, admitted, returned, receipted, verified, and bound. It still cannot be trusted beyond its receipt.",
+  "lane": "b32k.aletheos.bound.v1",
+  "receipt_chain": {
+    "admit": "e580b68706f5afd4986588aae60f5944b34f07bdb1687134446d09c944302356",
+    "bind": "e24b68243f28d724c264e67c4fec6b3e6adcdbeaffdf8e78a6e8524ee265b8fd",
+    "mark": "be2993f624577000c474be4e545809c3b6d15f733ef19471d3927d4ff229acbf",
+    "receipt": "7d064f6d4424400620dff7dabbf044d2f3cc0f7b23627b4c262f65580afde5e0",
+    "return": "e361372eaf3a5302b2f84a3b082b73ba9f49ef2cc7fa382ba157a2559323c6a1",
+    "verify": "0b080624b9cb7f2094cb955ecd84a2ee8bbe2689606e385d966c62df45d37c50"
+  },
+  "repo_head": "b8c1ad6 Add Aletheos CLI bind surface",
+  "route": [
+    {
+      "from": "NULL",
+      "role": "lawful stillness",
+      "to": "NULL",
+      "token": ":"
+    },
+    {
+      "from": "NULL",
+      "role": "candidate trace",
+      "to": "MARKED",
+      "token": "MARK"
+    },
+    {
+      "from": "MARKED",
+      "role": "witness passage admission",
+      "to": "ADMITTED",
+      "token": "ADMIT"
+    },
+    {
+      "from": "ADMITTED",
+      "role": "return from passage",
+      "to": "RETURNED",
+      "token": "RETURN"
+    },
+    {
+      "from": "RETURNED",
+      "role": "returned trace body",
+      "to": "RECEIPTED",
+      "token": "RECEIPT"
+    },
+    {
+      "from": "RECEIPTED",
+      "role": "internal chain verification",
+      "to": "VERIFIED",
+      "token": "VERIFY"
+    },
+    {
+      "from": "VERIFIED",
+      "role": "pre-ratification lane binding",
+      "to": "BOUND",
+      "token": "BIND"
+    }
+  ],
+  "route_status": "pass",
+  "status": "pre_ratification"
+}
