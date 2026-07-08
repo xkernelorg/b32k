@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "b32k_binding": {
+      "type": "object"
+    },
+    "book": {
+      "type": "string"
+    },
+    "chapter": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "created": {
+      "type": "string"
+    },
+    "entries": {
+      "items": {
+        "$ref": "structural_concordance_entry.schema.json"
+      },
+      "type": "array"
+    },
+    "id": {
+      "type": "string"
+    },
+    "keeper_stack": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "method_note": {
+      "type": "string"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "public_name": {
+      "type": "string"
+    },
+    "source_work": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "technical_name": {
+      "type": "string"
+    },
+    "translation": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "source_work",
+    "translation",
+    "book",
+    "chapter",
+    "status",
+    "entries"
+  ],
+  "title": "B32K KJV Chapter Structural Concordance",
+  "type": "object"
+}

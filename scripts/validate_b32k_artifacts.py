@@ -11,13 +11,16 @@ def bad(msg):
     errors.append(msg)
     print("BAD " + msg)
 
+def ok(msg):
+    print("OK " + msg)
+
 objs = {}
 for path in sorted(json_dir.glob("*.json")):
     rel = str(path.relative_to(root))
     try:
         obj = json.loads(path.read_text(encoding="utf-8"))
         objs[rel] = obj
-        print("OK " + rel)
+        ok(rel)
     except Exception as exc:
         bad(f"{rel} json parse failed: {exc}")
 
@@ -26,22 +29,51 @@ for rel, obj in objs.items():
         bad(f"{rel} missing id")
 
 reg = objs.get("artifacts/json/structural_key_registry_001.json")
+allowed = set()
+index_by_key = {}
 if reg:
     keys = [x.get("key") for x in reg.get("keys", [])]
     if len(keys) != len(set(keys)):
         bad("structural key registry has duplicate keys")
+    for row in reg.get("keys", []):
+        key = row.get("key")
+        idx = row.get("b32k_symbol_index")
+        if not key:
+            bad("structural key registry row missing key")
+            continue
+        allowed.add(key)
+        if not isinstance(idx, int) or idx < 0 or idx > 32767:
+            bad(f"structural key {key} has invalid b32k_symbol_index {idx}")
+        else:
+            index_by_key[key] = idx
+else:
+    bad("missing structural key registry")
 
-gen = objs.get("artifacts/json/kjv_genesis_1_structural_concordance_001.json")
-if gen and reg:
-    ids = [x.get("id") for x in gen.get("entries", [])]
-    if len(ids) != len(set(ids)):
-        bad("genesis 1 artifact has duplicate entry ids")
-    allowed = {x.get("key") for x in reg.get("keys", [])}
-    for e in gen.get("entries", []):
-        if e.get("structural_key") not in allowed:
-            bad(f"unknown structural key in genesis 1: {e.get('structural_key')}")
+for rel, obj in objs.items():
+    if not isinstance(obj, dict):
+        continue
+    if obj.get("translation") == "King James Version" and "entries" in obj:
+        entries = obj.get("entries", [])
+        ids = [x.get("id") for x in entries]
+        if len(ids) != len(set(ids)):
+            bad(f"{rel} has duplicate entry ids")
+        for e in entries:
+            eid = e.get("id", "<missing>")
+            key = e.get("structural_key")
+            if key not in allowed:
+                bad(f"{rel} {eid} unknown structural_key {key}")
+                continue
+            idx = e.get("b32k_symbol_index")
+            if idx != index_by_key.get(key):
+                bad(f"{rel} {eid} index mismatch for {key}: entry={idx} registry={index_by_key.get(key)}")
+            if e.get("b32k_binding_status") != "bound_to_structural_key_registry_001":
+                bad(f"{rel} {eid} missing binding status")
+            for req in ["source", "source_phrase", "keeper_line", "boundary_note"]:
+                if not e.get(req):
+                    bad(f"{rel} {eid} missing {req}")
 
 if errors:
     print(f"validation=fail error_count={len(errors)}")
     sys.exit(1)
+
 print("validation=pass")
