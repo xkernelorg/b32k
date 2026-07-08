@@ -1,0 +1,35 @@
+{
+  "$id": "aletheos_phase_registry.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_id": {
+      "const": "aletheos_phase_registry_001"
+    },
+    "id": {
+      "const": "aletheos_phase_registry_001"
+    },
+    "indexing_rule": {
+      "type": "object"
+    },
+    "lane": {
+      "const": "b32k.aletheos.bound.v1"
+    },
+    "phases": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "status": {
+      "const": "pre_ratification"
+    }
+  },
+  "required": [
+    "id",
+    "artifact_id",
+    "status",
+    "lane",
+    "indexing_rule",
+    "phases"
+  ],
+  "title": "Aletheos Phase Registry",
+  "type": "object"
+}

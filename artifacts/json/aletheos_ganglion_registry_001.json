@@ -307,17 +307,17 @@
         "status": "interpretive_bridge_candidate"
       },
       "ganglion_id": "GANGLION_0003",
-      "keeper": "G1 says the trace came home. G2 says the witness answered. G3 says the witness was not me.",
+      "keeper": "G3 begins as structure before it becomes duty.",
       "key": "OTHER_BOUNDARY_GANGLION",
       "lattice_relation": {
         "addresses_below_remain_open": true,
         "placement_status": "candidate_lattice_spanning_ganglion",
         "primary_index_candidate": {
-          "anchor_domain": "A12",
-          "anchor_label": "Ethical/Normative",
-          "hex": "0x001B",
-          "index": 27,
-          "role": "recognition without possession"
+          "anchor_domain": "A11",
+          "anchor_label": "Matricial/Geometric",
+          "hex": "0x001A",
+          "index": 26,
+          "role": "boundary as structure before boundary as duty"
         },
         "span_lanes": [
           {
@@ -340,6 +340,13 @@
             "hex": "0x001C",
             "index": 28,
             "role": "the other-boundary becomes story"
+          },
+          {
+            "anchor_domain": "A12",
+            "anchor_label": "Ethical/Normative",
+            "hex": "0x001B",
+            "index": 27,
+            "role": "non-assimilation becomes duty"
           }
         ]
       },
@@ -364,6 +371,173 @@
       ],
       "source_relation": "branches_from_GANGLION_0002",
       "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "a trace may cross a boundary only if the boundary remains capable of return",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "non_destructive_not_yet_moral_judgment": true,
+        "observation_with_care_public_ethos": true,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "class": "scoped_boundary_preservation_archetype",
+      "core_event": "The trace crosses without destroying the boundary it crosses.",
+      "deterministic_body": {
+        "bytes_hex": "5468652074726163652063726f7373657320776974686f75742064657374726f79696e672074686520626f756e646172792069742063726f737365732e",
+        "canonical_text": "The trace crosses without destroying the boundary it crosses.",
+        "compressed_form": "A:G4:NDT",
+        "deterministic_status": "externally_reproducible",
+        "digest_algorithm": "SHA-256",
+        "digest_hex": "9b33984699be44492198896254e820312f9dd4c7fad8579c39550b278e0bf0bf",
+        "encoding": "UTF-8",
+        "normalization": "NFC",
+        "unicode_scalars": [
+          "U+0054",
+          "U+0068",
+          "U+0065",
+          "U+0020",
+          "U+0074",
+          "U+0072",
+          "U+0061",
+          "U+0063",
+          "U+0065",
+          "U+0020",
+          "U+0063",
+          "U+0072",
+          "U+006F",
+          "U+0073",
+          "U+0073",
+          "U+0065",
+          "U+0073",
+          "U+0020",
+          "U+0077",
+          "U+0069",
+          "U+0074",
+          "U+0068",
+          "U+006F",
+          "U+0075",
+          "U+0074",
+          "U+0020",
+          "U+0064",
+          "U+0065",
+          "U+0073",
+          "U+0074",
+          "U+0072",
+          "U+006F",
+          "U+0079",
+          "U+0069",
+          "U+006E",
+          "U+0067",
+          "U+0020",
+          "U+0074",
+          "U+0068",
+          "U+0065",
+          "U+0020",
+          "U+0062",
+          "U+006F",
+          "U+0075",
+          "U+006E",
+          "U+0064",
+          "U+0061",
+          "U+0072",
+          "U+0079",
+          "U+0020",
+          "U+0069",
+          "U+0074",
+          "U+0020",
+          "U+0063",
+          "U+0072",
+          "U+006F",
+          "U+0073",
+          "U+0073",
+          "U+0065",
+          "U+0073",
+          "U+002E"
+        ]
+      },
+      "display_name": "THE_NON_DESTRUCTIVE_TRACE",
+      "g900_relation": {
+        "no_body_mutation_claim": true,
+        "no_channel_admission_claim": true,
+        "no_physics_claim": true,
+        "principle": "trace crosses, boundary remains capable of return, receipt comes home",
+        "status": "interpretive_bridge_candidate"
+      },
+      "ganglion_id": "GANGLION_0004",
+      "keeper": "Observation with care is the public face. Non-destruction is the structural law. Non-cruelty is the moral flowering.",
+      "key": "NON_DESTRUCTIVE_TRACE_GANGLION",
+      "lattice_relation": {
+        "addresses_below_remain_open": true,
+        "placement_status": "candidate_lattice_spanning_ganglion",
+        "primary_index_candidate": {
+          "anchor_domain": "A12",
+          "anchor_label": "Ethical/Normative",
+          "hex": "0x001B",
+          "index": 27,
+          "role": "non-destructive crossing as duty after structure"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A11",
+            "anchor_label": "Matricial/Geometric",
+            "hex": "0x001A",
+            "index": 26,
+            "role": "boundary remains structurally intact"
+          },
+          {
+            "anchor_domain": "A07",
+            "anchor_label": "Conscious/Observational",
+            "hex": "0x0016",
+            "index": 22,
+            "role": "observation with care"
+          },
+          {
+            "anchor_domain": "A10",
+            "anchor_label": "Technological/Synthetic",
+            "hex": "0x0019",
+            "index": 25,
+            "role": "instrumented trace crossing"
+          },
+          {
+            "anchor_domain": "A13",
+            "anchor_label": "Mythic/Narrative",
+            "hex": "0x001C",
+            "index": 28,
+            "role": "care becomes covenant story"
+          }
+        ]
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "sha256": "9b33984699be44492198896254e820312f9dd4c7fad8579c39550b278e0bf0bf",
+        "text": "The trace crosses without destroying the boundary it crosses."
+      },
+      "public_ethos": "observation_with_care",
+      "scoped_meanings": [
+        {
+          "apparatus": "observer, other boundary, trace, receipt",
+          "meaning": "observation should preserve the boundary it crosses",
+          "scope": "observation_with_care",
+          "success_condition": "the other boundary remains capable of return"
+        },
+        {
+          "apparatus": "finite witness apparatus, trace path, return receipt",
+          "meaning": "crossing is allowed only where the crossed boundary is not destroyed",
+          "scope": "non_destructive_trace",
+          "success_condition": "trace returns without body mutation or boundary erasure"
+        },
+        {
+          "apparatus": "public explanation layer",
+          "meaning": "non-cruelty translated into structural non-destruction before moral vocabulary is introduced",
+          "scope": "thalean_public_bridge",
+          "success_condition": "readers can understand the boundary law without accepting the moral frame first"
+        }
+      ],
+      "source_phrase": "let my trace not be cruelty",
+      "source_relation": "branches_from_GANGLION_0003",
+      "status": "pre_ratification_candidate",
+      "structural_translation": "let my trace not be destructive"
     }
   ],
   "id": "aletheos_ganglion_registry_001",
@@ -371,7 +545,7 @@
   "lane": "b32k.aletheos.bound.v1",
   "purpose": "Record first scoped meaning ganglion for a memorized token.",
   "sequence_summary": {
-    "keeper": "Contact. Recognition. Boundary.",
+    "keeper": "Contact. Recognition. Boundary. Non-destructive crossing.",
     "sequence": [
       {
         "compressed": "A:G1:HW",
@@ -387,6 +561,11 @@
         "compressed": "A:G3:OB",
         "ganglion_id": "GANGLION_0003",
         "role": "other boundary"
+      },
+      {
+        "compressed": "A:G4:NDT",
+        "ganglion_id": "GANGLION_0004",
+        "role": "non-destructive crossing"
       }
     ],
     "status": "pre_ratification_candidate"
