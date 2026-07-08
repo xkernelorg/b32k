@@ -668,13 +668,160 @@
         29
       ],
       "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "a rule proposes form",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P0:STYLE_OFFERED",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0028",
+      "lattice_candidate": {
+        "anchor_domain": "A10",
+        "anchor_label": "Technological/Synthetic",
+        "index": 25
+      },
+      "phase_id": "G7.P0",
+      "phase_role": "style_offered",
+      "span_candidates": [
+        20,
+        24,
+        26,
+        27
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the authority order is visible",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P1:CASCADE_DECLARED",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0029",
+      "lattice_candidate": {
+        "anchor_domain": "A05",
+        "anchor_label": "Logical/Algorithmic",
+        "index": 20
+      },
+      "phase_id": "G7.P1",
+      "phase_role": "cascade_declared",
+      "span_candidates": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "conflicts are settled by declared rules",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P2:SPECIFICITY_RESOLVED",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0030",
+      "lattice_candidate": {
+        "anchor_domain": "A05",
+        "anchor_label": "Logical/Algorithmic",
+        "index": 20
+      },
+      "phase_id": "G7.P2",
+      "phase_role": "specificity_resolved",
+      "span_candidates": [
+        24,
+        25,
+        26
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the boundary voluntarily yields presentation",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P3:FORM_ACCEPTED",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0031",
+      "lattice_candidate": {
+        "anchor_domain": "A09",
+        "anchor_label": "Cultural/Linguistic",
+        "index": 24
+      },
+      "phase_id": "G7.P3",
+      "phase_role": "form_accepted",
+      "span_candidates": [
+        20,
+        25,
+        26,
+        27
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the source remains itself",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P4:IDENTITY_RETAINED",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0032",
+      "lattice_candidate": {
+        "anchor_domain": "A11",
+        "anchor_label": "Matricial/Geometric",
+        "index": 26
+      },
+      "phase_id": "G7.P4",
+      "phase_role": "identity_retained",
+      "span_candidates": [
+        20,
+        24,
+        27
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "submission can end without erasing history",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P5:REVOCATION_REMAINS",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0033",
+      "lattice_candidate": {
+        "anchor_domain": "A12",
+        "anchor_label": "Ethical/Normative",
+        "index": 27
+      },
+      "phase_id": "G7.P5",
+      "phase_role": "revocation_remains",
+      "span_candidates": [
+        20,
+        24,
+        26
+      ],
+      "status": "pre_ratification_candidate"
     }
   ],
   "purpose": "Index ganglion phases as local unfolding and global emergence.",
   "sequence_summary": {
-    "keeper": "Refusal is older than accountable dominion. Stewardship is care after refusal.",
+    "keeper": "Submission is clean only when refusal remains live.",
     "status": "pre_ratification_candidate",
-    "through": "GANGLION_0006"
+    "through": "GANGLION_0007"
   },
   "status": "pre_ratification"
 }

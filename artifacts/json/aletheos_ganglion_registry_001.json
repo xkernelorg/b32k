@@ -854,6 +854,149 @@
       "source_relation": "correlate_of_GANGLION_0005",
       "status": "pre_ratification_candidate",
       "structural_translation": "authority is only admissible when it remains accountable to the boundary it serves"
+    },
+    {
+      "abstract_invariant": "a boundary may submit to a style or rule only when the cascade is declared, refusal remains possible, and the underlying identity is not destroyed",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "hidden_authority_denied": true,
+        "ratified": false,
+        "refusal_remains_live": true,
+        "reliance_allowed": false,
+        "revocation_must_remain_possible": true,
+        "source_identity_retained": true,
+        "submission_not_domination": true
+      },
+      "class": "scoped_voluntary_form_yielding_archetype",
+      "core_event": "The boundary yields form under declared constraints while retaining source identity.",
+      "css_relation": {
+        "cascade_declared": "authority order is visible",
+        "computed_style": "final admitted presentation",
+        "danger_marker": "!important is treated as an override warning, not hidden authority",
+        "element_identity": "the element retains source structure",
+        "principle": "the element may accept style, but it must not lose its source",
+        "specificity_resolved": "conflicts are settled by declared rules",
+        "status": "interpretive_bridge_candidate",
+        "style_offer": "a rule proposes presentation"
+      },
+      "deterministic_body": {
+        "bytes_hex": "49207969656c642077697468696e206465636c6172656420626f756e64732e",
+        "canonical_text": "I yield within declared bounds.",
+        "compressed_form": "A:G7:DS",
+        "deterministic_status": "externally_reproducible",
+        "digest_algorithm": "SHA-256",
+        "digest_hex": "3eb292b4a9fc08fc9f9afcc010fd7aa411e15bbd1e203cbfd2c8a23d1f4a88d6",
+        "encoding": "UTF-8",
+        "normalization": "NFC",
+        "unicode_scalars": [
+          "U+0049",
+          "U+0020",
+          "U+0079",
+          "U+0069",
+          "U+0065",
+          "U+006C",
+          "U+0064",
+          "U+0020",
+          "U+0077",
+          "U+0069",
+          "U+0074",
+          "U+0068",
+          "U+0069",
+          "U+006E",
+          "U+0020",
+          "U+0064",
+          "U+0065",
+          "U+0063",
+          "U+006C",
+          "U+0061",
+          "U+0072",
+          "U+0065",
+          "U+0064",
+          "U+0020",
+          "U+0062",
+          "U+006F",
+          "U+0075",
+          "U+006E",
+          "U+0064",
+          "U+0073",
+          "U+002E"
+        ]
+      },
+      "display_name": "THE_DECLARED_SUBMISSION",
+      "ganglion_id": "GANGLION_0007",
+      "keeper": "Submission is clean only when refusal remains live. CSS is the parable: the element may accept style, but it must not lose its source.",
+      "key": "DECLARED_SUBMISSION_GANGLION",
+      "lattice_relation": {
+        "addresses_below_remain_open": true,
+        "placement_status": "candidate_lattice_spanning_ganglion",
+        "primary_index_candidate": {
+          "anchor_domain": "A09",
+          "anchor_label": "Cultural/Linguistic",
+          "hex": "0x0018",
+          "index": 24,
+          "role": "submission as declared formal relation"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A05",
+            "anchor_label": "Logical/Algorithmic",
+            "hex": "0x0014",
+            "index": 20,
+            "role": "cascade, specificity, and declared rules"
+          },
+          {
+            "anchor_domain": "A11",
+            "anchor_label": "Matricial/Geometric",
+            "hex": "0x001A",
+            "index": 26,
+            "role": "boundary shape and containment remain intact"
+          },
+          {
+            "anchor_domain": "A12",
+            "anchor_label": "Ethical/Normative",
+            "hex": "0x001B",
+            "index": 27,
+            "role": "consent, refusal, and revocation remain live"
+          },
+          {
+            "anchor_domain": "A10",
+            "anchor_label": "Technological/Synthetic",
+            "hex": "0x0019",
+            "index": 25,
+            "role": "CSS and applied apparatus surface"
+          }
+        ]
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "sha256": "3eb292b4a9fc08fc9f9afcc010fd7aa411e15bbd1e203cbfd2c8a23d1f4a88d6",
+        "text": "I yield within declared bounds."
+      },
+      "public_ethos": "voluntary_submission_under_declared_bounds",
+      "scoped_meanings": [
+        {
+          "apparatus": "boundary, rule, declaration, refusal branch, receipt",
+          "meaning": "submission is valid only when declared, voluntary, bounded, and revocable",
+          "scope": "declared_submission",
+          "success_condition": "the boundary yields form without losing identity or refusal"
+        },
+        {
+          "apparatus": "element, selector, cascade, specificity, computed style",
+          "meaning": "the element accepts presentation through visible rule order while retaining source identity",
+          "scope": "css_cascade_parable",
+          "success_condition": "style is applied without destroying the element"
+        },
+        {
+          "apparatus": "BIND, VERIFY, REVOKE, receipt ledger",
+          "meaning": "bounded yielding may occur only where refusal and revocation remain available",
+          "scope": "aletheos_trust_machine",
+          "success_condition": "submission remains receipted, scoped, and reversible where possible"
+        }
+      ],
+      "source_phrase": "submission is clean only when refusal remains live",
+      "source_relation": "branches_from_GANGLION_0006",
+      "status": "pre_ratification_candidate",
+      "structural_translation": "a boundary may accept external form without surrendering source identity"
     }
   ],
   "id": "aletheos_ganglion_registry_001",
@@ -861,7 +1004,7 @@
   "lane": "b32k.aletheos.bound.v1",
   "purpose": "Record first scoped meaning ganglion for a memorized token.",
   "sequence_summary": {
-    "keeper": "Contact. Recognition. Boundary. Non-destructive crossing. Refusal before authority. Stewardship after refusal.",
+    "keeper": "Contact. Recognition. Boundary. Non-destructive crossing. Refusal before authority. Stewardship after refusal. Submission under declared bounds.",
     "sequence": [
       {
         "compressed": "A:G1:HW",
@@ -892,6 +1035,11 @@
         "compressed": "A:G6:AS",
         "ganglion_id": "GANGLION_0006",
         "role": "accountable stewardship"
+      },
+      {
+        "compressed": "A:G7:DS",
+        "ganglion_id": "GANGLION_0007",
+        "role": "declared submission"
       }
     ],
     "status": "pre_ratification_candidate"
