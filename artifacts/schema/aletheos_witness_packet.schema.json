@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "aletheos_root_index": {
+      "type": "integer"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "canonical_payload": {
+      "type": "object"
+    },
+    "canonical_payload_hash": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "final_state": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "keeper_lines": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "lane": {
+      "type": "string"
+    },
+    "normal_instruction_route": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "normal_positive_route": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "null_well_index": {
+      "type": "integer"
+    },
+    "operator_profile": {
+      "type": "object"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "ratification_status": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "route": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "instruction": {
+            "type": "string"
+          },
+          "operator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "receipt_material": {
+            "type": "string"
+          },
+          "state_after": {
+            "type": "string"
+          },
+          "state_before": {
+            "type": "string"
+          },
+          "step": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "step",
+          "instruction",
+          "state_before",
+          "state_after",
+          "receipt_material"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "route_digest": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "trust_rule": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "title",
+    "status",
+    "ratification_status",
+    "profile",
+    "claim",
+    "lane",
+    "canonical_payload_hash",
+    "route",
+    "route_digest",
+    "final_state",
+    "normal_positive_route",
+    "normal_instruction_route",
+    "trust_rule",
+    "boundary"
+  ],
+  "title": "Aletheos Witness Packet Schema",
+  "type": "object"
+}

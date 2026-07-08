@@ -143,6 +143,49 @@ for rel, obj in objs.items():
                 if not e.get(req):
                     bad(f"{rel} {eid} missing {req}")
 
+def validate_witness_packet(rel, obj):
+    if obj.get("title") != "Aletheos Minimal Witness Packet":
+        return
+    route = obj.get("route", [])
+    if not route:
+        bad(f"{rel} witness route is empty")
+        return
+    if route[0].get("state_before") != "NULL":
+        bad(f"{rel} witness route must start from NULL")
+    if obj.get("final_state") != route[-1].get("state_after"):
+        bad(f"{rel} final_state does not match route end")
+    if obj.get("final_state") != "VERIFIED":
+        bad(f"{rel} final_state must be VERIFIED for positive witness packet")
+    expected_states = ["NULL", "MARKED", "ADMITTED", "RETURNED", "RECEIPTED", "BOUND", "VERIFIED"]
+    if obj.get("normal_positive_route") != expected_states:
+        bad(f"{rel} normal_positive_route mismatch")
+    expected_instructions = ["MARK", "ADMIT", "RETURN", "RECEIPT", "BIND", "VERIFY"]
+    if obj.get("normal_instruction_route") != expected_instructions:
+        bad(f"{rel} normal_instruction_route mismatch")
+    opcodes = [x.get("instruction") for x in route]
+    for req in ["MARK", "ADMIT", "RETURN", "RECEIPT", "BIND", "VERIFY"]:
+        if req not in opcodes:
+            bad(f"{rel} witness route missing instruction {req}")
+    if obj.get("trust_rule", {}).get("no_q_no_trust") is not True:
+        bad(f"{rel} must assert no_q_no_trust")
+    if obj.get("trust_rule", {}).get("verified_only") is not True:
+        bad(f"{rel} must assert verified_only")
+    if not obj.get("canonical_payload_hash"):
+        bad(f"{rel} missing canonical_payload_hash")
+    if not obj.get("route_digest"):
+        bad(f"{rel} missing route_digest")
+    boundary = obj.get("boundary", {})
+    if boundary.get("commercial_reliance_allowed") is not False:
+        bad(f"{rel} commercial reliance must be false pre-ratification")
+    if boundary.get("sovereign_reliance_allowed") is not False:
+        bad(f"{rel} sovereign reliance must be false pre-ratification")
+    if boundary.get("ratified") is not False:
+        bad(f"{rel} ratified must be false pre-ratification")
+
+for rel, obj in objs.items():
+    if isinstance(obj, dict):
+        validate_witness_packet(rel, obj)
+
 if errors:
     print(f"validation=fail error_count={len(errors)}")
     sys.exit(1)
