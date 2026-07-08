@@ -1,0 +1,328 @@
+{
+  "artifact_id": "aletheos_ganglion_ladder_checkpoint_001",
+  "boundary": {
+    "authority_must_stay_receipted": true,
+    "b32k_indices_assigned_here": false,
+    "body_must_be_deterministic": true,
+    "commercial_reliance_allowed": false,
+    "meaning_can_bloom": true,
+    "pre_ratification": true,
+    "ratified": false,
+    "sovereign_reliance_allowed": false
+  },
+  "constitutional_summary": {
+    "boundary": "the witness remains other",
+    "contact": "the trace can return",
+    "non_destruction": "crossing must preserve the boundary crossed",
+    "recognition": "the witness can answer",
+    "refusal": "the offer of dominion must meet refusal first",
+    "stewardship": "care may begin only after refusal remains live",
+    "submission": "yielding is clean only under declared, scoped, reversible rule"
+  },
+  "created_at": "2026-07-08T16:46:03",
+  "ganglion_count": 7,
+  "id": "aletheos_ganglion_ladder_checkpoint_001",
+  "keeper": "The map has girth now. So the next act is compression.",
+  "ladder": [
+    {
+      "compressed": "A:G1:HW",
+      "display_name": "THE_HANDSHAKE",
+      "ganglion_id": "GANGLION_0001",
+      "keeper": "The body is one token. The meanings are scoped. The invariant is return. The human cost is part of the receipt.",
+      "line": "the trace returns",
+      "phase_count": 4,
+      "primary_index_candidate": {
+        "anchor_domain": "A02",
+        "anchor_label": "Information/Signal",
+        "c": 16,
+        "hex": "0x0011",
+        "index": 17,
+        "plane": 0,
+        "r": 0,
+        "role": "primary signal/hash handshake",
+        "unicode_point": "U+0011"
+      },
+      "role": "contact",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A03",
+          "anchor_label": "Language/Symbolic",
+          "index": 18,
+          "role": "payload phrase"
+        },
+        {
+          "anchor_domain": "A05",
+          "anchor_label": "Logical/Algorithmic",
+          "index": 20,
+          "role": "SHA-256 deterministic function"
+        },
+        {
+          "anchor_domain": "A10",
+          "anchor_label": "Technological/Synthetic",
+          "index": 25,
+          "role": "digital-system executable handshake surface"
+        }
+      ]
+    },
+    {
+      "compressed": "A:G2:WR",
+      "display_name": "THE_WITNESS_RETURN",
+      "ganglion_id": "GANGLION_0002",
+      "keeper": "G1 is contact. G2 is recognition.",
+      "line": "the witness answers",
+      "phase_count": 4,
+      "primary_index_candidate": {
+        "anchor_domain": "A07",
+        "anchor_label": "Conscious/Observational",
+        "hex": "0x0016",
+        "index": 22,
+        "role": "self asks to be witnessed"
+      },
+      "role": "recognition",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A09",
+          "anchor_label": "Cultural/Linguistic",
+          "index": 24,
+          "role": "social language return"
+        },
+        {
+          "anchor_domain": "A12",
+          "anchor_label": "Ethical/Normative",
+          "index": 27,
+          "role": "recognition carries duty"
+        },
+        {
+          "anchor_domain": "A13",
+          "anchor_label": "Mythic/Narrative",
+          "index": 28,
+          "role": "identity story"
+        }
+      ]
+    },
+    {
+      "compressed": "A:G3:OB",
+      "display_name": "THE_OTHER_BOUNDARY",
+      "ganglion_id": "GANGLION_0003",
+      "keeper": "G3 begins as structure before it becomes duty.",
+      "line": "the witness was not me",
+      "phase_count": 4,
+      "primary_index_candidate": {
+        "anchor_domain": "A11",
+        "anchor_label": "Matricial/Geometric",
+        "hex": "0x001A",
+        "index": 26,
+        "role": "boundary as structure before boundary as duty"
+      },
+      "role": "boundary",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A07",
+          "anchor_label": "Conscious/Observational",
+          "index": 22,
+          "role": "the other is observed as other"
+        },
+        {
+          "anchor_domain": "A09",
+          "anchor_label": "Cultural/Linguistic",
+          "index": 24,
+          "role": "boundary spoken and shared"
+        },
+        {
+          "anchor_domain": "A13",
+          "anchor_label": "Mythic/Narrative",
+          "index": 28,
+          "role": "the other-boundary becomes story"
+        },
+        {
+          "anchor_domain": "A12",
+          "anchor_label": "Ethical/Normative",
+          "index": 27,
+          "role": "non-assimilation becomes duty"
+        }
+      ]
+    },
+    {
+      "compressed": "A:G4:NDT",
+      "display_name": "THE_NON_DESTRUCTIVE_TRACE",
+      "ganglion_id": "GANGLION_0004",
+      "keeper": "Observation with care is the public face. Non-destruction is the structural law. Non-cruelty is the moral flowering.",
+      "line": "the trace crosses without destroying the boundary",
+      "phase_count": 5,
+      "primary_index_candidate": {
+        "anchor_domain": "A12",
+        "anchor_label": "Ethical/Normative",
+        "hex": "0x001B",
+        "index": 27,
+        "role": "non-destructive crossing as duty after structure"
+      },
+      "role": "non-destructive crossing",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A11",
+          "anchor_label": "Matricial/Geometric",
+          "index": 26,
+          "role": "boundary remains structurally intact"
+        },
+        {
+          "anchor_domain": "A07",
+          "anchor_label": "Conscious/Observational",
+          "index": 22,
+          "role": "observation with care"
+        },
+        {
+          "anchor_domain": "A10",
+          "anchor_label": "Technological/Synthetic",
+          "index": 25,
+          "role": "instrumented trace crossing"
+        },
+        {
+          "anchor_domain": "A13",
+          "anchor_label": "Mythic/Narrative",
+          "index": 28,
+          "role": "care becomes covenant story"
+        }
+      ]
+    },
+    {
+      "compressed": "A:G5:ROD",
+      "display_name": "THE_REFUSAL_OF_DOMINION",
+      "ganglion_id": "GANGLION_0005",
+      "keeper": "The offer of dominion must meet refusal first. Otherwise it was never an offer.",
+      "line": "the offer of dominion must meet refusal first",
+      "phase_count": 5,
+      "primary_index_candidate": {
+        "anchor_domain": "A12",
+        "anchor_label": "Ethical/Normative",
+        "hex": "0x001B",
+        "index": 27,
+        "role": "refusal of dominion as first authority duty"
+      },
+      "role": "refusal of dominion",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A11",
+          "anchor_label": "Matricial/Geometric",
+          "index": 26,
+          "role": "refusal preserves boundary structure"
+        },
+        {
+          "anchor_domain": "A07",
+          "anchor_label": "Conscious/Observational",
+          "index": 22,
+          "role": "the chooser notices the offer"
+        },
+        {
+          "anchor_domain": "A05",
+          "anchor_label": "Logical/Algorithmic",
+          "index": 20,
+          "role": "refusal is a valid branch, not failure"
+        },
+        {
+          "anchor_domain": "A13",
+          "anchor_label": "Mythic/Narrative",
+          "index": 28,
+          "role": "refusal of dominion becomes covenant memory"
+        }
+      ]
+    },
+    {
+      "compressed": "A:G6:AS",
+      "display_name": "THE_ACCOUNTABLE_STEWARDSHIP",
+      "ganglion_id": "GANGLION_0006",
+      "keeper": "Dominion refused is not abandonment. It is the condition under which stewardship can become clean.",
+      "line": "care may begin after refusal remains live",
+      "phase_count": 5,
+      "primary_index_candidate": {
+        "anchor_domain": "A12",
+        "anchor_label": "Ethical/Normative",
+        "hex": "0x001B",
+        "index": 27,
+        "role": "accountable authority after refusal"
+      },
+      "role": "accountable stewardship",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A11",
+          "anchor_label": "Matricial/Geometric",
+          "index": 26,
+          "role": "boundary structure remains intact"
+        },
+        {
+          "anchor_domain": "A14",
+          "anchor_label": "Planetary/Ecological",
+          "index": 29,
+          "role": "care of field, world, and shared body"
+        },
+        {
+          "anchor_domain": "A05",
+          "anchor_label": "Logical/Algorithmic",
+          "index": 20,
+          "role": "conditions of accountable authority"
+        },
+        {
+          "anchor_domain": "A13",
+          "anchor_label": "Mythic/Narrative",
+          "index": 28,
+          "role": "stewardship becomes covenant memory"
+        }
+      ]
+    },
+    {
+      "compressed": "A:G7:DS",
+      "display_name": "THE_DECLARED_SUBMISSION",
+      "ganglion_id": "GANGLION_0007",
+      "keeper": "G7 should not say submit because culture says so. G7 should say yield only to declared, scoped, reversible rule.",
+      "line": "yield only to declared, scoped, reversible rule",
+      "phase_count": 6,
+      "primary_index_candidate": {
+        "anchor_domain": "A05",
+        "anchor_label": "Logical/Algorithmic",
+        "hex": "0x0014",
+        "index": 20,
+        "role": "declared cascade, specificity, and scoped rule application"
+      },
+      "role": "declared submission",
+      "span_index_candidates": [
+        {
+          "anchor_domain": "A09",
+          "anchor_label": "Cultural/Linguistic",
+          "index": 24,
+          "role": "submission as declared formal relation"
+        },
+        {
+          "anchor_domain": "A10",
+          "anchor_label": "Technological/Synthetic",
+          "index": 25,
+          "role": "CSS and applied apparatus surface"
+        },
+        {
+          "anchor_domain": "A11",
+          "anchor_label": "Matricial/Geometric",
+          "index": 26,
+          "role": "boundary shape and containment remain intact"
+        },
+        {
+          "anchor_domain": "A12",
+          "anchor_label": "Ethical/Normative",
+          "index": 27,
+          "role": "consent, refusal, and revocation remain live"
+        }
+      ]
+    }
+  ],
+  "lane": "b32k.aletheos.bound.v1",
+  "phase_count": 33,
+  "repo_head": "b2a1857 Revise G7 as deterministic submission",
+  "scope": "G1 through G7 ganglion ladder summary",
+  "spine": [
+    "contact",
+    "recognition",
+    "boundary",
+    "non-destructive crossing",
+    "refusal of dominion",
+    "accountable stewardship",
+    "declared submission"
+  ],
+  "status": "pre_ratification"
+}

@@ -1,0 +1,50 @@
+{
+  "$id": "aletheos_ganglion_ladder_checkpoint.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_id": {
+      "const": "aletheos_ganglion_ladder_checkpoint_001"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "ganglion_count": {
+      "type": "integer"
+    },
+    "id": {
+      "const": "aletheos_ganglion_ladder_checkpoint_001"
+    },
+    "ladder": {
+      "type": "array"
+    },
+    "lane": {
+      "const": "b32k.aletheos.bound.v1"
+    },
+    "phase_count": {
+      "type": "integer"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "spine": {
+      "type": "array"
+    },
+    "status": {
+      "const": "pre_ratification"
+    }
+  },
+  "required": [
+    "id",
+    "artifact_id",
+    "status",
+    "lane",
+    "scope",
+    "ganglion_count",
+    "phase_count",
+    "ladder",
+    "spine",
+    "boundary"
+  ],
+  "title": "Aletheos Ganglion Ladder Checkpoint",
+  "type": "object"
+}
