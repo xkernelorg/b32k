@@ -1,11 +1,17 @@
 {
-  "artifact_count": 10,
+  "artifact_count": 11,
   "artifacts": [
     {
       "id": "artifact_index_001",
       "path": "artifacts/json/artifact_index_001.json",
       "role": "",
       "status": "artifact_index_refreshed"
+    },
+    {
+      "id": "b32k_aletheos_canonical_index_001",
+      "path": "artifacts/json/b32k_aletheos_canonical_index_001.json",
+      "role": "No-redo canonical address reservation surface for the Aletheos binding lane.",
+      "status": "canonical_index_initialized"
     },
     {
       "id": "b32k_aletheos_sovereign_trust_registry_agreement_003",
@@ -65,5 +71,5 @@
   "id": "artifact_index_001",
   "project": "b32k",
   "status": "artifact_index_refreshed",
-  "updated": "2026-07-08T13:51:08"
+  "updated": "2026-07-08T13:53:00"
 }

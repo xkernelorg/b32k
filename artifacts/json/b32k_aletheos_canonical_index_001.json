@@ -1,0 +1,55 @@
+{
+  "binding_profile": "B32K bound to Aletheos",
+  "boundary": {
+    "aletheos_claims_all_b32k": false,
+    "b32k_scaffold_only": true,
+    "doctrine_engine": false,
+    "hidden_code_claim": false,
+    "physics_claim": false
+  },
+  "created": "2026-07-08T13:53:00",
+  "entries": [
+    {
+      "entry_type": "reserved_null",
+      "index": 0,
+      "keeper_line": "Zero is the well.",
+      "key": "NULL_WELL",
+      "lane": "b32k.aletheos.bound.v1",
+      "meaning": "Unbound socket. No admitted binding. No positive claim. No authority.",
+      "name": "Null Well",
+      "positive_authority": false,
+      "reassignment_allowed": false,
+      "status": "reserved"
+    },
+    {
+      "entry_type": "reserved_root",
+      "index": 1,
+      "keeper_line": "One is the witness root.",
+      "key": "ALETHEOS_ROOT",
+      "lane": "b32k.aletheos.bound.v1",
+      "meaning": "First admitted witness root for Aletheos-bound semantic, sovereign, certificate, subscriber, structural-key, and receipt lanes.",
+      "name": "Aletheos Root",
+      "positive_authority": true,
+      "reassignment_allowed": false,
+      "status": "reserved_root"
+    }
+  ],
+  "id": "b32k_aletheos_canonical_index_001",
+  "index_range": [
+    0,
+    32767
+  ],
+  "lane": "b32k.aletheos.bound.v1",
+  "project": "b32k",
+  "role": "No-redo canonical address reservation surface for the Aletheos binding lane.",
+  "rules": {
+    "addresses_must_not_drift": true,
+    "definitions_may_mature": true,
+    "index_0_positive_authority_allowed": false,
+    "index_0_reserved_in_every_aletheos_bound_lane": true,
+    "index_1_aletheos_root": true,
+    "reassignment_allowed_by_default": false
+  },
+  "status": "canonical_index_initialized",
+  "title": "B32K Aletheos Canonical Index"
+}
