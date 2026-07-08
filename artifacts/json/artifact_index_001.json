@@ -1,5 +1,5 @@
 {
-  "artifact_count": 19,
+  "artifact_count": 20,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -49,6 +49,13 @@
       "ratification_status": "pre_ratification",
       "role": "Primary operator discipline for B32K bound to Aletheos.",
       "status": "pre_ratification_operator_profile"
+    },
+    {
+      "id": "aletheos_pre_ratification_checkpoint_001",
+      "path": "artifacts/json/aletheos_pre_ratification_checkpoint_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Status checkpoint after positive and negative Aletheos witness packets.",
+      "status": "checkpoint_recorded"
     },
     {
       "id": "aletheos_ratification_checklist_001",
@@ -139,5 +146,5 @@
   "project": "b32k",
   "ratification_status": "pre_ratification",
   "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:27:27"
+  "updated": "2026-07-08T14:30:08"
 }

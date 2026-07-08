@@ -1,0 +1,102 @@
+{
+  "aletheos_binding_profile_is_cooling": true,
+  "b32k_public_scaffold_is_live": true,
+  "commercial_reliance_allowed": false,
+  "created": "2026-07-08T14:30:08",
+  "document_path": "docs/spec/aletheos_pre_ratification_checkpoint_001.md",
+  "execution_states": [
+    "NULL",
+    "MARKED",
+    "ADMITTED",
+    "RETURNED",
+    "RECEIPTED",
+    "BOUND",
+    "VERIFIED",
+    "REJECTED",
+    "REVOKED"
+  ],
+  "id": "aletheos_pre_ratification_checkpoint_001",
+  "instruction_set": [
+    "NOOP",
+    "MARK",
+    "ADMIT",
+    "RETURN",
+    "RECEIPT",
+    "REJECT",
+    "BIND",
+    "VERIFY"
+  ],
+  "keeper_lines": [
+    "A machine that cannot refuse cannot be trusted.",
+    "Aletheos has now refused correctly.",
+    "The scaffold is live.",
+    "The binding is cooling.",
+    "The profile names the machine.",
+    "The first receipts prove it can say yes and no."
+  ],
+  "minimal_apparatus_order": [
+    "boundary",
+    "state",
+    "logic",
+    "language",
+    "sequence",
+    "memory",
+    "input_output",
+    "receipt",
+    "body"
+  ],
+  "open_before_ratification": [
+    "decide structural-key assignment policy",
+    "harden canonical index schema",
+    "harden witness packet schema enforcement",
+    "decide lane naming stability",
+    "review contract draft",
+    "prepare ratification receipt",
+    "tag release only after ratification"
+  ],
+  "operator_profile": {
+    "A": "local motion",
+    "M": "admission",
+    "M^T": "return",
+    "Q": "receipt",
+    "primary_receipt_law": "Q = M M^T",
+    "reference_identity": "Q = M M^T = A^3 + 2A^2 + 2I"
+  },
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
+  "reserved_addresses": [
+    {
+      "index": 0,
+      "key": "NULL_WELL",
+      "positive_authority": false
+    },
+    {
+      "index": 1,
+      "key": "ALETHEOS_ROOT",
+      "positive_authority": true
+    }
+  ],
+  "role": "Status checkpoint after positive and negative Aletheos witness packets.",
+  "root_lane": "b32k.aletheos.bound.v1",
+  "sovereign_reliance_allowed": false,
+  "status": "checkpoint_recorded",
+  "title": "Aletheos Pre-Ratification Checkpoint",
+  "witness_packets": [
+    {
+      "claim": "Boundary before body.",
+      "final_state": "VERIFIED",
+      "id": "aletheos_minimal_witness_packet_001",
+      "path": "artifacts/json/aletheos_minimal_witness_packet_001.json",
+      "type": "positive"
+    },
+    {
+      "claim": "Index 0 carries positive authority.",
+      "final_state": "REJECTED",
+      "id": "aletheos_negative_witness_packet_001",
+      "path": "artifacts/json/aletheos_negative_witness_packet_001.json",
+      "rejection_reason": "index_0_positive_authority_denied",
+      "type": "negative"
+    }
+  ]
+}
