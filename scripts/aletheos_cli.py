@@ -10,7 +10,8 @@ Usage:
   python scripts/aletheos_cli.py MARK "open the door" --json > ~/tmp/mark.json
   python scripts/aletheos_cli.py ADMIT ~/tmp/mark.json --json > ~/tmp/admit.json
   python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json
-  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json
+  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json --json > ~/tmp/receipt.json
+  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json
   python scripts/aletheos_cli.py help
 
 Boundary:
@@ -351,6 +352,82 @@ def receipt_receipt(token: str, return_path: Path, registry: Dict[str, Any], ope
     receipt["receipt_sha256"] = digest_obj(receipt)
     return receipt
 
+
+def verify_receipt(token: str, receipt_path: Path, registry: Dict[str, Any], operator: Dict[str, Any]) -> Dict[str, Any]:
+    try:
+        receipt_obj = json.loads(receipt_path.read_text(encoding="utf-8"))
+    except Exception:
+        return error_receipt(token, "verify_requires_readable_receipt_json", registry)
+
+    ok, reason = validate_receipt(receipt_obj, "aletheos_cli_receipt_receipt_001", "receipted", "RECEIPTED")
+    checks = {
+        "receipt_file_readable": True,
+        "receipt_hash_valid": ok,
+        "receipt_kind_is_returned_trace_ledger_receipt": receipt_obj.get("semantics", {}).get("receipt_kind") == "returned_trace_ledger_receipt",
+        "operator_path_valid": receipt_obj.get("semantics", {}).get("admitted_operator_path") == "MARK -> ADMIT -> RETURN -> RECEIPT",
+        "payload_hash_present": bool(receipt_obj.get("input", {}).get("marked_payload", {}).get("text_sha256")),
+        "mark_receipt_hash_present": bool(receipt_obj.get("input", {}).get("mark_receipt_sha256")),
+        "admit_receipt_hash_present": bool(receipt_obj.get("input", {}).get("admit_receipt_sha256")),
+        "return_receipt_hash_present": bool(receipt_obj.get("input", {}).get("return_receipt_sha256")),
+        "b32k_index_assigned_here_false": receipt_obj.get("boundary", {}).get("b32k_index_assigned_here") is False,
+        "reliance_allowed_false": receipt_obj.get("semantics", {}).get("reliance_allowed") is False,
+        "positive_authority_false": receipt_obj.get("semantics", {}).get("positive_authority") is False
+    }
+
+    if not ok:
+        checks["failure_reason"] = reason
+
+    pass_all = all(v is True for k, v in checks.items() if k != "failure_reason")
+
+    boundary = base_boundary()
+    boundary.update({
+        "receipt_receipt_required": True,
+        "receipt_hash_verified": bool(ok),
+        "operator_path_checked": True,
+        "reliance_allowed": False,
+        "ratification_not_performed": True
+    })
+
+    result = "verified" if pass_all else "rejected"
+    state_after = "VERIFIED" if pass_all else "REJECTED"
+
+    out = {
+        "id": "aletheos_cli_verify_receipt_001" if pass_all else "aletheos_cli_error_receipt_001",
+        "artifact_kind": "cli_receipt",
+        "status": "pre_ratification",
+        "created_at": utc_now(),
+        "lane": registry.get("lane", "b32k.aletheos.bound.v1"),
+        "input": {
+            "token": token,
+            "raw_command": f"{token} {receipt_path}",
+            "receipt_path": str(receipt_path),
+            "receipt_sha256_checked": receipt_obj.get("receipt_sha256"),
+            "marked_payload": receipt_obj.get("input", {}).get("marked_payload", {}),
+            "mark_receipt_sha256": receipt_obj.get("input", {}).get("mark_receipt_sha256"),
+            "admit_receipt_sha256": receipt_obj.get("input", {}).get("admit_receipt_sha256"),
+            "return_receipt_sha256": receipt_obj.get("input", {}).get("return_receipt_sha256")
+        },
+        "operator": operator_view(operator),
+        "semantics": {
+            "claim_advanced": True,
+            "positive_authority": False,
+            "state_before": "RECEIPTED",
+            "state_after": state_after,
+            "final_state": state_after,
+            "result": result,
+            "receipt_kind": "verification_receipt" if pass_all else "verification_rejection_receipt",
+            "trust_bearing": False,
+            "reliance_allowed": False,
+            "verified": pass_all,
+            "admitted_operator_path": "MARK -> ADMIT -> RETURN -> RECEIPT -> VERIFY"
+        },
+        "checks": checks,
+        "boundary": boundary,
+        "keeper": "VERIFY checks the chain without pretending ratification has happened."
+    }
+    out["receipt_sha256"] = digest_obj(out)
+    return out
+
 def print_receipt_summary(receipt: Dict[str, Any]) -> None:
     sem = receipt.get("semantics", {})
     op = receipt.get("operator", {})
@@ -389,7 +466,8 @@ def main() -> int:
         print("  python scripts/aletheos_cli.py MARK \"open the door\" --json > ~/tmp/mark.json")
         print("  python scripts/aletheos_cli.py ADMIT ~/tmp/mark.json --json > ~/tmp/admit.json")
         print("  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json")
-        print("  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json")
+        print("  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json --json > ~/tmp/receipt.json")
+        print("  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json")
         print("")
         print("Commands:")
         print("  :       NOOP, lawful stillness, no claim advanced")
@@ -397,6 +475,7 @@ def main() -> int:
         print("  ADMIT   admit a valid MARK receipt into witness passage")
         print("  RETURN   return a valid ADMIT receipt from witness passage")
         print("  RECEIPT  record a valid RETURN receipt as returned trace body")
+        print("  VERIFY   verify a valid RECEIPT chain without granting reliance")
         print("  help     show this help")
         print("")
         print("Boundary:")
@@ -458,6 +537,20 @@ def main() -> int:
             return 2
         receipt = receipt_receipt(parsed.command, Path(parsed.args[0]).expanduser(), registry, operator)
         ok = receipt.get("semantics", {}).get("result") == "receipted"
+        if parsed.json and ok:
+            print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
+        else:
+            print_receipt_summary(receipt)
+        return 0 if ok else 2
+
+
+    if parsed.command == "VERIFY" and operator:
+        if len(parsed.args) != 1:
+            receipt = error_receipt(parsed.command, "verify_requires_one_receipt_file", registry)
+            print_receipt_summary(receipt)
+            return 2
+        receipt = verify_receipt(parsed.command, Path(parsed.args[0]).expanduser(), registry, operator)
+        ok = receipt.get("semantics", {}).get("result") == "verified"
         if parsed.json and ok:
             print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
         else:
