@@ -22,6 +22,39 @@
     "Everything Aletheos-bound descends from 1.",
     "Addresses and receipts must not silently drift."
   ],
+  "llm_viewer_boundary": {
+    "admission_rule": "LLM outputs are advisory until admitted by the Aletheos apparatus.",
+    "b32k_aetherial_first": true,
+    "build_rule": "Build B32K as if no LLM exists; document B32K so an LLM can view it truthfully.",
+    "created_at": "2026-07-08T16:51:35",
+    "denials": {
+      "embedding_similarity_is_provenance": false,
+      "generated_text_is_ratification": false,
+      "model_confidence_is_authority": false
+    },
+    "keeper": "The LLM may view the aether. It may not become the aether.",
+    "llm_is_kernel": false,
+    "llm_roles_allowed": [
+      "viewer",
+      "narrator",
+      "proposer",
+      "translator",
+      "interface"
+    ],
+    "llm_roles_denied": [
+      "canonical_authority",
+      "final_index_assigner",
+      "ratifier",
+      "receipt_authority",
+      "verification_authority",
+      "sovereign_reliance_authority"
+    ],
+    "operator_boundary": {
+      "aletheos_must_admit_return_receipt_verify_bind_reject_or_revoke": true,
+      "llm_may_mark_or_propose": true
+    },
+    "status": "pre_ratification_contract_boundary"
+  },
   "normalization_ladder": [
     {
       "index": 0,

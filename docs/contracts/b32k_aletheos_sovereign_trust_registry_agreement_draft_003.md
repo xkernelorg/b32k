@@ -407,3 +407,28 @@ This draft is a conceptual and technical scaffold.
 It is not final legal advice.
 
 Before use with a sovereign authority, public institution, regulated industry, commercial subscriber, or public certificate registry, this Agreement should be reviewed by counsel familiar with digital identity, public-sector procurement, cryptographic signatures, certificate authority governance, privacy law, administrative law, Indigenous and sovereign registry law where applicable, and cross-border data governance.
+
+## LLM viewer boundary
+
+B32K is aetherial first.
+
+A language model is not the B32K kernel.
+
+A language model may act as a viewer, narrator, proposer, translator, or interface for B32K and Aletheos-bound materials.
+
+A language model may not become the source of canonical authority, final index assignment, ratification, receipt, verification, or sovereign reliance.
+
+B32K and Aletheos-bound materials must be built as if no language model exists, while remaining legible enough for language models to view and explain truthfully.
+
+Language-model outputs are advisory until admitted by the Aletheos apparatus.
+
+A language model may MARK or propose, but Aletheos must ADMIT, RETURN, RECEIPT, VERIFY, BIND, REJECT, or REVOKE according to declared artifacts and receipts.
+
+Model confidence is not authority.
+
+Embedding similarity is not provenance.
+
+Generated text is not ratification.
+
+The LLM may view the aether. It may not become the aether.
+
