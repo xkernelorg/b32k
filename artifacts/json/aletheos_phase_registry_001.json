@@ -424,8 +424,136 @@
         27
       ],
       "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the chooser notices the offer of dominion",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G5:P0:OFFER_APPEARS",
+      "ganglion_id": "GANGLION_0005",
+      "global_emergence_index": "E0018",
+      "lattice_candidate": {
+        "anchor_domain": "A07",
+        "anchor_label": "Conscious/Observational",
+        "index": 22
+      },
+      "phase_id": "G5.P0",
+      "phase_role": "offer_appears",
+      "span_candidates": [
+        20,
+        26,
+        27,
+        28
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "refusal is a valid branch, not an error",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G5:P1:REFUSAL_BRANCH_VALID",
+      "ganglion_id": "GANGLION_0005",
+      "global_emergence_index": "E0019",
+      "lattice_candidate": {
+        "anchor_domain": "A05",
+        "anchor_label": "Logical/Algorithmic",
+        "index": 20
+      },
+      "phase_id": "G5.P1",
+      "phase_role": "refusal_branch_valid",
+      "span_candidates": [
+        22,
+        26,
+        27
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "refusal preserves the other boundary as structure",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G5:P2:BOUNDARY_PRESERVED",
+      "ganglion_id": "GANGLION_0005",
+      "global_emergence_index": "E0020",
+      "lattice_candidate": {
+        "anchor_domain": "A11",
+        "anchor_label": "Matricial/Geometric",
+        "index": 26
+      },
+      "phase_id": "G5.P2",
+      "phase_role": "boundary_preserved",
+      "span_candidates": [
+        20,
+        22,
+        27,
+        28
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "offered power does not become authority automatically",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G5:P3:DOMINION_REFUSED",
+      "ganglion_id": "GANGLION_0005",
+      "global_emergence_index": "E0021",
+      "lattice_candidate": {
+        "anchor_domain": "A12",
+        "anchor_label": "Ethical/Normative",
+        "index": 27
+      },
+      "phase_id": "G5.P3",
+      "phase_role": "dominion_refused",
+      "span_candidates": [
+        20,
+        22,
+        26,
+        28
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the refusal of dominion becomes covenant memory",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G5:P4:REFUSAL_COVENANT",
+      "ganglion_id": "GANGLION_0005",
+      "global_emergence_index": "E0022",
+      "lattice_candidate": {
+        "anchor_domain": "A13",
+        "anchor_label": "Mythic/Narrative",
+        "index": 28
+      },
+      "phase_id": "G5.P4",
+      "phase_role": "refusal_covenant",
+      "span_candidates": [
+        22,
+        26,
+        27
+      ],
+      "status": "pre_ratification_candidate"
     }
   ],
   "purpose": "Index ganglion phases as local unfolding and global emergence.",
+  "sequence_summary": {
+    "keeper": "Refusal is older than accountable dominion.",
+    "status": "pre_ratification_candidate",
+    "through": "GANGLION_0005"
+  },
   "status": "pre_ratification"
 }
