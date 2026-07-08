@@ -1,0 +1,104 @@
+{
+  "artifact_id": "aletheos_memorized_token_registry_001",
+  "authority_boundary": {
+    "b32k_index_authoritative": true,
+    "commercial_reliance_allowed": false,
+    "glyphs_advisory": true,
+    "placement_is_candidate": true,
+    "ratified": false,
+    "sovereign_reliance_allowed": false
+  },
+  "created_at": "2026-07-08T15:49:34",
+  "id": "aletheos_memorized_token_registry_001",
+  "keeper": "Hello world belongs near the root because it is not wisdom. It is contact.",
+  "lane": "b32k.aletheos.bound.v1",
+  "purpose": "Record low-register lattice placement candidates for memorized handshake tokens.",
+  "status": "pre_ratification",
+  "tokens": [
+    {
+      "aletheos_role": "First memorized external-token handshake carried through the Aletheos CLI route.",
+      "class": "memorized_handshake_token",
+      "digest_check_pass": true,
+      "digest_hex": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+      "display_name": "THE_HANDSHAKE",
+      "function": {
+        "deterministic": true,
+        "input": "utf-8 bytes of payload text",
+        "name": "SHA-256",
+        "output": "256-bit digest encoded as lowercase hex",
+        "publicly_reproducible": true
+      },
+      "keeper": "The phrase is common. The function is public. The digest is reproducible. The passage is Aletheos.",
+      "key": "HANDSHAKE_HELLO_WORLD_SHA256",
+      "lattice_placement": {
+        "assignment_status": "candidate_not_ratified",
+        "b32k_index_assigned_here": false,
+        "primary_index_candidate": {
+          "anchor_domain": "A02",
+          "anchor_label": "Information/Signal",
+          "c": 16,
+          "hex": "0x0011",
+          "index": 17,
+          "plane": 0,
+          "r": 0,
+          "role": "primary signal/hash handshake",
+          "unicode_point": "U+0011"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A03",
+            "anchor_label": "Language/Symbolic",
+            "c": 17,
+            "hex": "0x0012",
+            "index": 18,
+            "plane": 0,
+            "r": 0,
+            "role": "payload phrase",
+            "unicode_point": "U+0012"
+          },
+          {
+            "anchor_domain": "A05",
+            "anchor_label": "Logical/Algorithmic",
+            "c": 19,
+            "hex": "0x0014",
+            "index": 20,
+            "plane": 0,
+            "r": 0,
+            "role": "SHA-256 deterministic function",
+            "unicode_point": "U+0014"
+          },
+          {
+            "anchor_domain": "A10",
+            "anchor_label": "Technological/Synthetic",
+            "c": 24,
+            "hex": "0x0019",
+            "index": 25,
+            "plane": 0,
+            "r": 0,
+            "role": "digital-system executable handshake surface",
+            "unicode_point": "U+0019"
+          }
+        ]
+      },
+      "meaning": "Public deterministic greeting token proving that a digital system can transform a shared phrase into a reproducible digest.",
+      "observed_aletheos_cli_binding": {
+        "final_state_observed": "BOUND",
+        "observed_bind_receipt_sha256": "9d30f6260095462c90074cf1b9f8e6ce75cd6ca665463ac83e510fb89d39efd9",
+        "observed_route": "MARK -> ADMIT -> RETURN -> RECEIPT -> VERIFY -> BIND",
+        "payload_bound_by_cli": true
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "text": "hello world",
+        "text_sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
+      },
+      "phase_register": {
+        "addresses_below_remain_open": true,
+        "lower_band_policy": "Indices below the primary candidate remain available for roots, nulls, substrates, and pre-handshake apparatus.",
+        "preferred_phase_register": "low",
+        "reason": "Primitive digital greeting, public deterministic hash, and first contact token."
+      },
+      "status": "pre_ratification_candidate"
+    }
+  ]
+}

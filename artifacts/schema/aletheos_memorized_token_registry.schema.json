@@ -1,0 +1,66 @@
+{
+  "$id": "aletheos_memorized_token_registry.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_id": {
+      "const": "aletheos_memorized_token_registry_001"
+    },
+    "authority_boundary": {
+      "type": "object"
+    },
+    "id": {
+      "const": "aletheos_memorized_token_registry_001"
+    },
+    "lane": {
+      "const": "b32k.aletheos.bound.v1"
+    },
+    "status": {
+      "const": "pre_ratification"
+    },
+    "tokens": {
+      "items": {
+        "properties": {
+          "digest_hex": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "function": {
+            "type": "object"
+          },
+          "key": {
+            "type": "string"
+          },
+          "lattice_placement": {
+            "type": "object"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "key",
+          "display_name",
+          "payload",
+          "function",
+          "digest_hex",
+          "lattice_placement"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "artifact_id",
+    "status",
+    "lane",
+    "authority_boundary",
+    "tokens"
+  ],
+  "title": "Aletheos Memorized Token Registry",
+  "type": "object"
+}
