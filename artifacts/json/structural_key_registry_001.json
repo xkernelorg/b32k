@@ -11,6 +11,7 @@
     "method": "translation mythology with declared correlation",
     "physics_claim": false
   },
+  "commercial_reliance_allowed": false,
   "created": "2026-07-08T13:01:34",
   "id": "structural_key_registry_001",
   "keys": [
@@ -159,8 +160,19 @@
       "status": "draft"
     }
   ],
+  "pre_ratification_policy": {
+    "after_ratification_addresses_must_not_drift": true,
+    "aletheos_binding_profile_is_cooling": true,
+    "assignments_may_change_by_receipt_before_ratification": true,
+    "b32k_public_scaffold_is_live": true,
+    "sovereign_or_commercial_reliance_before_ratification": false
+  },
+  "previous_status": "draft_registry_with_genesis_1_day6_keys",
   "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
   "role": "stable key registry for B32K Concordance Ledger structural extraction",
-  "status": "draft_registry_with_genesis_1_day6_keys",
-  "updated": "2026-07-08T13:07:14"
+  "sovereign_reliance_allowed": false,
+  "status": "pre_ratification_draft_registry_with_genesis_1_day6_keys",
+  "updated": "2026-07-08T14:06:20"
 }

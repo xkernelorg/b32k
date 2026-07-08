@@ -4,78 +4,91 @@
     {
       "id": "aletheos_operator_profile_001",
       "path": "artifacts/json/aletheos_operator_profile_001.json",
+      "ratification_status": "pre_ratification",
       "role": "Primary operator discipline for B32K bound to Aletheos.",
       "status": "pre_ratification_operator_profile"
     },
     {
       "id": "artifact_index_001",
       "path": "artifacts/json/artifact_index_001.json",
+      "ratification_status": "",
       "role": "",
       "status": "artifact_index_refreshed"
     },
     {
       "id": "b32k_aletheos_canonical_index_001",
       "path": "artifacts/json/b32k_aletheos_canonical_index_001.json",
+      "ratification_status": "pre_ratification",
       "role": "No-redo canonical address reservation surface for the Aletheos binding lane.",
-      "status": "canonical_index_initialized"
+      "status": "pre_ratification_canonical_index_initialized"
     },
     {
       "id": "b32k_aletheos_sovereign_trust_registry_agreement_003",
       "path": "artifacts/json/b32k_aletheos_sovereign_trust_registry_agreement_003.json",
+      "ratification_status": "pre_ratification",
       "role": "B32K-Aletheos Sovereign Trust Registry Agreement",
-      "status": "conceptual_technical_contract_scaffold"
+      "status": "pre_ratification_conceptual_technical_contract_scaffold"
     },
     {
       "id": "b32k_source_inventory_001",
       "path": "artifacts/json/b32k_source_inventory_001.json",
+      "ratification_status": "",
       "role": "filesystem ledger inventory for imported B32K and KJV source materials",
       "status": "source_inventory_recorded"
     },
     {
       "id": "genesis_structural_concordance_seed_001",
       "path": "artifacts/json/genesis_structural_concordance_seed_001.json",
+      "ratification_status": "",
       "role": "",
       "status": "draft_seed"
     },
     {
       "id": "kjv_genesis_1_structural_concordance_001",
       "path": "artifacts/json/kjv_genesis_1_structural_concordance_001.json",
+      "ratification_status": "",
       "role": "B32K Concordance Ledger",
       "status": "genesis_1_complete_draft_bound_to_provisional_b32k_indices"
     },
     {
       "id": "kjv_training_corpus_manifest_001",
       "path": "artifacts/json/kjv_training_corpus_manifest_001.json",
+      "ratification_status": "",
       "role": "",
       "status": "source_corpus_declared"
     },
     {
       "id": "b32k.project_manifest_001",
       "path": "artifacts/json/project_manifest_001.json",
+      "ratification_status": "",
       "role": "B32K Concordance Ledger",
       "status": "filesystem_ledger_initialized"
     },
     {
       "id": "structural_key_b32k_index_assignment_001",
       "path": "artifacts/json/structural_key_b32k_index_assignment_001.json",
+      "ratification_status": "",
       "role": "deterministic provisional B32K 15-bit index assignment for structural keys",
       "status": "provisional_assignment_recorded"
     },
     {
       "id": "structural_key_b32k_index_assignment_002",
       "path": "artifacts/json/structural_key_b32k_index_assignment_002.json",
+      "ratification_status": "",
       "role": "provisional B32K 15-bit index assignment for Genesis 1 day-six structural keys",
       "status": "provisional_day6_assignment_recorded"
     },
     {
       "id": "structural_key_registry_001",
       "path": "artifacts/json/structural_key_registry_001.json",
+      "ratification_status": "pre_ratification",
       "role": "stable key registry for B32K Concordance Ledger structural extraction",
-      "status": "draft_registry_with_genesis_1_day6_keys"
+      "status": "pre_ratification_draft_registry_with_genesis_1_day6_keys"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
-  "status": "artifact_index_refreshed",
-  "updated": "2026-07-08T14:05:06"
+  "ratification_status": "pre_ratification",
+  "status": "artifact_index_refreshed_pre_ratification",
+  "updated": "2026-07-08T14:06:20"
 }

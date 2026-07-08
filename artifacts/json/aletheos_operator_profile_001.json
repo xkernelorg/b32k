@@ -7,6 +7,7 @@
     "hidden_code_claim": false,
     "physics_claim": false
   },
+  "commercial_reliance_allowed": false,
   "commercial_trust_rule": "No Q, no trust.",
   "cpu_from_null_ladder": [
     {
@@ -74,8 +75,17 @@
       "name": "receipt_operator"
     }
   },
+  "pre_ratification_policy": {
+    "after_ratification_addresses_must_not_drift": true,
+    "aletheos_binding_profile_is_cooling": true,
+    "assignments_may_change_by_receipt_before_ratification": true,
+    "b32k_public_scaffold_is_live": true,
+    "sovereign_or_commercial_reliance_before_ratification": false
+  },
   "primary_receipt_law": "Q = M M^T",
   "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
   "reference_identity": {
     "core": "G15 isomorphic to L(Petersen)",
     "identity": "Q = M M^T = A^3 + 2A^2 + 2I",
@@ -84,6 +94,8 @@
     "role": "reference witness for exact finite closure"
   },
   "role": "Primary operator discipline for B32K bound to Aletheos.",
+  "sovereign_reliance_allowed": false,
   "status": "pre_ratification_operator_profile",
-  "title": "Aletheos Operator Profile"
+  "title": "Aletheos Operator Profile",
+  "updated": "2026-07-08T14:06:20"
 }

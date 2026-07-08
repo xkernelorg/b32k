@@ -7,6 +7,7 @@
     "hidden_code_claim": false,
     "physics_claim": false
   },
+  "commercial_reliance_allowed": false,
   "created": "2026-07-08T13:53:00",
   "entries": [
     {
@@ -40,7 +41,17 @@
     32767
   ],
   "lane": "b32k.aletheos.bound.v1",
+  "pre_ratification_policy": {
+    "after_ratification_addresses_must_not_drift": true,
+    "aletheos_binding_profile_is_cooling": true,
+    "assignments_may_change_by_receipt_before_ratification": true,
+    "b32k_public_scaffold_is_live": true,
+    "sovereign_or_commercial_reliance_before_ratification": false
+  },
+  "previous_status": "canonical_index_initialized",
   "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
   "role": "No-redo canonical address reservation surface for the Aletheos binding lane.",
   "rules": {
     "addresses_must_not_drift": true,
@@ -50,6 +61,8 @@
     "index_1_aletheos_root": true,
     "reassignment_allowed_by_default": false
   },
-  "status": "canonical_index_initialized",
-  "title": "B32K Aletheos Canonical Index"
+  "sovereign_reliance_allowed": false,
+  "status": "pre_ratification_canonical_index_initialized",
+  "title": "B32K Aletheos Canonical Index",
+  "updated": "2026-07-08T14:06:20"
 }

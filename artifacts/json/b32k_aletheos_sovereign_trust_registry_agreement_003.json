@@ -9,6 +9,7 @@
     "physics_claim": false
   },
   "certificate_lane_pattern": "b32k.aletheos.sovereign.<jurisdiction>.<certificate_type>.v1",
+  "commercial_reliance_allowed": false,
   "created": "2026-07-08T13:51:08",
   "document_path": "docs/contracts/b32k_aletheos_sovereign_trust_registry_agreement_draft_003.md",
   "draft_version": "003",
@@ -55,10 +56,22 @@
   ],
   "not_legal_advice": true,
   "null_well_index": 0,
+  "pre_ratification_policy": {
+    "after_ratification_addresses_must_not_drift": true,
+    "aletheos_binding_profile_is_cooling": true,
+    "assignments_may_change_by_receipt_before_ratification": true,
+    "b32k_public_scaffold_is_live": true,
+    "sovereign_or_commercial_reliance_before_ratification": false
+  },
+  "previous_status": "conceptual_technical_contract_scaffold",
   "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
   "requires_counsel_review": true,
   "root_lane": "b32k.aletheos.bound.v1",
   "sovereign_lane_pattern": "b32k.aletheos.sovereign.<jurisdiction>.v1",
-  "status": "conceptual_technical_contract_scaffold",
-  "title": "B32K-Aletheos Sovereign Trust Registry Agreement"
+  "sovereign_reliance_allowed": false,
+  "status": "pre_ratification_conceptual_technical_contract_scaffold",
+  "title": "B32K-Aletheos Sovereign Trust Registry Agreement",
+  "updated": "2026-07-08T14:06:20"
 }
