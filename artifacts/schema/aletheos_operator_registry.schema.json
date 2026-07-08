@@ -1,0 +1,129 @@
+{
+  "$id": "aletheos_operator_registry.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_id": {
+      "const": "aletheos_operator_registry_001"
+    },
+    "authority_boundary": {
+      "properties": {
+        "b32k_index_authoritative": {
+          "const": true
+        },
+        "commercial_reliance_allowed": {
+          "const": false
+        },
+        "english_labels_advisory": {
+          "const": true
+        },
+        "sovereign_reliance_allowed": {
+          "const": false
+        },
+        "tokens_advisory_until_ratification": {
+          "const": true
+        }
+      },
+      "required": [
+        "b32k_index_authoritative",
+        "english_labels_advisory",
+        "tokens_advisory_until_ratification",
+        "commercial_reliance_allowed",
+        "sovereign_reliance_allowed"
+      ],
+      "type": "object"
+    },
+    "binding_rule": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "created_purpose": {
+      "type": "string"
+    },
+    "keeper": {
+      "type": "string"
+    },
+    "lane": {
+      "const": "b32k.aletheos.bound.v1"
+    },
+    "operator_families": {
+      "items": {
+        "properties": {
+          "family": {
+            "type": "string"
+          },
+          "operators": {
+            "items": {
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "meaning": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "key",
+                "token"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "family",
+          "role",
+          "operators"
+        ],
+        "type": "object"
+      },
+      "minItems": 5,
+      "type": "array"
+    },
+    "ratification_boundary": {
+      "properties": {
+        "b32k_indices_assigned_here": {
+          "const": false
+        },
+        "operator_registry_is_final_assignment": {
+          "const": false
+        },
+        "reliance_allowed_now": {
+          "const": false
+        }
+      },
+      "required": [
+        "operator_registry_is_final_assignment",
+        "b32k_indices_assigned_here",
+        "reliance_allowed_now"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "const": "pre_ratification"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "status",
+    "lane",
+    "authority_boundary",
+    "operator_families",
+    "binding_rule",
+    "ratification_boundary"
+  ],
+  "title": "Aletheos Operator Registry",
+  "type": "object"
+}

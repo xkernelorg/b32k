@@ -1,0 +1,232 @@
+{
+  "artifact_id": "aletheos_operator_registry_001",
+  "authority_boundary": {
+    "b32k_index_authoritative": true,
+    "commercial_reliance_allowed": false,
+    "english_labels_advisory": true,
+    "sovereign_reliance_allowed": false,
+    "tokens_advisory_until_ratification": true
+  },
+  "binding_rule": "Each operator must eventually receive a B32K canonical index in the Aletheos lane before ratified use.",
+  "created_at": "2026-07-08T15:01:47",
+  "created_purpose": "Declare candidate operator families for later B32K canonical binding.",
+  "keeper": "The glyph is not the operator. The word is not the operator. The index carries the symbol. The receipt admits the meaning.",
+  "lane": "b32k.aletheos.bound.v1",
+  "operator_families": [
+    {
+      "family": "apparatus",
+      "operators": [
+        {
+          "key": "OP_NOOP",
+          "label": "NOOP",
+          "meaning": "lawful stillness; no claim advanced",
+          "token": ":"
+        },
+        {
+          "key": "OP_MARK",
+          "label": "MARK",
+          "meaning": "mark a candidate trace",
+          "token": "MARK"
+        },
+        {
+          "key": "OP_ADMIT",
+          "label": "ADMIT",
+          "meaning": "allow candidate into witness passage",
+          "token": "ADMIT"
+        },
+        {
+          "key": "OP_RETURN",
+          "label": "RETURN",
+          "meaning": "return from witness passage",
+          "token": "RETURN"
+        },
+        {
+          "key": "OP_RECEIPT",
+          "label": "RECEIPT",
+          "meaning": "record the returned trace",
+          "token": "RECEIPT"
+        },
+        {
+          "key": "OP_BIND",
+          "label": "BIND",
+          "meaning": "bind receipt to lane, schema, and address",
+          "token": "BIND"
+        },
+        {
+          "key": "OP_VERIFY",
+          "label": "VERIFY",
+          "meaning": "test reproducibility and reliance conditions",
+          "token": "VERIFY"
+        },
+        {
+          "key": "OP_REJECT",
+          "label": "REJECT",
+          "meaning": "fail closed",
+          "token": "REJECT"
+        },
+        {
+          "key": "OP_REVOKE",
+          "label": "REVOKE",
+          "meaning": "deny future reliance without deleting receipt",
+          "token": "REVOKE"
+        }
+      ],
+      "role": "trust-machine state transition verbs"
+    },
+    {
+      "family": "modal",
+      "operators": [
+        {
+          "key": "MOD_NECESSARY",
+          "token": "NECESSARY"
+        },
+        {
+          "key": "MOD_POSSIBLE",
+          "token": "POSSIBLE"
+        },
+        {
+          "key": "MOD_ACTUAL",
+          "token": "ACTUAL"
+        },
+        {
+          "key": "MOD_UNKNOWN",
+          "token": "UNKNOWN"
+        },
+        {
+          "key": "MOD_FORBIDDEN",
+          "token": "FORBIDDEN"
+        },
+        {
+          "key": "MOD_ADMISSIBLE",
+          "token": "ADMISSIBLE"
+        },
+        {
+          "key": "MOD_RELIABLE",
+          "token": "RELIABLE"
+        }
+      ],
+      "role": "claim-status classification"
+    },
+    {
+      "family": "assembly",
+      "operators": [
+        {
+          "key": "ASM_LOAD",
+          "token": "LOAD"
+        },
+        {
+          "key": "ASM_STORE",
+          "token": "STORE"
+        },
+        {
+          "key": "ASM_MOVE",
+          "token": "MOVE"
+        },
+        {
+          "key": "ASM_CLEAR",
+          "token": "CLEAR"
+        },
+        {
+          "key": "ASM_CMP",
+          "token": "CMP"
+        },
+        {
+          "key": "ASM_HASH",
+          "token": "HASH"
+        },
+        {
+          "key": "ASM_CHECK",
+          "token": "CHECK"
+        },
+        {
+          "key": "ASM_JUMP",
+          "token": "JUMP"
+        },
+        {
+          "key": "ASM_CALL",
+          "token": "CALL"
+        },
+        {
+          "key": "ASM_RET",
+          "token": "RET"
+        },
+        {
+          "key": "ASM_HALT",
+          "token": "HALT"
+        },
+        {
+          "key": "ASM_FAULT",
+          "token": "FAULT"
+        }
+      ],
+      "role": "low-level execution and memory operations"
+    },
+    {
+      "family": "logic",
+      "operators": [
+        {
+          "key": "LOG_NOT",
+          "token": "NOT"
+        },
+        {
+          "key": "LOG_AND",
+          "token": "AND"
+        },
+        {
+          "key": "LOG_OR",
+          "token": "OR"
+        },
+        {
+          "key": "LOG_IMPLIES",
+          "token": "IMPLIES"
+        },
+        {
+          "key": "LOG_EQUALS",
+          "token": "EQUALS"
+        },
+        {
+          "key": "LOG_EXISTS",
+          "token": "EXISTS"
+        }
+      ],
+      "role": "predicate and schema reasoning"
+    },
+    {
+      "family": "witness_math",
+      "operators": [
+        {
+          "key": "MATH_A",
+          "meaning": "local adjacency or admissible first-order motion",
+          "token": "A"
+        },
+        {
+          "key": "MATH_M",
+          "meaning": "incidence or admission passage",
+          "token": "M"
+        },
+        {
+          "key": "MATH_M_T",
+          "meaning": "return passage",
+          "token": "M_T"
+        },
+        {
+          "key": "MATH_Q",
+          "meaning": "receipt overlap image",
+          "token": "Q"
+        },
+        {
+          "key": "MATH_LAW_Q_EQ_MMT",
+          "meaning": "operator law Q = M M_T",
+          "token": "LAW_Q_EQ_MMT"
+        }
+      ],
+      "role": "Thalean/Aletheos passage and receipt profile"
+    }
+  ],
+  "ratification_boundary": {
+    "b32k_indices_assigned_here": false,
+    "operator_registry_is_final_assignment": false,
+    "reliance_allowed_now": false
+  },
+  "status": "pre_ratification"
+}
