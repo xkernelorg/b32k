@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Structural Concordance Entry",
+  "type": "object",
+  "required": [
+    "id",
+    "source",
+    "source_phrase",
+    "structural_key",
+    "literal_layer",
+    "mythic_role",
+    "structural_function",
+    "boundary_function",
+    "thalean_role",
+    "physics_analogy",
+    "boundary_note",
+    "keeper_line"
+  ],
+  "properties": {
+    "id": {"type": "string"},
+    "source": {"type": "string"},
+    "source_phrase": {"type": "string"},
+    "structural_key": {"type": "string"},
+    "literal_layer": {"type": "string"},
+    "mythic_role": {"type": "string"},
+    "structural_function": {"type": "string"},
+    "boundary_function": {"type": "string"},
+    "witness_relation": {"type": "string"},
+    "memory_operation": {"type": "string"},
+    "admission_status": {"type": "string"},
+    "grammar_operation": {"type": "string"},
+    "thalean_role": {"type": "string"},
+    "physics_analogy": {"type": "string"},
+    "b32k_lane": {"type": "string"},
+    "b32k_symbol_index": {"type": ["integer", "null"], "minimum": 0, "maximum": 32767},
+    "confidence": {"type": "string"},
+    "boundary_note": {"type": "string"},
+    "keeper_line": {"type": "string"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

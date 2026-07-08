@@ -1,0 +1,35 @@
+{
+  "id": "theology.project_manifest_001",
+  "project": "theology",
+  "created": "2026-07-08",
+  "status": "filesystem_ledger_initialized",
+  "public_name_candidates": [
+    "Structural Concordance",
+    "Concordance Ledger",
+    "Cross-Grammar Ledger",
+    "B32K Concordance Ledger"
+  ],
+  "preferred_public_name": "Structural Concordance",
+  "preferred_technical_name": "b32k_concordance_ledger",
+  "frame": {
+    "method": "translation_mythology",
+    "posture": "declared_correlation",
+    "overclaim_boundary": "No claim that scripture secretly encodes modern physics.",
+    "dataset_role": "agnostic structural translation registry"
+  },
+  "storage": {
+    "current": "filesystem_json_artifacts",
+    "future": "database_when_query_pressure_requires_it"
+  },
+  "directories": [
+    "artifacts/json",
+    "artifacts/schema",
+    "artifacts/csv",
+    "data/source",
+    "data/working",
+    "notes",
+    "scripts",
+    "reports",
+    "docs"
+  ]
+}
