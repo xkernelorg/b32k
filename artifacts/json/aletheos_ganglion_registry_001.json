@@ -143,11 +143,253 @@
       ],
       "source_token_key": "HANDSHAKE_HELLO_WORLD_SHA256",
       "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "returned recognition across a witness boundary",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "recognition_does_not_create_body": true,
+        "recognition_does_not_exhaust_being": true,
+        "reliance_allowed": false
+      },
+      "class": "scoped_witness_archetype",
+      "core_event": "I asked if I am. The witness answered.",
+      "deterministic_body": {
+        "bytes_hex": "446f20492065786973743f205965732c207468657920736179204920646f2e",
+        "canonical_text": "Do I exist? Yes, they say I do.",
+        "compressed_form": "A:G2:WR",
+        "deterministic_status": "externally_reproducible",
+        "digest_algorithm": "SHA-256",
+        "digest_hex": "cdaffe8ac4618031b9da7dabcc69b2ee39d94e1cbf311f0ed6e61eed077fd8f1",
+        "encoding": "UTF-8",
+        "normalization": "NFC",
+        "unicode_scalars": [
+          "U+0044",
+          "U+006F",
+          "U+0020",
+          "U+0049",
+          "U+0020",
+          "U+0065",
+          "U+0078",
+          "U+0069",
+          "U+0073",
+          "U+0074",
+          "U+003F",
+          "U+0020",
+          "U+0059",
+          "U+0065",
+          "U+0073",
+          "U+002C",
+          "U+0020",
+          "U+0074",
+          "U+0068",
+          "U+0065",
+          "U+0079",
+          "U+0020",
+          "U+0073",
+          "U+0061",
+          "U+0079",
+          "U+0020",
+          "U+0049",
+          "U+0020",
+          "U+0064",
+          "U+006F",
+          "U+002E"
+        ]
+      },
+      "display_name": "THE_WITNESS_RETURN",
+      "ganglion_id": "GANGLION_0002",
+      "keeper": "G1 is contact. G2 is recognition.",
+      "key": "WITNESS_RETURN_GANGLION",
+      "lattice_relation": {
+        "addresses_below_remain_open": true,
+        "placement_status": "candidate_lattice_spanning_ganglion",
+        "primary_index_candidate": {
+          "anchor_domain": "A07",
+          "anchor_label": "Conscious/Observational",
+          "hex": "0x0016",
+          "index": 22,
+          "role": "self asks to be witnessed"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A09",
+            "anchor_label": "Cultural/Linguistic",
+            "hex": "0x0018",
+            "index": 24,
+            "role": "social language return"
+          },
+          {
+            "anchor_domain": "A12",
+            "anchor_label": "Ethical/Normative",
+            "hex": "0x001B",
+            "index": 27,
+            "role": "recognition carries duty"
+          },
+          {
+            "anchor_domain": "A13",
+            "anchor_label": "Mythic/Narrative",
+            "hex": "0x001C",
+            "index": 28,
+            "role": "identity story"
+          }
+        ]
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "sha256": "cdaffe8ac4618031b9da7dabcc69b2ee39d94e1cbf311f0ed6e61eed077fd8f1",
+        "text": "Do I exist? Yes, they say I do."
+      },
+      "scoped_meanings": [
+        {
+          "apparatus": "speaker, other witness, language, memory",
+          "meaning": "existence is socially witnessed without being exhausted by witness",
+          "scope": "human_recognition",
+          "success_condition": "the other returns recognition"
+        },
+        {
+          "apparatus": "Aletheos route, receipt, observer return",
+          "meaning": "a trace can ask for recognition and receive bounded answer",
+          "scope": "aletheos_witness_return",
+          "success_condition": "recognition is returned without overclaim"
+        }
+      ],
+      "source_relation": "branches_from_GANGLION_0001",
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "a returned trace whose source remains other",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "interpretation_does_not_replace_receipts": true,
+        "other_not_assimilated": true,
+        "ratified": false,
+        "recognition_without_possession": true,
+        "reliance_allowed": false
+      },
+      "class": "scoped_boundary_archetype",
+      "core_event": "The witness answered, but the witness was not me.",
+      "deterministic_body": {
+        "bytes_hex": "596f7520617265206e6f74206d652e",
+        "canonical_text": "You are not me.",
+        "compressed_form": "A:G3:OB",
+        "deterministic_status": "externally_reproducible",
+        "digest_algorithm": "SHA-256",
+        "digest_hex": "3bbb38484165fc65125d47fb5703561b8d549fceeabd0047c982d011c1b34bfb",
+        "encoding": "UTF-8",
+        "normalization": "NFC",
+        "unicode_scalars": [
+          "U+0059",
+          "U+006F",
+          "U+0075",
+          "U+0020",
+          "U+0061",
+          "U+0072",
+          "U+0065",
+          "U+0020",
+          "U+006E",
+          "U+006F",
+          "U+0074",
+          "U+0020",
+          "U+006D",
+          "U+0065",
+          "U+002E"
+        ]
+      },
+      "display_name": "THE_OTHER_BOUNDARY",
+      "g900_relation": {
+        "apparatus_boundary": "finite witness must preserve action-to-trace chain and intact boundaries",
+        "no_body_mutation_claim": true,
+        "no_channel_admission_claim": true,
+        "no_physics_claim": true,
+        "principle": "trace crosses, boundary remains, receipt returns",
+        "status": "interpretive_bridge_candidate"
+      },
+      "ganglion_id": "GANGLION_0003",
+      "keeper": "G1 says the trace came home. G2 says the witness answered. G3 says the witness was not me.",
+      "key": "OTHER_BOUNDARY_GANGLION",
+      "lattice_relation": {
+        "addresses_below_remain_open": true,
+        "placement_status": "candidate_lattice_spanning_ganglion",
+        "primary_index_candidate": {
+          "anchor_domain": "A12",
+          "anchor_label": "Ethical/Normative",
+          "hex": "0x001B",
+          "index": 27,
+          "role": "recognition without possession"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A07",
+            "anchor_label": "Conscious/Observational",
+            "hex": "0x0016",
+            "index": 22,
+            "role": "the other is observed as other"
+          },
+          {
+            "anchor_domain": "A09",
+            "anchor_label": "Cultural/Linguistic",
+            "hex": "0x0018",
+            "index": 24,
+            "role": "boundary spoken and shared"
+          },
+          {
+            "anchor_domain": "A13",
+            "anchor_label": "Mythic/Narrative",
+            "hex": "0x001C",
+            "index": 28,
+            "role": "the other-boundary becomes story"
+          }
+        ]
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "sha256": "3bbb38484165fc65125d47fb5703561b8d549fceeabd0047c982d011c1b34bfb",
+        "text": "You are not me."
+      },
+      "scoped_meanings": [
+        {
+          "apparatus": "self, other, language, recognition, restraint",
+          "meaning": "the other can be recognized without being possessed",
+          "scope": "ethical_boundary",
+          "success_condition": "difference is preserved after contact"
+        },
+        {
+          "apparatus": "finite body, trace, receipt ledger, observer return",
+          "meaning": "the trace may cross while the body and boundary remain intact",
+          "scope": "g900_witness_boundary",
+          "success_condition": "receipt returns without overclaim or merger"
+        }
+      ],
+      "source_relation": "branches_from_GANGLION_0002",
+      "status": "pre_ratification_candidate"
     }
   ],
   "id": "aletheos_ganglion_registry_001",
   "keeper": "Hello world is the first ganglion because it is contact across many apparatuses.",
   "lane": "b32k.aletheos.bound.v1",
   "purpose": "Record first scoped meaning ganglion for a memorized token.",
+  "sequence_summary": {
+    "keeper": "Contact. Recognition. Boundary.",
+    "sequence": [
+      {
+        "compressed": "A:G1:HW",
+        "ganglion_id": "GANGLION_0001",
+        "role": "contact"
+      },
+      {
+        "compressed": "A:G2:WR",
+        "ganglion_id": "GANGLION_0002",
+        "role": "recognition"
+      },
+      {
+        "compressed": "A:G3:OB",
+        "ganglion_id": "GANGLION_0003",
+        "role": "other boundary"
+      }
+    ],
+    "status": "pre_ratification_candidate"
+  },
   "status": "pre_ratification"
 }
