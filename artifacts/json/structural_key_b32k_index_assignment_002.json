@@ -1,0 +1,63 @@
+{
+  "assignment_count": 5,
+  "assignment_lane": "b32k.structural_key.v1",
+  "assignments": [
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 8390,
+      "collision_probe_count": 0,
+      "key": "LAND_LIFE",
+      "sha256": "446420c6a705b1471dc407571c3e79077e63aa130d2ed36f39183a085f0b2daf",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 21573,
+      "collision_probe_count": 0,
+      "key": "IMAGE_BEARER",
+      "sha256": "682a54455e112acac9b3645c690f9982896e289084ac3409a94dc635aa7044f8",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 26234,
+      "collision_probe_count": 0,
+      "key": "DOMINION_AGENCY",
+      "sha256": "0e2ce67a0331167058ff9932194ef34ecad745741892b924a17c1c567ca09d57",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 19193,
+      "collision_probe_count": 0,
+      "key": "PROVISION_LEDGER",
+      "sha256": "ace44af9382245e2c533e683c67cc91aed6f3127797aac300bcadaed2fb5640a",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 8983,
+      "collision_probe_count": 0,
+      "key": "VERY_GOOD_COMPLETION",
+      "sha256": "2b96a317a6b4b669adc2f0244568445bab91fb5e44c978ffd3363fce3c4de7e9",
+      "status": "provisional"
+    }
+  ],
+  "boundary": {
+    "doctrine_engine": false,
+    "final_semantic_law": false,
+    "hidden_code_claim": false,
+    "physics_claim": false
+  },
+  "collision_count": 0,
+  "created": "2026-07-08T13:07:14",
+  "id": "structural_key_b32k_index_assignment_002",
+  "project": "b32k",
+  "role": "provisional B32K 15-bit index assignment for Genesis 1 day-six structural keys",
+  "status": "provisional_day6_assignment_recorded"
+}

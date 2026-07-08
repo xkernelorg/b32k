@@ -1,6 +1,12 @@
 {
-  "artifact_count": 6,
+  "artifact_count": 9,
   "artifacts": [
+    {
+      "id": "artifact_index_001",
+      "path": "artifacts/json/artifact_index_001.json",
+      "role": "",
+      "status": "artifact_index_recorded"
+    },
     {
       "id": "b32k_source_inventory_001",
       "path": "artifacts/json/b32k_source_inventory_001.json",
@@ -17,7 +23,7 @@
       "id": "kjv_genesis_1_structural_concordance_001",
       "path": "artifacts/json/kjv_genesis_1_structural_concordance_001.json",
       "role": "B32K Concordance Ledger",
-      "status": "draft_seed"
+      "status": "genesis_1_complete_draft_bound_to_provisional_b32k_indices"
     },
     {
       "id": "kjv_training_corpus_manifest_001",
@@ -32,14 +38,26 @@
       "status": "filesystem_ledger_initialized"
     },
     {
+      "id": "structural_key_b32k_index_assignment_001",
+      "path": "artifacts/json/structural_key_b32k_index_assignment_001.json",
+      "role": "deterministic provisional B32K 15-bit index assignment for structural keys",
+      "status": "provisional_assignment_recorded"
+    },
+    {
+      "id": "structural_key_b32k_index_assignment_002",
+      "path": "artifacts/json/structural_key_b32k_index_assignment_002.json",
+      "role": "provisional B32K 15-bit index assignment for Genesis 1 day-six structural keys",
+      "status": "provisional_day6_assignment_recorded"
+    },
+    {
       "id": "structural_key_registry_001",
       "path": "artifacts/json/structural_key_registry_001.json",
       "role": "stable key registry for B32K Concordance Ledger structural extraction",
-      "status": "draft_registry"
+      "status": "draft_registry_with_genesis_1_day6_keys"
     }
   ],
-  "created": "2026-07-08T13:01:34",
   "id": "artifact_index_001",
   "project": "b32k",
-  "status": "artifact_index_recorded"
+  "status": "artifact_index_refreshed",
+  "updated": "2026-07-08T13:07:14"
 }

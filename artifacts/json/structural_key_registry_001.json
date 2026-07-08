@@ -112,10 +112,55 @@
       "keeper_line": "Life is the first moving witness.",
       "key": "MOVING_WITNESS",
       "status": "draft"
+    },
+    {
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 8390,
+      "definition": "Embodied living kinds appear on the named surface.",
+      "keeper_line": "Land life is embodied motion on the field.",
+      "key": "LAND_LIFE",
+      "status": "draft"
+    },
+    {
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 21573,
+      "definition": "A being is made as a reflective boundary capable of bearing likeness.",
+      "keeper_line": "Image is the first embodied witness grammar.",
+      "key": "IMAGE_BEARER",
+      "status": "draft"
+    },
+    {
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 26234,
+      "definition": "Agency is granted as accountable rule over living motion.",
+      "keeper_line": "Dominion is admitted agency, not ownership without receipt.",
+      "key": "DOMINION_AGENCY",
+      "status": "draft"
+    },
+    {
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 19193,
+      "definition": "The created order receives a food and support allocation.",
+      "keeper_line": "Provision is the first shared resource ledger.",
+      "key": "PROVISION_LEDGER",
+      "status": "draft"
+    },
+    {
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 8983,
+      "definition": "The completed arrangement is judged as an integrated whole.",
+      "keeper_line": "Very good is the first whole-system admission.",
+      "key": "VERY_GOOD_COMPLETION",
+      "status": "draft"
     }
   ],
   "project": "b32k",
   "role": "stable key registry for B32K Concordance Ledger structural extraction",
-  "status": "draft_registry_with_provisional_b32k_indices",
-  "updated": "2026-07-08T13:05:09"
+  "status": "draft_registry_with_genesis_1_day6_keys",
+  "updated": "2026-07-08T13:07:14"
 }
