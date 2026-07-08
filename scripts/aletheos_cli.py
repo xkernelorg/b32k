@@ -9,7 +9,8 @@ Usage:
   python scripts/aletheos_cli.py MARK "open the door"
   python scripts/aletheos_cli.py MARK "open the door" --json > ~/tmp/mark.json
   python scripts/aletheos_cli.py ADMIT ~/tmp/mark.json --json > ~/tmp/admit.json
-  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json
+  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json
+  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json
   python scripts/aletheos_cli.py help
 
 Boundary:
@@ -297,6 +298,59 @@ def return_receipt(token: str, admit_path: Path, registry: Dict[str, Any], opera
     return receipt
 
 
+
+def receipt_receipt(token: str, return_path: Path, registry: Dict[str, Any], operator: Dict[str, Any]) -> Dict[str, Any]:
+    try:
+        return_obj = json.loads(return_path.read_text(encoding="utf-8"))
+    except Exception:
+        return error_receipt(token, "receipt_requires_readable_return_receipt_json", registry)
+
+    ok, reason = validate_receipt(return_obj, "aletheos_cli_return_receipt_001", "returned", "RETURNED")
+    if not ok:
+        return error_receipt(token, reason, registry)
+
+    boundary = base_boundary()
+    boundary.update({
+        "return_receipt_required": True,
+        "return_receipt_hash_verified": True,
+        "verify_not_performed": True,
+        "reliance_allowed": False
+    })
+    receipt = {
+        "id": "aletheos_cli_receipt_receipt_001",
+        "artifact_kind": "cli_receipt",
+        "status": "pre_ratification",
+        "created_at": utc_now(),
+        "lane": registry.get("lane", "b32k.aletheos.bound.v1"),
+        "input": {
+            "token": token,
+            "raw_command": f"{token} {return_path}",
+            "return_receipt_path": str(return_path),
+            "return_receipt_sha256": return_obj.get("receipt_sha256"),
+            "admit_receipt_sha256": return_obj.get("input", {}).get("admit_receipt_sha256"),
+            "mark_receipt_sha256": return_obj.get("input", {}).get("mark_receipt_sha256"),
+            "marked_payload": return_obj.get("input", {}).get("marked_payload", {})
+        },
+        "operator": operator_view(operator),
+        "semantics": {
+            "claim_advanced": True,
+            "positive_authority": False,
+            "state_before": "RETURNED",
+            "state_after": "RECEIPTED",
+            "final_state": "RECEIPTED",
+            "result": "receipted",
+            "receipt_kind": "returned_trace_ledger_receipt",
+            "trust_bearing": False,
+            "reliance_allowed": False,
+            "receipt": "returned_trace_recorded",
+            "admitted_operator_path": "MARK -> ADMIT -> RETURN -> RECEIPT"
+        },
+        "boundary": boundary,
+        "keeper": "RECEIPT gives the returned trace a body without pretending verification is complete."
+    }
+    receipt["receipt_sha256"] = digest_obj(receipt)
+    return receipt
+
 def print_receipt_summary(receipt: Dict[str, Any]) -> None:
     sem = receipt.get("semantics", {})
     op = receipt.get("operator", {})
@@ -334,14 +388,16 @@ def main() -> int:
         print("  python scripts/aletheos_cli.py MARK \"open the door\"")
         print("  python scripts/aletheos_cli.py MARK \"open the door\" --json > ~/tmp/mark.json")
         print("  python scripts/aletheos_cli.py ADMIT ~/tmp/mark.json --json > ~/tmp/admit.json")
-        print("  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json")
+        print("  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json")
+        print("  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json")
         print("")
         print("Commands:")
         print("  :       NOOP, lawful stillness, no claim advanced")
         print("  MARK    mark a candidate trace, not yet admitted or trusted")
         print("  ADMIT   admit a valid MARK receipt into witness passage")
-        print("  RETURN  return a valid ADMIT receipt from witness passage")
-        print("  help    show this help")
+        print("  RETURN   return a valid ADMIT receipt from witness passage")
+        print("  RECEIPT  record a valid RETURN receipt as returned trace body")
+        print("  help     show this help")
         print("")
         print("Boundary:")
         print("  Python-hosted, pre-ratification, not self-hosting, not reliance-bearing.")
@@ -388,6 +444,20 @@ def main() -> int:
             return 2
         receipt = return_receipt(parsed.command, Path(parsed.args[0]).expanduser(), registry, operator)
         ok = receipt.get("semantics", {}).get("result") == "returned"
+        if parsed.json and ok:
+            print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
+        else:
+            print_receipt_summary(receipt)
+        return 0 if ok else 2
+
+
+    if parsed.command == "RECEIPT" and operator:
+        if len(parsed.args) != 1:
+            receipt = error_receipt(parsed.command, "receipt_requires_one_return_receipt_file", registry)
+            print_receipt_summary(receipt)
+            return 2
+        receipt = receipt_receipt(parsed.command, Path(parsed.args[0]).expanduser(), registry, operator)
+        ok = receipt.get("semantics", {}).get("result") == "receipted"
         if parsed.json and ok:
             print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
         else:
