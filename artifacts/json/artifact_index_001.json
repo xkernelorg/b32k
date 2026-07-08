@@ -1,11 +1,17 @@
 {
-  "artifact_count": 9,
+  "artifact_count": 10,
   "artifacts": [
     {
       "id": "artifact_index_001",
       "path": "artifacts/json/artifact_index_001.json",
       "role": "",
-      "status": "artifact_index_recorded"
+      "status": "artifact_index_refreshed"
+    },
+    {
+      "id": "b32k_aletheos_sovereign_trust_registry_agreement_003",
+      "path": "artifacts/json/b32k_aletheos_sovereign_trust_registry_agreement_003.json",
+      "role": "B32K-Aletheos Sovereign Trust Registry Agreement",
+      "status": "conceptual_technical_contract_scaffold"
     },
     {
       "id": "b32k_source_inventory_001",
@@ -59,5 +65,5 @@
   "id": "artifact_index_001",
   "project": "b32k",
   "status": "artifact_index_refreshed",
-  "updated": "2026-07-08T13:07:14"
+  "updated": "2026-07-08T13:51:08"
 }

@@ -1,0 +1,64 @@
+{
+  "aletheos_root_index": 1,
+  "binding_profile": "B32K bound to Aletheos",
+  "boundary_flags": {
+    "aletheos_claims_all_b32k": false,
+    "doctrine_engine": false,
+    "hidden_code_claim": false,
+    "index_0_positive_authority": false,
+    "physics_claim": false
+  },
+  "certificate_lane_pattern": "b32k.aletheos.sovereign.<jurisdiction>.<certificate_type>.v1",
+  "created": "2026-07-08T13:51:08",
+  "document_path": "docs/contracts/b32k_aletheos_sovereign_trust_registry_agreement_draft_003.md",
+  "draft_version": "003",
+  "id": "b32k_aletheos_sovereign_trust_registry_agreement_003",
+  "keeper_clauses": [
+    "B32K is the scaffold.",
+    "Aletheos is the declared way of climbing it.",
+    "Zero is the well.",
+    "One is the witness root.",
+    "Everything Aletheos-bound descends from 1.",
+    "Addresses and receipts must not silently drift."
+  ],
+  "normalization_ladder": [
+    {
+      "index": 0,
+      "meaning": "No admitted binding. No positive claim. No authority.",
+      "name": "Null Well"
+    },
+    {
+      "index": 1,
+      "meaning": "A first positive address or symbol exists.",
+      "name": "Mark"
+    },
+    {
+      "index": 2,
+      "meaning": "The mark is bound across a declared relation.",
+      "name": "Relation"
+    },
+    {
+      "index": 3,
+      "meaning": "The relation is scoped inside a lane, schema, jurisdiction, institution, or authority domain.",
+      "name": "Chamber"
+    },
+    {
+      "index": 4,
+      "meaning": "The scoped relation becomes checkable, signed, receipted, or otherwise closed under verification.",
+      "name": "Closure"
+    },
+    {
+      "index": 5,
+      "meaning": "The closed object carries admitted content.",
+      "name": "Body"
+    }
+  ],
+  "not_legal_advice": true,
+  "null_well_index": 0,
+  "project": "b32k",
+  "requires_counsel_review": true,
+  "root_lane": "b32k.aletheos.bound.v1",
+  "sovereign_lane_pattern": "b32k.aletheos.sovereign.<jurisdiction>.v1",
+  "status": "conceptual_technical_contract_scaffold",
+  "title": "B32K-Aletheos Sovereign Trust Registry Agreement"
+}
