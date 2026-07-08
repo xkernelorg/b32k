@@ -1,5 +1,5 @@
 {
-  "artifact_count": 17,
+  "artifact_count": 18,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -28,6 +28,13 @@
       "ratification_status": "pre_ratification",
       "role": "Defines the minimal apparatus required before symbols, claims, or certificates can become accountable inside the Aletheos binding profile.",
       "status": "pre_ratification_technical_profile"
+    },
+    {
+      "id": "aletheos_minimal_witness_packet_001",
+      "path": "artifacts/json/aletheos_minimal_witness_packet_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "First minimal witness packet proving the Aletheos canonical profile can run one accountable path.",
+      "status": "pre_ratification_test_vector_passed"
     },
     {
       "id": "aletheos_operator_profile_001",
@@ -125,5 +132,5 @@
   "project": "b32k",
   "ratification_status": "pre_ratification",
   "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:23:37"
+  "updated": "2026-07-08T14:24:53"
 }

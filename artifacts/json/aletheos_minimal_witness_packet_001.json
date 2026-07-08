@@ -1,0 +1,126 @@
+{
+  "aletheos_root_index": 1,
+  "boundary": {
+    "commercial_reliance_allowed": false,
+    "doctrine_engine": false,
+    "full_runtime_vm": false,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "ratified": false,
+    "sovereign_reliance_allowed": false
+  },
+  "canonical_payload": {
+    "claim": "Boundary before body.",
+    "lane": "b32k.aletheos.bound.v1",
+    "profile": "aletheos_canonical_profile_001",
+    "test_id": "aletheos_minimal_witness_packet_001"
+  },
+  "canonical_payload_hash": "97d11c2155404a6b7e69fad91e757043f146f7594d277331dff058badee2f3a8",
+  "claim": "Boundary before body.",
+  "created": "2026-07-08T14:24:53",
+  "final_state": "VERIFIED",
+  "id": "aletheos_minimal_witness_packet_001",
+  "keeper_lines": [
+    "The profile names the machine.",
+    "The first receipt proves it can run.",
+    "Boundary before body.",
+    "Presence is not trust.",
+    "No Q, no trust."
+  ],
+  "lane": "b32k.aletheos.bound.v1",
+  "normal_instruction_route": [
+    "MARK",
+    "ADMIT",
+    "RETURN",
+    "RECEIPT",
+    "BIND",
+    "VERIFY"
+  ],
+  "normal_positive_route": [
+    "NULL",
+    "MARKED",
+    "ADMITTED",
+    "RETURNED",
+    "RECEIPTED",
+    "BOUND",
+    "VERIFIED"
+  ],
+  "null_well_index": 0,
+  "operator_profile": {
+    "A": "local motion",
+    "M": "admission",
+    "M^T": "return",
+    "Q": "receipt",
+    "primary_receipt_law": "Q = M M^T"
+  },
+  "profile": "aletheos_canonical_profile_001",
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "role": "First minimal witness packet proving the Aletheos canonical profile can run one accountable path.",
+  "route": [
+    {
+      "instruction": "NOOP",
+      "operator": null,
+      "receipt_material": "no admitted state",
+      "state_after": "NULL",
+      "state_before": "NULL",
+      "step": 0
+    },
+    {
+      "instruction": "MARK",
+      "operator": "mark",
+      "receipt_material": "24d17b61bee15b2ebd082fe622ad06a52a9eb99e8b2a7b1399db1683226c651a",
+      "state_after": "MARKED",
+      "state_before": "NULL",
+      "step": 1
+    },
+    {
+      "instruction": "ADMIT",
+      "operator": "M",
+      "receipt_material": "eec4693608e310b8e1b6f842018c5eaf47a179ab04bae9767c87cf87d1ec3340",
+      "state_after": "ADMITTED",
+      "state_before": "MARKED",
+      "step": 2
+    },
+    {
+      "instruction": "RETURN",
+      "operator": "M^T",
+      "receipt_material": "0c6a3f029f0efaa95b6c4b191057582d23ee8e359f8316969e55a5ede613c4b2",
+      "state_after": "RETURNED",
+      "state_before": "ADMITTED",
+      "step": 3
+    },
+    {
+      "instruction": "RECEIPT",
+      "operator": "Q = M M^T",
+      "receipt_material": "9911b0b554ff409e47b098e0aa038078c3a0dd6fb0602eb7497f495ec9abfdc4",
+      "state_after": "RECEIPTED",
+      "state_before": "RETURNED",
+      "step": 4
+    },
+    {
+      "instruction": "BIND",
+      "operator": "binding",
+      "receipt_material": "8c3fcc3d34a2b64cfbca0f0cbc320c5891b4ca61ee6cdf3ca0f038b26344600a",
+      "state_after": "BOUND",
+      "state_before": "RECEIPTED",
+      "step": 5
+    },
+    {
+      "instruction": "VERIFY",
+      "operator": "verification",
+      "receipt_material": "9a2c4701931dc9ec802c27f86ed1a93ac8acbf57d0ab1a33ed12982f11947240",
+      "state_after": "VERIFIED",
+      "state_before": "BOUND",
+      "step": 6
+    }
+  ],
+  "route_digest": "fe204daaec9e4ad9bc47a60ae8b1847fe392efa2bbad507a0987b22f16e14126",
+  "status": "pre_ratification_test_vector_passed",
+  "title": "Aletheos Minimal Witness Packet",
+  "trust_rule": {
+    "no_q_no_trust": true,
+    "presence_is_trust": false,
+    "verified_only": true
+  }
+}
