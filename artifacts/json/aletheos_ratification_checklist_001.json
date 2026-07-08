@@ -1,0 +1,98 @@
+{
+  "aletheos_binding_profile_is_cooling": true,
+  "aletheos_root_index": 1,
+  "b32k_public_scaffold_is_live": true,
+  "commercial_reliance_allowed": false,
+  "created": "2026-07-08T14:07:51",
+  "id": "aletheos_ratification_checklist_001",
+  "items": [
+    {
+      "evidence_target": "B32K public scaffold remains external/live.",
+      "id": "confirm_b32k_scaffold_boundary",
+      "requirement": "Confirm Aletheos does not alter or claim all B32K usage.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Root lane appears consistently in contract, canonical index, and operator profile.",
+      "id": "confirm_root_lane",
+      "requirement": "Confirm root lane b32k.aletheos.bound.v1.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Validator rejects positive authority at index 0.",
+      "id": "confirm_null_well",
+      "requirement": "Confirm index 0 is NULL_WELL and cannot carry positive authority.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Canonical index contains ALETHEOS_ROOT at index 1.",
+      "id": "confirm_aletheos_root",
+      "requirement": "Confirm index 1 is ALETHEOS_ROOT.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Operator profile records Q = M M^T and Thalean reference identity.",
+      "id": "confirm_operator_profile",
+      "requirement": "Confirm A, M, M^T, and Q operator discipline.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "A ratification receipt names the chosen policy.",
+      "id": "decide_structural_key_assignments",
+      "requirement": "Decide whether current structural-key assignments are kept, changed, migrated, or discarded.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Schema and validator enforce no drift.",
+      "id": "confirm_canonical_index_schema",
+      "requirement": "Confirm canonical index schema before public reliance.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "scripts/validate_b32k_artifacts.py passes and contains these checks.",
+      "id": "confirm_validator_blocks_drift",
+      "requirement": "Confirm validator blocks duplicate lane/index, illegal index 0, and mismatched bindings.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Contract draft reviewed and status updated.",
+      "id": "confirm_contract_language",
+      "requirement": "Confirm contract language for scaffold, binding, sovereign authority, subscriber reliance, and no-legal-advice boundary.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Artifacts carry commercial_reliance_allowed=false and sovereign_reliance_allowed=false.",
+      "id": "confirm_no_reliance_before_ratification",
+      "requirement": "Confirm no commercial or sovereign reliance before ratification.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Future ratification artifact.",
+      "id": "create_ratification_receipt",
+      "requirement": "Create a ratification receipt only after all required checks pass.",
+      "status": "open"
+    },
+    {
+      "evidence_target": "Future git tag.",
+      "id": "tag_release",
+      "requirement": "Tag the ratified release after ratification receipt is committed.",
+      "status": "open"
+    }
+  ],
+  "keeper": [
+    "The scaffold is live.",
+    "The binding is cooling.",
+    "Ratification is the moment the address becomes promise."
+  ],
+  "null_well_index": 0,
+  "operator_law": "Q = M M^T",
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
+  "reference_identity": "Q = M M^T = A^3 + 2A^2 + 2I",
+  "role": "Checklist for moving Aletheos binding profile from pre-ratification to ratified.",
+  "root_lane": "b32k.aletheos.bound.v1",
+  "sovereign_reliance_allowed": false,
+  "status": "pre_ratification_checklist_open",
+  "title": "Aletheos Ratification Checklist"
+}

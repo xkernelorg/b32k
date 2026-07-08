@@ -1,5 +1,5 @@
 {
-  "artifact_count": 12,
+  "artifact_count": 13,
   "artifacts": [
     {
       "id": "aletheos_operator_profile_001",
@@ -9,11 +9,18 @@
       "status": "pre_ratification_operator_profile"
     },
     {
+      "id": "aletheos_ratification_checklist_001",
+      "path": "artifacts/json/aletheos_ratification_checklist_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Checklist for moving Aletheos binding profile from pre-ratification to ratified.",
+      "status": "pre_ratification_checklist_open"
+    },
+    {
       "id": "artifact_index_001",
       "path": "artifacts/json/artifact_index_001.json",
-      "ratification_status": "",
+      "ratification_status": "pre_ratification",
       "role": "",
-      "status": "artifact_index_refreshed"
+      "status": "artifact_index_refreshed_pre_ratification"
     },
     {
       "id": "b32k_aletheos_canonical_index_001",
@@ -90,5 +97,5 @@
   "project": "b32k",
   "ratification_status": "pre_ratification",
   "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:06:20"
+  "updated": "2026-07-08T14:07:51"
 }
