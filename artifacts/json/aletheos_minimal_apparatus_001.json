@@ -1,0 +1,65 @@
+{
+  "aletheos_root_index": 1,
+  "apparatus_order": [
+    "null_well",
+    "boundary",
+    "state",
+    "logic",
+    "language",
+    "sequence",
+    "memory",
+    "input_output",
+    "receipt",
+    "body"
+  ],
+  "boundary": {
+    "apparatus_order_is_b32k_index_assignment": false,
+    "commercial_reliance_allowed": false,
+    "doctrine_engine": false,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "sovereign_reliance_allowed": false
+  },
+  "created": "2026-07-08T14:17:16",
+  "document_path": "docs/spec/aletheos_minimal_apparatus_001.md",
+  "id": "aletheos_minimal_apparatus_001",
+  "keeper_lines": [
+    "Boundary before body.",
+    "Witness before authority.",
+    "Receipt before trust.",
+    "Aletheos begins by drawing a boundary around witness.",
+    "Only then may a symbol acquire body.",
+    "Do not canonize the dictionary before the apparatus exists.",
+    "First define the machine that can make a word accountable."
+  ],
+  "minimal_apparatus_requirements": [
+    "distinguish inside from outside",
+    "hold state",
+    "apply logic",
+    "interpret instruction language",
+    "sequence admissible operations",
+    "preserve memory",
+    "cross an input/output boundary",
+    "produce a receipt of admitted return",
+    "allow a symbol to acquire body only after witness"
+  ],
+  "null_well_index": 0,
+  "operator_profile": {
+    "A": "local motion",
+    "M": "admission",
+    "M^T": "return",
+    "Q": "receipt",
+    "primary_receipt_law": "Q = M M^T"
+  },
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "role": "Defines the minimal apparatus required before symbols, claims, or certificates can become accountable inside the Aletheos binding profile.",
+  "root_lane": "b32k.aletheos.bound.v1",
+  "status": "pre_ratification_technical_profile",
+  "thesis": [
+    "Boundary before body.",
+    "Witness before authority.",
+    "Receipt before trust."
+  ],
+  "title": "Aletheos Minimal Apparatus"
+}

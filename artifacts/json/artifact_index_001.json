@@ -1,6 +1,13 @@
 {
-  "artifact_count": 13,
+  "artifact_count": 14,
   "artifacts": [
+    {
+      "id": "aletheos_minimal_apparatus_001",
+      "path": "artifacts/json/aletheos_minimal_apparatus_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Defines the minimal apparatus required before symbols, claims, or certificates can become accountable inside the Aletheos binding profile.",
+      "status": "pre_ratification_technical_profile"
+    },
     {
       "id": "aletheos_operator_profile_001",
       "path": "artifacts/json/aletheos_operator_profile_001.json",
@@ -97,5 +104,5 @@
   "project": "b32k",
   "ratification_status": "pre_ratification",
   "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:07:51"
+  "updated": "2026-07-08T14:17:16"
 }
