@@ -41,6 +41,9 @@
     "created_purpose": {
       "type": "string"
     },
+    "id": {
+      "const": "aletheos_operator_registry_001"
+    },
     "keeper": {
       "type": "string"
     },
@@ -116,6 +119,7 @@
     }
   },
   "required": [
+    "id",
     "artifact_id",
     "status",
     "lane",

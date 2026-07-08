@@ -10,6 +10,7 @@
   "binding_rule": "Each operator must eventually receive a B32K canonical index in the Aletheos lane before ratified use.",
   "created_at": "2026-07-08T15:01:47",
   "created_purpose": "Declare candidate operator families for later B32K canonical binding.",
+  "id": "aletheos_operator_registry_001",
   "keeper": "The glyph is not the operator. The word is not the operator. The index carries the symbol. The receipt admits the meaning.",
   "lane": "b32k.aletheos.bound.v1",
   "operator_families": [
