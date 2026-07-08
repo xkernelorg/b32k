@@ -670,46 +670,21 @@
       "status": "pre_ratification_candidate"
     },
     {
-      "abstract_invariant": "a rule proposes form",
+      "abstract_invariant": "the authority order is visible before form is accepted",
       "boundary": {
         "b32k_index_assigned_here": false,
         "ratified": false,
         "reliance_allowed": false
       },
-      "compressed_id": "A:G7:P0:STYLE_OFFERED",
+      "compressed_id": "A:G7:P0:CASCADE_DECLARED",
       "ganglion_id": "GANGLION_0007",
       "global_emergence_index": "E0028",
-      "lattice_candidate": {
-        "anchor_domain": "A10",
-        "anchor_label": "Technological/Synthetic",
-        "index": 25
-      },
-      "phase_id": "G7.P0",
-      "phase_role": "style_offered",
-      "span_candidates": [
-        20,
-        24,
-        26,
-        27
-      ],
-      "status": "pre_ratification_candidate"
-    },
-    {
-      "abstract_invariant": "the authority order is visible",
-      "boundary": {
-        "b32k_index_assigned_here": false,
-        "ratified": false,
-        "reliance_allowed": false
-      },
-      "compressed_id": "A:G7:P1:CASCADE_DECLARED",
-      "ganglion_id": "GANGLION_0007",
-      "global_emergence_index": "E0029",
       "lattice_candidate": {
         "anchor_domain": "A05",
         "anchor_label": "Logical/Algorithmic",
         "index": 20
       },
-      "phase_id": "G7.P1",
+      "phase_id": "G7.P0",
       "phase_role": "cascade_declared",
       "span_candidates": [
         24,
@@ -720,21 +695,21 @@
       "status": "pre_ratification_candidate"
     },
     {
-      "abstract_invariant": "conflicts are settled by declared rules",
+      "abstract_invariant": "conflicts are settled by declared deterministic rules",
       "boundary": {
         "b32k_index_assigned_here": false,
         "ratified": false,
         "reliance_allowed": false
       },
-      "compressed_id": "A:G7:P2:SPECIFICITY_RESOLVED",
+      "compressed_id": "A:G7:P1:SPECIFICITY_RESOLVED",
       "ganglion_id": "GANGLION_0007",
-      "global_emergence_index": "E0030",
+      "global_emergence_index": "E0029",
       "lattice_candidate": {
         "anchor_domain": "A05",
         "anchor_label": "Logical/Algorithmic",
         "index": 20
       },
-      "phase_id": "G7.P2",
+      "phase_id": "G7.P1",
       "phase_role": "specificity_resolved",
       "span_candidates": [
         24,
@@ -744,7 +719,32 @@
       "status": "pre_ratification_candidate"
     },
     {
-      "abstract_invariant": "the boundary voluntarily yields presentation",
+      "abstract_invariant": "a rule proposes form through an apparatus surface",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G7:P2:STYLE_OFFERED",
+      "ganglion_id": "GANGLION_0007",
+      "global_emergence_index": "E0030",
+      "lattice_candidate": {
+        "anchor_domain": "A10",
+        "anchor_label": "Technological/Synthetic",
+        "index": 25
+      },
+      "phase_id": "G7.P2",
+      "phase_role": "style_offered",
+      "span_candidates": [
+        20,
+        24,
+        26,
+        27
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the boundary voluntarily yields presentation under declared rule",
       "boundary": {
         "b32k_index_assigned_here": false,
         "ratified": false,
@@ -769,7 +769,7 @@
       "status": "pre_ratification_candidate"
     },
     {
-      "abstract_invariant": "the source remains itself",
+      "abstract_invariant": "the source remains itself after style is applied",
       "boundary": {
         "b32k_index_assigned_here": false,
         "ratified": false,
@@ -819,7 +819,7 @@
   ],
   "purpose": "Index ganglion phases as local unfolding and global emergence.",
   "sequence_summary": {
-    "keeper": "Submission is clean only when refusal remains live.",
+    "keeper": "Submission is clean only when refusal remains live and the rule order is declared.",
     "status": "pre_ratification_candidate",
     "through": "GANGLION_0007"
   },

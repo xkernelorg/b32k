@@ -856,7 +856,7 @@
       "structural_translation": "authority is only admissible when it remains accountable to the boundary it serves"
     },
     {
-      "abstract_invariant": "a boundary may submit to a style or rule only when the cascade is declared, refusal remains possible, and the underlying identity is not destroyed",
+      "abstract_invariant": "submission is valid only when the cascade is declared, rule priority is deterministic, refusal remains possible, and source identity is retained",
       "boundary": {
         "b32k_index_assigned_here": false,
         "hidden_authority_denied": true,
@@ -873,8 +873,10 @@
         "cascade_declared": "authority order is visible",
         "computed_style": "final admitted presentation",
         "danger_marker": "!important is treated as an override warning, not hidden authority",
+        "deterministic_model_revision": true,
         "element_identity": "the element retains source structure",
-        "principle": "the element may accept style, but it must not lose its source",
+        "primary_lens": "Logical/Algorithmic before Cultural/Linguistic",
+        "principle": "the element may accept style only through declared cascade and specificity while retaining source identity",
         "specificity_resolved": "conflicts are settled by declared rules",
         "status": "interpretive_bridge_candidate",
         "style_offer": "a rule proposes presentation"
@@ -924,25 +926,32 @@
       },
       "display_name": "THE_DECLARED_SUBMISSION",
       "ganglion_id": "GANGLION_0007",
-      "keeper": "Submission is clean only when refusal remains live. CSS is the parable: the element may accept style, but it must not lose its source.",
+      "keeper": "G7 should not say submit because culture says so. G7 should say yield only to declared, scoped, reversible rule.",
       "key": "DECLARED_SUBMISSION_GANGLION",
       "lattice_relation": {
         "addresses_below_remain_open": true,
         "placement_status": "candidate_lattice_spanning_ganglion",
         "primary_index_candidate": {
-          "anchor_domain": "A09",
-          "anchor_label": "Cultural/Linguistic",
-          "hex": "0x0018",
-          "index": 24,
-          "role": "submission as declared formal relation"
+          "anchor_domain": "A05",
+          "anchor_label": "Logical/Algorithmic",
+          "hex": "0x0014",
+          "index": 20,
+          "role": "declared cascade, specificity, and scoped rule application"
         },
         "span_lanes": [
           {
-            "anchor_domain": "A05",
-            "anchor_label": "Logical/Algorithmic",
-            "hex": "0x0014",
-            "index": 20,
-            "role": "cascade, specificity, and declared rules"
+            "anchor_domain": "A09",
+            "anchor_label": "Cultural/Linguistic",
+            "hex": "0x0018",
+            "index": 24,
+            "role": "submission as declared formal relation"
+          },
+          {
+            "anchor_domain": "A10",
+            "anchor_label": "Technological/Synthetic",
+            "hex": "0x0019",
+            "index": 25,
+            "role": "CSS and applied apparatus surface"
           },
           {
             "anchor_domain": "A11",
@@ -957,13 +966,6 @@
             "hex": "0x001B",
             "index": 27,
             "role": "consent, refusal, and revocation remain live"
-          },
-          {
-            "anchor_domain": "A10",
-            "anchor_label": "Technological/Synthetic",
-            "hex": "0x0019",
-            "index": 25,
-            "role": "CSS and applied apparatus surface"
           }
         ]
       },
@@ -996,7 +998,7 @@
       "source_phrase": "submission is clean only when refusal remains live",
       "source_relation": "branches_from_GANGLION_0006",
       "status": "pre_ratification_candidate",
-      "structural_translation": "a boundary may accept external form without surrendering source identity"
+      "structural_translation": "a boundary may accept external form only through declared, scoped, reversible rule application"
     }
   ],
   "id": "aletheos_ganglion_registry_001",
