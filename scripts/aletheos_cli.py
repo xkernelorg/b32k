@@ -12,7 +12,8 @@ Usage:
   python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json
   python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json --json > ~/tmp/receipt.json
   python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json --json > ~/tmp/verify.json
-  python scripts/aletheos_cli.py BIND ~/tmp/verify.json
+  python scripts/aletheos_cli.py BIND ~/tmp/verify.json --json > ~/tmp/bind.json
+  python scripts/aletheos_cli.py REVOKE ~/tmp/bind.json
   python scripts/aletheos_cli.py help
 
 Boundary:
@@ -498,6 +499,72 @@ def bind_receipt(token: str, verify_path: Path, registry: Dict[str, Any], operat
     out["receipt_sha256"] = digest_obj(out)
     return out
 
+
+def revoke_receipt(token: str, bind_path: Path, registry: Dict[str, Any], operator: Dict[str, Any], reason_text: str) -> Dict[str, Any]:
+    try:
+        bind_obj = json.loads(bind_path.read_text(encoding="utf-8"))
+    except Exception:
+        return error_receipt(token, "revoke_requires_readable_bind_receipt_json", registry)
+
+    ok, reason = validate_receipt(bind_obj, "aletheos_cli_bind_receipt_001", "bound", "BOUND")
+    if not ok:
+        return error_receipt(token, reason, registry)
+
+    binding = bind_obj.get("binding", {})
+    boundary = base_boundary()
+    boundary.update({
+        "bind_receipt_required": True,
+        "bind_receipt_hash_verified": True,
+        "history_erased": False,
+        "reliance_denied": True,
+        "ratification_not_performed": True
+    })
+
+    out = {
+        "id": "aletheos_cli_revoke_receipt_001",
+        "artifact_kind": "cli_receipt",
+        "status": "pre_ratification",
+        "created_at": utc_now(),
+        "lane": registry.get("lane", "b32k.aletheos.bound.v1"),
+        "input": {
+            "token": token,
+            "raw_command": f"{token} {bind_path}",
+            "bind_receipt_path": str(bind_path),
+            "bind_receipt_sha256": bind_obj.get("receipt_sha256"),
+            "marked_payload": bind_obj.get("input", {}).get("marked_payload", {}),
+            "binding": binding,
+            "revocation_reason": reason_text
+        },
+        "operator": operator_view(operator),
+        "semantics": {
+            "claim_advanced": True,
+            "positive_authority": False,
+            "state_before": "BOUND",
+            "state_after": "REVOKED",
+            "final_state": "REVOKED",
+            "result": "revoked",
+            "receipt_kind": "revocation_receipt",
+            "trust_bearing": False,
+            "reliance_allowed": False,
+            "future_reliance_denied": True,
+            "history_preserved": True,
+            "admitted_operator_path": "MARK -> ADMIT -> RETURN -> RECEIPT -> VERIFY -> BIND -> REVOKE"
+        },
+        "revocation": {
+            "revoked_binding_status": binding.get("binding_status"),
+            "revoked_binding_lane": binding.get("binding_lane"),
+            "revoked_binding_schema": binding.get("binding_schema"),
+            "revoked_binding_address": binding.get("binding_address"),
+            "reason": reason_text,
+            "deletes_prior_receipts": False,
+            "denies_future_reliance": True
+        },
+        "boundary": boundary,
+        "keeper": "REVOKE denies future reliance without erasing the trace."
+    }
+    out["receipt_sha256"] = digest_obj(out)
+    return out
+
 def print_receipt_summary(receipt: Dict[str, Any]) -> None:
     sem = receipt.get("semantics", {})
     op = receipt.get("operator", {})
@@ -528,6 +595,7 @@ def main() -> int:
     parser.add_argument("--bind-lane", default="b32k.aletheos.bound.v1")
     parser.add_argument("--bind-schema", default="aletheos.cli.bound_trace.v1")
     parser.add_argument("--bind-address", default="unassigned_pre_ratification")
+    parser.add_argument("--revoke-reason", default="operator_requested_revocation")
     parsed = parser.parse_args()
 
     if parsed.command in ("help", "-h", "--help"):
@@ -541,7 +609,8 @@ def main() -> int:
         print("  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json")
         print("  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json --json > ~/tmp/receipt.json")
         print("  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json --json > ~/tmp/verify.json")
-        print("  python scripts/aletheos_cli.py BIND ~/tmp/verify.json")
+        print("  python scripts/aletheos_cli.py BIND ~/tmp/verify.json --json > ~/tmp/bind.json")
+        print("  python scripts/aletheos_cli.py REVOKE ~/tmp/bind.json")
         print("")
         print("Commands:")
         print("  :       NOOP, lawful stillness, no claim advanced")
@@ -551,6 +620,7 @@ def main() -> int:
         print("  RECEIPT  record a valid RETURN receipt as returned trace body")
         print("  VERIFY   verify a valid RECEIPT chain without granting reliance")
         print("  BIND     bind a valid VERIFY receipt to a pre-ratification lane")
+        print("  REVOKE   revoke a valid BIND receipt without erasing history")
         print("  help     show this help")
         print("")
         print("Boundary:")
@@ -648,6 +718,26 @@ def main() -> int:
             parsed.bind_address
         )
         ok = receipt.get("semantics", {}).get("result") == "bound"
+        if parsed.json and ok:
+            print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
+        else:
+            print_receipt_summary(receipt)
+        return 0 if ok else 2
+
+
+    if parsed.command == "REVOKE" and operator:
+        if len(parsed.args) != 1:
+            receipt = error_receipt(parsed.command, "revoke_requires_one_bind_receipt_file", registry)
+            print_receipt_summary(receipt)
+            return 2
+        receipt = revoke_receipt(
+            parsed.command,
+            Path(parsed.args[0]).expanduser(),
+            registry,
+            operator,
+            parsed.revoke_reason
+        )
+        ok = receipt.get("semantics", {}).get("result") == "revoked"
         if parsed.json and ok:
             print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
         else:
