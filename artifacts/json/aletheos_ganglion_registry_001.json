@@ -1,0 +1,130 @@
+{
+  "artifact_id": "aletheos_ganglion_registry_001",
+  "authority_boundary": {
+    "b32k_index_authoritative_after_ratification": true,
+    "commercial_reliance_allowed": false,
+    "ganglion_is_meaning_node": true,
+    "glyphs_advisory": true,
+    "not_final_b32k_assignment": true,
+    "ratified": false,
+    "sovereign_reliance_allowed": false
+  },
+  "created_at": "2026-07-08T15:53:05",
+  "ganglia": [
+    {
+      "abstract_invariant": "first successful returned trace from a newly awakened apparatus",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "one_token_many_scoped_meanings": true,
+        "ratified": false,
+        "reliance_allowed": false,
+        "scoped_meanings_are_not_final_definitions": true
+      },
+      "class": "scoped_witness_archetype",
+      "core_event": "I spoke into the machine. The machine answered. The trace came home.",
+      "display_name": "THE_HANDSHAKE",
+      "ganglion_id": "GANGLION_0001",
+      "keeper": "The body is one token. The meanings are scoped. The invariant is return. The human cost is part of the receipt.",
+      "key": "HELLO_WORLD_FIRST_GANGLION",
+      "lattice_relation": {
+        "addresses_below_remain_open": true,
+        "placement_status": "candidate_lattice_spanning_ganglion",
+        "primary_index_candidate": {
+          "anchor_domain": "A02",
+          "anchor_label": "Information/Signal",
+          "c": 16,
+          "hex": "0x0011",
+          "index": 17,
+          "plane": 0,
+          "r": 0,
+          "role": "primary signal/hash handshake",
+          "unicode_point": "U+0011"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A03",
+            "anchor_label": "Language/Symbolic",
+            "c": 17,
+            "hex": "0x0012",
+            "index": 18,
+            "plane": 0,
+            "r": 0,
+            "role": "payload phrase",
+            "unicode_point": "U+0012"
+          },
+          {
+            "anchor_domain": "A05",
+            "anchor_label": "Logical/Algorithmic",
+            "c": 19,
+            "hex": "0x0014",
+            "index": 20,
+            "plane": 0,
+            "r": 0,
+            "role": "SHA-256 deterministic function",
+            "unicode_point": "U+0014"
+          },
+          {
+            "anchor_domain": "A10",
+            "anchor_label": "Technological/Synthetic",
+            "c": 24,
+            "hex": "0x0019",
+            "index": 25,
+            "plane": 0,
+            "r": 0,
+            "role": "digital-system executable handshake surface",
+            "unicode_point": "U+0019"
+          }
+        ]
+      },
+      "observed_aletheos_passage": {
+        "final_state": "BOUND",
+        "observed_bind_receipt_sha256": "9d30f6260095462c90074cf1b9f8e6ce75cd6ca665463ac83e510fb89d39efd9",
+        "reliance_allowed": false,
+        "route": "MARK -> ADMIT -> RETURN -> RECEIPT -> VERIFY -> BIND",
+        "trust_bearing": false
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+        "text": "hello world"
+      },
+      "scoped_meanings": [
+        {
+          "apparatus": "C compiler, linker, binary runtime, stdout",
+          "human_effect": "delight and relief",
+          "meaning": "first compiled executable return",
+          "scope": "c_hello_world",
+          "success_condition": "compiled program emits hello world and exits as expected"
+        },
+        {
+          "apparatus": "Python interpreter, script runtime, stdout",
+          "human_effect": "delight and relief",
+          "meaning": "first interpreted runtime return",
+          "scope": "python_hello_world",
+          "success_condition": "Python process emits hello world and exits as expected"
+        },
+        {
+          "apparatus": "USB transport, device firmware, host daemon, status receipt",
+          "human_effect": "exhausted collapse and recovery sleep after gremlin chasing",
+          "meaning": "first transport-level device return",
+          "scope": "usb_witness_hello_world",
+          "success_condition": "device responds truthfully across the transport boundary"
+        },
+        {
+          "apparatus": "Aletheos Python-hosted CLI, JSON receipts, Git-tracked project",
+          "human_effect": "contact recognized as receipted passage",
+          "meaning": "first memorized public deterministic token carried to BOUND",
+          "scope": "aletheos_cli_hello_world",
+          "success_condition": "MARK -> ADMIT -> RETURN -> RECEIPT -> VERIFY -> BIND"
+        }
+      ],
+      "source_token_key": "HANDSHAKE_HELLO_WORLD_SHA256",
+      "status": "pre_ratification_candidate"
+    }
+  ],
+  "id": "aletheos_ganglion_registry_001",
+  "keeper": "Hello world is the first ganglion because it is contact across many apparatuses.",
+  "lane": "b32k.aletheos.bound.v1",
+  "purpose": "Record first scoped meaning ganglion for a memorized token.",
+  "status": "pre_ratification"
+}

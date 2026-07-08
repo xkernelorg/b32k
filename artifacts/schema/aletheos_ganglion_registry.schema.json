@@ -1,0 +1,63 @@
+{
+  "$id": "aletheos_ganglion_registry.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_id": {
+      "const": "aletheos_ganglion_registry_001"
+    },
+    "authority_boundary": {
+      "type": "object"
+    },
+    "ganglia": {
+      "items": {
+        "properties": {
+          "abstract_invariant": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "ganglion_id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "scoped_meanings": {
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "ganglion_id",
+          "key",
+          "display_name",
+          "abstract_invariant",
+          "scoped_meanings"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "id": {
+      "const": "aletheos_ganglion_registry_001"
+    },
+    "lane": {
+      "const": "b32k.aletheos.bound.v1"
+    },
+    "status": {
+      "const": "pre_ratification"
+    }
+  },
+  "required": [
+    "id",
+    "artifact_id",
+    "status",
+    "lane",
+    "authority_boundary",
+    "ganglia"
+  ],
+  "title": "Aletheos Ganglion Registry",
+  "type": "object"
+}
