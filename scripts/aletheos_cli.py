@@ -6,6 +6,7 @@ Pre-ratification witness CLI.
 
 Usage:
   python scripts/aletheos_cli.py ':'
+  python scripts/aletheos_cli.py MARK "open the door"
   python scripts/aletheos_cli.py help
 
 Boundary:
@@ -22,7 +23,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,6 +97,59 @@ def noop_receipt(token: str, registry: Dict[str, Any], operator: Dict[str, Any])
     return receipt
 
 
+def mark_receipt(token: str, payload_parts: List[str], registry: Dict[str, Any], operator: Dict[str, Any]) -> Dict[str, Any]:
+    payload_text = " ".join(payload_parts).strip()
+    payload = {
+        "text": payload_text,
+        "text_sha256": hashlib.sha256(payload_text.encode("utf-8")).hexdigest()
+    }
+    receipt = {
+        "id": "aletheos_cli_mark_receipt_001",
+        "artifact_kind": "cli_receipt",
+        "status": "pre_ratification",
+        "created_at": utc_now(),
+        "lane": registry.get("lane", "b32k.aletheos.bound.v1"),
+        "input": {
+            "token": token,
+            "raw_command": " ".join([token] + payload_parts).strip(),
+            "payload": payload
+        },
+        "operator": {
+            "key": operator.get("key"),
+            "token": operator.get("token"),
+            "label": operator.get("label"),
+            "family": operator.get("family"),
+            "meaning": operator.get("meaning")
+        },
+        "semantics": {
+            "claim_advanced": True,
+            "positive_authority": False,
+            "state_before": "NULL",
+            "state_after": "MARKED",
+            "final_state": "MARKED",
+            "result": "marked",
+            "admission": "not_yet_admitted",
+            "receipt_kind": "candidate_trace_receipt",
+            "trust_bearing": False,
+            "reliance_allowed": False
+        },
+        "boundary": {
+            "python_hosted": True,
+            "self_hosting": False,
+            "ratified": False,
+            "b32k_index_assigned_here": False,
+            "commercial_reliance_allowed": False,
+            "sovereign_reliance_allowed": False,
+            "admit_not_performed": True,
+            "return_not_performed": True,
+            "verify_not_performed": True
+        },
+        "keeper": "MARK proves the machine can notice without trusting."
+    }
+    receipt["receipt_sha256"] = digest_obj(receipt)
+    return receipt
+
+
 def error_receipt(token: str, reason: str, registry: Dict[str, Any] | None = None) -> Dict[str, Any]:
     receipt = {
         "id": "aletheos_cli_error_receipt_001",
@@ -127,23 +181,43 @@ def error_receipt(token: str, reason: str, registry: Dict[str, Any] | None = Non
     return receipt
 
 
+def print_receipt_summary(receipt: Dict[str, Any]) -> None:
+    sem = receipt.get("semantics", {})
+    op = receipt.get("operator", {})
+    print("Aletheos CLI receipt")
+    print("token: " + str(op.get("token", receipt.get("input", {}).get("token", ""))))
+    if op.get("key"):
+        print("operator: " + str(op.get("key")))
+    print("result: " + str(sem.get("result")))
+    print("claim_advanced: " + str(sem.get("claim_advanced")).lower())
+    if sem.get("admission"):
+        print("admission: " + str(sem.get("admission")))
+    print("state: " + str(sem.get("state_before")) + " -> " + str(sem.get("state_after")))
+    print("receipt_sha256: " + receipt["receipt_sha256"])
+    print("")
+    print(json.dumps(receipt, indent=2, sort_keys=True))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         prog="aletheos_cli",
         description="Pre-ratification Aletheos witness CLI."
     )
     parser.add_argument("command", nargs="?", default="help")
+    parser.add_argument("args", nargs="*")
     parser.add_argument("--json", action="store_true", help="emit compact JSON only")
-    args = parser.parse_args()
+    parsed = parser.parse_args()
 
-    if args.command in ("help", "-h", "--help"):
+    if parsed.command in ("help", "-h", "--help"):
         print("Aletheos CLI 001")
         print("")
         print("Usage:")
         print("  python scripts/aletheos_cli.py ':'")
+        print("  python scripts/aletheos_cli.py MARK \"open the door\"")
         print("")
         print("Commands:")
         print("  :     NOOP, lawful stillness, no claim advanced")
+        print("  MARK  mark a candidate trace, not yet admitted or trusted")
         print("  help  show this help")
         print("")
         print("Boundary:")
@@ -151,32 +225,30 @@ def main() -> int:
         return 0
 
     registry = load_registry()
-    operator = find_operator_by_token(registry, args.command)
+    operator = find_operator_by_token(registry, parsed.command)
 
-    if args.command == ":" and operator:
-        receipt = noop_receipt(args.command, registry, operator)
-        if args.json:
+    if parsed.command == ":" and operator:
+        receipt = noop_receipt(parsed.command, registry, operator)
+        if parsed.json:
             print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
         else:
-            print("Aletheos CLI receipt")
-            print("token: :")
-            print("operator: OP_NOOP")
-            print("result: accepted_noop")
-            print("claim_advanced: false")
-            print("state: NULL -> NULL")
-            print("receipt_sha256: " + receipt["receipt_sha256"])
-            print("")
-            print(json.dumps(receipt, indent=2, sort_keys=True))
+            print_receipt_summary(receipt)
         return 0
 
-    receipt = error_receipt(args.command, "unknown_or_unadmitted_operator", registry)
-    print("Aletheos CLI receipt")
-    print(f"token: {args.command}")
-    print("result: rejected")
-    print("reason: unknown_or_unadmitted_operator")
-    print("receipt_sha256: " + receipt["receipt_sha256"])
-    print("")
-    print(json.dumps(receipt, indent=2, sort_keys=True))
+    if parsed.command == "MARK" and operator:
+        if not parsed.args:
+            receipt = error_receipt(parsed.command, "mark_requires_payload", registry)
+            print_receipt_summary(receipt)
+            return 2
+        receipt = mark_receipt(parsed.command, parsed.args, registry, operator)
+        if parsed.json:
+            print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
+        else:
+            print_receipt_summary(receipt)
+        return 0
+
+    receipt = error_receipt(parsed.command, "unknown_or_unadmitted_operator", registry)
+    print_receipt_summary(receipt)
     return 2
 
 
