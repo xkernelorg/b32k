@@ -547,13 +547,134 @@
         27
       ],
       "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "after refusal remains possible, care may begin",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G6:P0:CARE_MAY_BEGIN",
+      "ganglion_id": "GANGLION_0006",
+      "global_emergence_index": "E0023",
+      "lattice_candidate": {
+        "anchor_domain": "A12",
+        "anchor_label": "Ethical/Normative",
+        "index": 27
+      },
+      "phase_id": "G6.P0",
+      "phase_role": "care_may_begin",
+      "span_candidates": [
+        20,
+        26,
+        28,
+        29
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "authority has declared conditions rather than hidden control",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G6:P1:CONDITIONS_DECLARED",
+      "ganglion_id": "GANGLION_0006",
+      "global_emergence_index": "E0024",
+      "lattice_candidate": {
+        "anchor_domain": "A05",
+        "anchor_label": "Logical/Algorithmic",
+        "index": 20
+      },
+      "phase_id": "G6.P1",
+      "phase_role": "conditions_declared",
+      "span_candidates": [
+        26,
+        27,
+        29
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "the boundary served remains structurally intact",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G6:P2:BOUNDARY_SERVED",
+      "ganglion_id": "GANGLION_0006",
+      "global_emergence_index": "E0025",
+      "lattice_candidate": {
+        "anchor_domain": "A11",
+        "anchor_label": "Matricial/Geometric",
+        "index": 26
+      },
+      "phase_id": "G6.P2",
+      "phase_role": "boundary_served",
+      "span_candidates": [
+        20,
+        27,
+        29
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "stewardship cares for the shared field rather than consuming it",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G6:P3:FIELD_CARED_FOR",
+      "ganglion_id": "GANGLION_0006",
+      "global_emergence_index": "E0026",
+      "lattice_candidate": {
+        "anchor_domain": "A14",
+        "anchor_label": "Planetary/Ecological",
+        "index": 29
+      },
+      "phase_id": "G6.P3",
+      "phase_role": "field_cared_for",
+      "span_candidates": [
+        26,
+        27,
+        28
+      ],
+      "status": "pre_ratification_candidate"
+    },
+    {
+      "abstract_invariant": "bounded care becomes covenant memory",
+      "boundary": {
+        "b32k_index_assigned_here": false,
+        "ratified": false,
+        "reliance_allowed": false
+      },
+      "compressed_id": "A:G6:P4:STEWARDSHIP_COVENANT",
+      "ganglion_id": "GANGLION_0006",
+      "global_emergence_index": "E0027",
+      "lattice_candidate": {
+        "anchor_domain": "A13",
+        "anchor_label": "Mythic/Narrative",
+        "index": 28
+      },
+      "phase_id": "G6.P4",
+      "phase_role": "stewardship_covenant",
+      "span_candidates": [
+        26,
+        27,
+        29
+      ],
+      "status": "pre_ratification_candidate"
     }
   ],
   "purpose": "Index ganglion phases as local unfolding and global emergence.",
   "sequence_summary": {
-    "keeper": "Refusal is older than accountable dominion.",
+    "keeper": "Refusal is older than accountable dominion. Stewardship is care after refusal.",
     "status": "pre_ratification_candidate",
-    "through": "GANGLION_0005"
+    "through": "GANGLION_0006"
   },
   "status": "pre_ratification"
 }

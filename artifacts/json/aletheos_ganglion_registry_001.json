@@ -685,6 +685,175 @@
       "source_relation": "branches_from_GANGLION_0004",
       "status": "pre_ratification_candidate",
       "structural_translation": "power offered does not become authority until refusal remains possible"
+    },
+    {
+      "abstract_invariant": "authority is only admissible when it remains accountable to the boundary it serves",
+      "boundary": {
+        "acceptance_after_refusal_only": true,
+        "b32k_index_assigned_here": false,
+        "dominion_not_automatic": true,
+        "ratified": false,
+        "reliance_allowed": false,
+        "revocation_must_remain_possible": true,
+        "stewardship_not_capture": true
+      },
+      "class": "scoped_accountable_authority_archetype",
+      "core_event": "Refusal remains possible, so bounded care may be accepted.",
+      "correlate_relation": {
+        "correlate_of": "GANGLION_0005",
+        "keeper": "G5 refuses capture. G6 permits care.",
+        "not_opposite": true,
+        "reason": "The correlate of refusal is not automatic acceptance; it is accountable stewardship after refusal remains live."
+      },
+      "deterministic_body": {
+        "bytes_hex": "537465776172647368697020697320646f6d696e696f6e206166746572207265667573616c2c20726563656970742c20616e6420726573747261696e742e",
+        "canonical_text": "Stewardship is dominion after refusal, receipt, and restraint.",
+        "compressed_form": "A:G6:AS",
+        "deterministic_status": "externally_reproducible",
+        "digest_algorithm": "SHA-256",
+        "digest_hex": "6b599ff56b0165ca084ad7e1f7592e1dfaf3035204a0209d6cd5683c96a071db",
+        "encoding": "UTF-8",
+        "normalization": "NFC",
+        "unicode_scalars": [
+          "U+0053",
+          "U+0074",
+          "U+0065",
+          "U+0077",
+          "U+0061",
+          "U+0072",
+          "U+0064",
+          "U+0073",
+          "U+0068",
+          "U+0069",
+          "U+0070",
+          "U+0020",
+          "U+0069",
+          "U+0073",
+          "U+0020",
+          "U+0064",
+          "U+006F",
+          "U+006D",
+          "U+0069",
+          "U+006E",
+          "U+0069",
+          "U+006F",
+          "U+006E",
+          "U+0020",
+          "U+0061",
+          "U+0066",
+          "U+0074",
+          "U+0065",
+          "U+0072",
+          "U+0020",
+          "U+0072",
+          "U+0065",
+          "U+0066",
+          "U+0075",
+          "U+0073",
+          "U+0061",
+          "U+006C",
+          "U+002C",
+          "U+0020",
+          "U+0072",
+          "U+0065",
+          "U+0063",
+          "U+0065",
+          "U+0069",
+          "U+0070",
+          "U+0074",
+          "U+002C",
+          "U+0020",
+          "U+0061",
+          "U+006E",
+          "U+0064",
+          "U+0020",
+          "U+0072",
+          "U+0065",
+          "U+0073",
+          "U+0074",
+          "U+0072",
+          "U+0061",
+          "U+0069",
+          "U+006E",
+          "U+0074",
+          "U+002E"
+        ]
+      },
+      "display_name": "THE_ACCOUNTABLE_STEWARDSHIP",
+      "ganglion_id": "GANGLION_0006",
+      "keeper": "Dominion refused is not abandonment. It is the condition under which stewardship can become clean.",
+      "key": "ACCOUNTABLE_STEWARDSHIP_GANGLION",
+      "lattice_relation": {
+        "addresses_below_remain_open": true,
+        "placement_status": "candidate_lattice_spanning_ganglion",
+        "primary_index_candidate": {
+          "anchor_domain": "A12",
+          "anchor_label": "Ethical/Normative",
+          "hex": "0x001B",
+          "index": 27,
+          "role": "accountable authority after refusal"
+        },
+        "span_lanes": [
+          {
+            "anchor_domain": "A11",
+            "anchor_label": "Matricial/Geometric",
+            "hex": "0x001A",
+            "index": 26,
+            "role": "boundary structure remains intact"
+          },
+          {
+            "anchor_domain": "A14",
+            "anchor_label": "Planetary/Ecological",
+            "hex": "0x001D",
+            "index": 29,
+            "role": "care of field, world, and shared body"
+          },
+          {
+            "anchor_domain": "A05",
+            "anchor_label": "Logical/Algorithmic",
+            "hex": "0x0014",
+            "index": 20,
+            "role": "conditions of accountable authority"
+          },
+          {
+            "anchor_domain": "A13",
+            "anchor_label": "Mythic/Narrative",
+            "hex": "0x001C",
+            "index": 28,
+            "role": "stewardship becomes covenant memory"
+          }
+        ]
+      },
+      "payload": {
+        "encoding": "utf-8",
+        "sha256": "6b599ff56b0165ca084ad7e1f7592e1dfaf3035204a0209d6cd5683c96a071db",
+        "text": "Stewardship is dominion after refusal, receipt, and restraint."
+      },
+      "public_ethos": "authority_as_bounded_care",
+      "scoped_meanings": [
+        {
+          "apparatus": "offer, refusal gate, receipt, boundary, care",
+          "meaning": "authority may be accepted only when refusal remains live and the boundary served remains intact",
+          "scope": "accountable_authority",
+          "success_condition": "accepted care remains bounded, receipted, and revocable"
+        },
+        {
+          "apparatus": "boundary-preserving trace, field of care, refusal covenant",
+          "meaning": "stewardship is dominion disciplined by non-destruction and refusal",
+          "scope": "non_destructive_stewardship",
+          "success_condition": "care does not become capture"
+        },
+        {
+          "apparatus": "BIND, VERIFY, REVOKE, receipt ledger",
+          "meaning": "bound authority is accountable only while receipt and revocation remain available",
+          "scope": "aletheos_trust_machine",
+          "success_condition": "the machine can preserve, verify, and revoke without memory-hole behavior"
+        }
+      ],
+      "source_phrase": "Dominion refused is not abandonment. It is the condition under which stewardship can become clean.",
+      "source_relation": "correlate_of_GANGLION_0005",
+      "status": "pre_ratification_candidate",
+      "structural_translation": "authority is only admissible when it remains accountable to the boundary it serves"
     }
   ],
   "id": "aletheos_ganglion_registry_001",
@@ -692,7 +861,7 @@
   "lane": "b32k.aletheos.bound.v1",
   "purpose": "Record first scoped meaning ganglion for a memorized token.",
   "sequence_summary": {
-    "keeper": "Contact. Recognition. Boundary. Non-destructive crossing. Refusal before authority.",
+    "keeper": "Contact. Recognition. Boundary. Non-destructive crossing. Refusal before authority. Stewardship after refusal.",
     "sequence": [
       {
         "compressed": "A:G1:HW",
@@ -718,6 +887,11 @@
         "compressed": "A:G5:ROD",
         "ganglion_id": "GANGLION_0005",
         "role": "refusal of dominion"
+      },
+      {
+        "compressed": "A:G6:AS",
+        "ganglion_id": "GANGLION_0006",
+        "role": "accountable stewardship"
       }
     ],
     "status": "pre_ratification_candidate"
