@@ -1,0 +1,89 @@
+{
+  "alters_b32k_public_scaffold": false,
+  "binding_profile": "B32K bound to Aletheos",
+  "boundary": {
+    "all_b32k_use_must_realize_thalean_core": false,
+    "doctrine_engine": false,
+    "hidden_code_claim": false,
+    "physics_claim": false
+  },
+  "commercial_trust_rule": "No Q, no trust.",
+  "cpu_from_null_ladder": [
+    {
+      "name": "Null Well",
+      "step": 0
+    },
+    {
+      "name": "Mark",
+      "step": 1
+    },
+    {
+      "name": "Logic",
+      "step": 2
+    },
+    {
+      "name": "Language",
+      "step": 3
+    },
+    {
+      "name": "Sequence",
+      "step": 4
+    },
+    {
+      "name": "Memory",
+      "step": 5
+    },
+    {
+      "name": "I/O",
+      "step": 6
+    },
+    {
+      "name": "Receipt",
+      "step": 7
+    }
+  ],
+  "created": "2026-07-08T14:05:06",
+  "document_paths": {
+    "contract_addendum": "docs/contracts/b32k_aletheos_operator_discipline_addendum_001.md",
+    "operator_profile": "docs/spec/aletheos_operator_profile_001.md"
+  },
+  "id": "aletheos_operator_profile_001",
+  "keeper_lines": [
+    "A is local motion.",
+    "M is admission.",
+    "M^T is return.",
+    "Q is receipt.",
+    "Aletheos does not trust presence.",
+    "Aletheos trusts admitted return."
+  ],
+  "operators": {
+    "A": {
+      "meaning": "Admissible one-step relation inside a declared apparatus or reference core.",
+      "name": "local_motion_operator"
+    },
+    "M": {
+      "meaning": "Admitted incidence into the active witness register.",
+      "name": "admission_operator"
+    },
+    "M_transpose": {
+      "meaning": "Return relation for comparison, verification, and closure.",
+      "name": "return_operator"
+    },
+    "Q": {
+      "meaning": "Overlap or closure produced by admission followed by return.",
+      "name": "receipt_operator"
+    }
+  },
+  "primary_receipt_law": "Q = M M^T",
+  "project": "b32k",
+  "reference_identity": {
+    "core": "G15 isomorphic to L(Petersen)",
+    "identity": "Q = M M^T = A^3 + 2A^2 + 2I",
+    "name": "Thalean reference identity",
+    "required_for_all_b32k_use": false,
+    "role": "reference witness for exact finite closure"
+  },
+  "role": "Primary operator discipline for B32K bound to Aletheos.",
+  "status": "pre_ratification_operator_profile",
+  "title": "Aletheos Operator Profile"
+}

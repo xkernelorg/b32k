@@ -1,6 +1,12 @@
 {
-  "artifact_count": 11,
+  "artifact_count": 12,
   "artifacts": [
+    {
+      "id": "aletheos_operator_profile_001",
+      "path": "artifacts/json/aletheos_operator_profile_001.json",
+      "role": "Primary operator discipline for B32K bound to Aletheos.",
+      "status": "pre_ratification_operator_profile"
+    },
     {
       "id": "artifact_index_001",
       "path": "artifacts/json/artifact_index_001.json",
@@ -71,5 +77,5 @@
   "id": "artifact_index_001",
   "project": "b32k",
   "status": "artifact_index_refreshed",
-  "updated": "2026-07-08T13:53:00"
+  "updated": "2026-07-08T14:05:06"
 }
