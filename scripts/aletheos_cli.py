@@ -11,7 +11,8 @@ Usage:
   python scripts/aletheos_cli.py ADMIT ~/tmp/mark.json --json > ~/tmp/admit.json
   python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json
   python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json --json > ~/tmp/receipt.json
-  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json
+  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json --json > ~/tmp/verify.json
+  python scripts/aletheos_cli.py BIND ~/tmp/verify.json
   python scripts/aletheos_cli.py help
 
 Boundary:
@@ -428,6 +429,75 @@ def verify_receipt(token: str, receipt_path: Path, registry: Dict[str, Any], ope
     out["receipt_sha256"] = digest_obj(out)
     return out
 
+
+def bind_receipt(token: str, verify_path: Path, registry: Dict[str, Any], operator: Dict[str, Any], bind_lane: str, bind_schema: str, bind_address: str) -> Dict[str, Any]:
+    try:
+        verify_obj = json.loads(verify_path.read_text(encoding="utf-8"))
+    except Exception:
+        return error_receipt(token, "bind_requires_readable_verify_receipt_json", registry)
+
+    ok, reason = validate_receipt(verify_obj, "aletheos_cli_verify_receipt_001", "verified", "VERIFIED")
+    if not ok:
+        return error_receipt(token, reason, registry)
+
+    sem = verify_obj.get("semantics", {})
+    if sem.get("verified") is not True:
+        return error_receipt(token, "verify_receipt_not_verified", registry)
+
+    boundary = base_boundary()
+    boundary.update({
+        "verify_receipt_required": True,
+        "verify_receipt_hash_verified": True,
+        "binding_is_pre_ratification": True,
+        "reliance_allowed": False,
+        "ratification_not_performed": True
+    })
+
+    out = {
+        "id": "aletheos_cli_bind_receipt_001",
+        "artifact_kind": "cli_receipt",
+        "status": "pre_ratification",
+        "created_at": utc_now(),
+        "lane": registry.get("lane", "b32k.aletheos.bound.v1"),
+        "input": {
+            "token": token,
+            "raw_command": f"{token} {verify_path}",
+            "verify_receipt_path": str(verify_path),
+            "verify_receipt_sha256": verify_obj.get("receipt_sha256"),
+            "marked_payload": verify_obj.get("input", {}).get("marked_payload", {}),
+            "mark_receipt_sha256": verify_obj.get("input", {}).get("mark_receipt_sha256"),
+            "admit_receipt_sha256": verify_obj.get("input", {}).get("admit_receipt_sha256"),
+            "return_receipt_sha256": verify_obj.get("input", {}).get("return_receipt_sha256"),
+            "receipt_sha256_checked": verify_obj.get("input", {}).get("receipt_sha256_checked")
+        },
+        "binding": {
+            "binding_lane": bind_lane,
+            "binding_schema": bind_schema,
+            "binding_address": bind_address,
+            "binding_status": "pre_ratification_bound",
+            "b32k_index_assigned_here": False,
+            "binding_authority": "aletheos_cli_python_hosted_pre_ratification"
+        },
+        "operator": operator_view(operator),
+        "semantics": {
+            "claim_advanced": True,
+            "positive_authority": False,
+            "state_before": "VERIFIED",
+            "state_after": "BOUND",
+            "final_state": "BOUND",
+            "result": "bound",
+            "receipt_kind": "binding_receipt",
+            "trust_bearing": False,
+            "reliance_allowed": False,
+            "verified_before_binding": True,
+            "admitted_operator_path": "MARK -> ADMIT -> RETURN -> RECEIPT -> VERIFY -> BIND"
+        },
+        "boundary": boundary,
+        "keeper": "BIND attaches the verified trace to a lane without pretending reliance has been granted."
+    }
+    out["receipt_sha256"] = digest_obj(out)
+    return out
+
 def print_receipt_summary(receipt: Dict[str, Any]) -> None:
     sem = receipt.get("semantics", {})
     op = receipt.get("operator", {})
@@ -455,6 +525,9 @@ def main() -> int:
     parser.add_argument("command", nargs="?", default="help")
     parser.add_argument("args", nargs="*")
     parser.add_argument("--json", action="store_true", help="emit compact JSON only")
+    parser.add_argument("--bind-lane", default="b32k.aletheos.bound.v1")
+    parser.add_argument("--bind-schema", default="aletheos.cli.bound_trace.v1")
+    parser.add_argument("--bind-address", default="unassigned_pre_ratification")
     parsed = parser.parse_args()
 
     if parsed.command in ("help", "-h", "--help"):
@@ -467,7 +540,8 @@ def main() -> int:
         print("  python scripts/aletheos_cli.py ADMIT ~/tmp/mark.json --json > ~/tmp/admit.json")
         print("  python scripts/aletheos_cli.py RETURN ~/tmp/admit.json --json > ~/tmp/return.json")
         print("  python scripts/aletheos_cli.py RECEIPT ~/tmp/return.json --json > ~/tmp/receipt.json")
-        print("  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json")
+        print("  python scripts/aletheos_cli.py VERIFY ~/tmp/receipt.json --json > ~/tmp/verify.json")
+        print("  python scripts/aletheos_cli.py BIND ~/tmp/verify.json")
         print("")
         print("Commands:")
         print("  :       NOOP, lawful stillness, no claim advanced")
@@ -476,6 +550,7 @@ def main() -> int:
         print("  RETURN   return a valid ADMIT receipt from witness passage")
         print("  RECEIPT  record a valid RETURN receipt as returned trace body")
         print("  VERIFY   verify a valid RECEIPT chain without granting reliance")
+        print("  BIND     bind a valid VERIFY receipt to a pre-ratification lane")
         print("  help     show this help")
         print("")
         print("Boundary:")
@@ -551,6 +626,28 @@ def main() -> int:
             return 2
         receipt = verify_receipt(parsed.command, Path(parsed.args[0]).expanduser(), registry, operator)
         ok = receipt.get("semantics", {}).get("result") == "verified"
+        if parsed.json and ok:
+            print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
+        else:
+            print_receipt_summary(receipt)
+        return 0 if ok else 2
+
+
+    if parsed.command == "BIND" and operator:
+        if len(parsed.args) != 1:
+            receipt = error_receipt(parsed.command, "bind_requires_one_verify_receipt_file", registry)
+            print_receipt_summary(receipt)
+            return 2
+        receipt = bind_receipt(
+            parsed.command,
+            Path(parsed.args[0]).expanduser(),
+            registry,
+            operator,
+            parsed.bind_lane,
+            parsed.bind_schema,
+            parsed.bind_address
+        )
+        ok = receipt.get("semantics", {}).get("result") == "bound"
         if parsed.json and ok:
             print(json.dumps(receipt, sort_keys=True, separators=(",", ":")))
         else:
