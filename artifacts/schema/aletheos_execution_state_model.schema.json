@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "aletheos_root_index": {
+      "type": "integer"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "created": {
+      "type": "string"
+    },
+    "document_path": {
+      "type": "string"
+    },
+    "failure_state": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "keeper_lines": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "normal_instruction_route": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "normal_positive_route": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "null_well_index": {
+      "type": "integer"
+    },
+    "positive_reliance_state": {
+      "type": "string"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "ratification_status": {
+      "type": "string"
+    },
+    "revocation_state": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "root_lane": {
+      "type": "string"
+    },
+    "states": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "status": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "transitions": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "updated": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "title",
+    "status",
+    "ratification_status",
+    "role",
+    "states",
+    "transitions",
+    "normal_positive_route"
+  ],
+  "title": "Aletheos Execution State Model Schema",
+  "type": "object"
+}

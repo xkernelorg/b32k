@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "aletheos_root_index": {
+      "type": "integer"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "created": {
+      "type": "string"
+    },
+    "document_path": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "keeper_lines": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "null_well_index": {
+      "type": "integer"
+    },
+    "operators": {
+      "type": "object"
+    },
+    "primary_receipt_law": {
+      "const": "Q = M M^T"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "ratification_status": {
+      "type": "string"
+    },
+    "reference_identity": {
+      "type": "object"
+    },
+    "role": {
+      "type": "string"
+    },
+    "root_lane": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "title",
+    "status",
+    "ratification_status",
+    "role",
+    "operators",
+    "primary_receipt_law"
+  ],
+  "title": "Aletheos Operator Profile Schema",
+  "type": "object"
+}

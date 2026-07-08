@@ -52,6 +52,48 @@ if canon:
 else:
     bad("missing Aletheos canonical index")
 
+op = objs.get("artifacts/json/aletheos_operator_profile_001.json")
+if op:
+    if op.get("primary_receipt_law") != "Q = M M^T":
+        bad("operator profile primary receipt law mismatch")
+    ops = op.get("operators", {})
+    for key in ["A", "M", "M_transpose", "Q"]:
+        if key not in ops:
+            bad(f"operator profile missing operator {key}")
+
+instr = objs.get("artifacts/json/aletheos_instruction_grammar_001.json")
+if instr:
+    ops = [x.get("opcode") for x in instr.get("instructions", [])]
+    required = ["NOOP", "MARK", "ADMIT", "RETURN", "RECEIPT", "REJECT", "BIND", "VERIFY"]
+    for x in required:
+        if x not in ops:
+            bad(f"instruction grammar missing {x}")
+    if instr.get("failure_instruction") != "REJECT":
+        bad("instruction grammar failure_instruction must be REJECT")
+    if instr.get("rules", {}).get("no_q_no_trust") is not True:
+        bad("instruction grammar must assert no_q_no_trust")
+
+state = objs.get("artifacts/json/aletheos_execution_state_model_001.json")
+if state:
+    states = [x.get("state") for x in state.get("states", [])]
+    required_states = ["NULL", "MARKED", "ADMITTED", "RETURNED", "RECEIPTED", "BOUND", "VERIFIED", "REJECTED", "REVOKED"]
+    for x in required_states:
+        if x not in states:
+            bad(f"execution state model missing {x}")
+    if state.get("positive_reliance_state") != "VERIFIED":
+        bad("positive reliance state must be VERIFIED")
+    if state.get("rules", {}).get("no_q_no_trust") is not True:
+        bad("execution state model must assert no_q_no_trust")
+
+apparatus = objs.get("artifacts/json/aletheos_minimal_apparatus_001.json")
+if apparatus:
+    order = apparatus.get("apparatus_order", [])
+    required_order = ["null_well", "boundary", "state", "logic", "language", "sequence", "memory", "input_output", "receipt", "body"]
+    if order != required_order:
+        bad("minimal apparatus order mismatch")
+    if apparatus.get("boundary", {}).get("apparatus_order_is_b32k_index_assignment") is not False:
+        bad("minimal apparatus must not treat apparatus order as B32K index assignment")
+
 reg = objs.get("artifacts/json/structural_key_registry_001.json")
 allowed = set()
 index_by_key = {}

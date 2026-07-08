@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "aletheos_root_index": {
+      "type": "integer"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "created": {
+      "type": "string"
+    },
+    "document_path": {
+      "type": "string"
+    },
+    "failure_instruction": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "instruction_count": {
+      "type": "integer"
+    },
+    "instructions": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "keeper_lines": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "null_well_index": {
+      "type": "integer"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "ratification_status": {
+      "type": "string"
+    },
+    "required_trust_sequence": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "role": {
+      "type": "string"
+    },
+    "root_lane": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "title",
+    "status",
+    "ratification_status",
+    "role",
+    "instructions",
+    "required_trust_sequence",
+    "failure_instruction"
+  ],
+  "title": "Aletheos Instruction Grammar Schema",
+  "type": "object"
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "aletheos_root_index": {
+      "type": "integer"
+    },
+    "apparatus_order": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "boundary": {
+      "type": "object"
+    },
+    "created": {
+      "type": "string"
+    },
+    "document_path": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "keeper_lines": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "minimal_apparatus_requirements": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "null_well_index": {
+      "type": "integer"
+    },
+    "operator_profile": {
+      "type": "object"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "ratification_status": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "root_lane": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "thesis": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "title": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "title",
+    "status",
+    "ratification_status",
+    "role",
+    "minimal_apparatus_requirements",
+    "apparatus_order"
+  ],
+  "title": "Aletheos Minimal Apparatus Schema",
+  "type": "object"
+}
