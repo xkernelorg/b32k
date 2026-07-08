@@ -1,0 +1,110 @@
+{
+  "aletheos_root_index": 1,
+  "boundary": {
+    "b32k_index_assignment": false,
+    "commercial_reliance_allowed": false,
+    "doctrine_engine": false,
+    "full_programming_language": false,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "sovereign_reliance_allowed": false
+  },
+  "created": "2026-07-08T14:19:07",
+  "document_path": "docs/spec/aletheos_instruction_grammar_001.md",
+  "failure_instruction": "REJECT",
+  "id": "aletheos_instruction_grammar_001",
+  "instruction_count": 8,
+  "instructions": [
+    {
+      "fail_mode": "safe",
+      "meaning": "Do not advance claim state.",
+      "opcode": "NOOP",
+      "operator_role": "null-safe idle",
+      "trust_effect": "none"
+    },
+    {
+      "fail_mode": "reject if no boundary exists",
+      "meaning": "Create or recognize a first positive symbol after the Null Well.",
+      "opcode": "MARK",
+      "operator_role": "first mark",
+      "trust_effect": "symbol exists but is not yet trusted"
+    },
+    {
+      "fail_mode": "reject if schema, lane, or boundary is invalid",
+      "meaning": "Enter a relation, claim, field, or symbol into the admission operator M.",
+      "opcode": "ADMIT",
+      "operator_role": "M",
+      "trust_effect": "candidate enters witness register"
+    },
+    {
+      "fail_mode": "reject if return relation is undefined",
+      "meaning": "Apply the return relation M^T for comparison, verification, or closure.",
+      "opcode": "RETURN",
+      "operator_role": "M^T",
+      "trust_effect": "candidate becomes testable against source side"
+    },
+    {
+      "fail_mode": "reject if Q cannot be reproduced",
+      "meaning": "Record or compute the receipt operator Q after admission and return.",
+      "opcode": "RECEIPT",
+      "operator_role": "Q = M M^T",
+      "trust_effect": "candidate may become accountable witness"
+    },
+    {
+      "fail_mode": "safe",
+      "meaning": "Fail closed and record why the object did not become admitted witness.",
+      "opcode": "REJECT",
+      "operator_role": "boundary guard",
+      "trust_effect": "negative receipt or refusal state"
+    },
+    {
+      "fail_mode": "reject index 0, unknown lane, or drift",
+      "meaning": "Bind a nonzero B32K address to a declared Aletheos lane under policy.",
+      "opcode": "BIND",
+      "operator_role": "binding",
+      "trust_effect": "address becomes lane-scoped candidate binding"
+    },
+    {
+      "fail_mode": "reject if any required check fails",
+      "meaning": "Check canonical payload, lane, schema, index, receipt, authority, and revocation state.",
+      "opcode": "VERIFY",
+      "operator_role": "verification",
+      "trust_effect": "subscriber may rely if policy permits"
+    }
+  ],
+  "keeper_lines": [
+    "Boundary gives the machine an inside.",
+    "Language gives the inside a callable action.",
+    "Receipt proves the call returned.",
+    "Presence is not trust.",
+    "No Q, no trust."
+  ],
+  "null_well_index": 0,
+  "operator_profile": {
+    "A": "local motion",
+    "M": "admission",
+    "M^T": "return",
+    "Q": "receipt",
+    "primary_receipt_law": "Q = M M^T"
+  },
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "required_trust_sequence": [
+    "MARK",
+    "ADMIT",
+    "RETURN",
+    "RECEIPT",
+    "VERIFY"
+  ],
+  "role": "Defines the first callable instruction grammar for the Aletheos minimal apparatus.",
+  "root_lane": "b32k.aletheos.bound.v1",
+  "rules": {
+    "index_0_positive_claim_rejected": true,
+    "instructions_fail_closed": true,
+    "no_q_no_trust": true,
+    "presence_is_trust": false,
+    "unknown_opcode_rejected": true
+  },
+  "status": "pre_ratification_technical_profile",
+  "title": "Aletheos Instruction Grammar"
+}
