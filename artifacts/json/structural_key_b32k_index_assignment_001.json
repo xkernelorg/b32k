@@ -1,0 +1,122 @@
+{
+  "assignment_count": 11,
+  "assignment_lane": "b32k.structural_key.v1",
+  "assignment_method": "sha256(lane:key) mod 32768 with linear probing for collisions",
+  "assignments": [
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 31830,
+      "collision_probe_count": 0,
+      "key": "BOUNDARY_ACTION",
+      "sha256": "dd0dfc5656fb14f1f2b1a5f2c9684a425108be873b0071600275d59b43775b0f",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 288,
+      "collision_probe_count": 0,
+      "key": "UNASSIGNED_SUBSTRATE",
+      "sha256": "9ed10120d628994a0b097f31ea644bd3c6b6be45fdcde21f5516e5eaf988df32",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 3740,
+      "collision_probe_count": 0,
+      "key": "FIRST_WITNESS_RELATION",
+      "sha256": "fc260e9cd612966461545757fdfa238f2dc2051cdad3f2ba2f5a0c9a5d726ba8",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 8865,
+      "collision_probe_count": 0,
+      "key": "FIRST_RECEIPT",
+      "sha256": "7879a2a1ce14ac3a12c3f05472c3537e3457491f8cbda28d3c11b1d0344463d2",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 22622,
+      "collision_probe_count": 0,
+      "key": "ADMITTED_DISTINCTION",
+      "sha256": "f2e2d85ed6a8c30b0f931e4268dc1edf787032cfef37b939d3851b1a6aa54221",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 26273,
+      "collision_probe_count": 0,
+      "key": "FIRST_GRAMMAR",
+      "sha256": "abfe66a1ccc35d74af6971f936fab3dc9f3e2fa8900bf50db6b8ee790f82270b",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 11595,
+      "collision_probe_count": 0,
+      "key": "FIRST_CHAMBER",
+      "sha256": "b70a2d4bb9f9f59a64959bb81c6e56ecd5001a5754c370f03f32e2d5ccd84dd2",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 28466,
+      "collision_probe_count": 0,
+      "key": "FIELD_OF_EMBODIED_GRAMMAR",
+      "sha256": "044c6f32cccc37f31b68842b73986c68e6697a67858cf9e6f1ff794d9267760c",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 10347,
+      "collision_probe_count": 0,
+      "key": "RECURSIVE_MEMORY",
+      "sha256": "f9d4a86b62efece225a89622cea94a6d36c61f295eae7363f140a7432d9589b6",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 4665,
+      "collision_probe_count": 0,
+      "key": "RECURRENCE_CLOCK",
+      "sha256": "d5b312394f9df3435667debc81479e98c87300727c0fb76c611185b97f65f735",
+      "status": "provisional"
+    },
+    {
+      "assignment_lane": "b32k.structural_key.v1",
+      "assignment_method": "sha256(lane:key) mod 32768 with collision probing",
+      "b32k_symbol_index": 7788,
+      "collision_probe_count": 0,
+      "key": "MOVING_WITNESS",
+      "sha256": "56cf9e6cb8cebdcdb538894c438c69a971eecd5600579cc6ee839afc36eef6be",
+      "status": "provisional"
+    }
+  ],
+  "b32k_index_range": [
+    0,
+    32767
+  ],
+  "boundary": {
+    "doctrine_engine": false,
+    "final_semantic_law": false,
+    "hidden_code_claim": false,
+    "physics_claim": false
+  },
+  "collision_count": 0,
+  "created": "2026-07-08T13:05:09",
+  "id": "structural_key_b32k_index_assignment_001",
+  "project": "b32k",
+  "role": "deterministic provisional B32K 15-bit index assignment for structural keys",
+  "status": "provisional_assignment_recorded"
+}

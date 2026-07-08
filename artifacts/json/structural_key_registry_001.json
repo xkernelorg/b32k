@@ -1,4 +1,10 @@
 {
+  "b32k_assignment_boundary": {
+    "assignment_is_final_semantics": false,
+    "assignment_is_symbolic_addressing": true,
+    "lane": "b32k.structural_key.v1",
+    "method": "deterministic provisional hash assignment"
+  },
   "boundary": {
     "doctrine_engine": false,
     "hidden_code_claim": false,
@@ -9,77 +15,99 @@
   "id": "structural_key_registry_001",
   "keys": [
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 31830,
       "definition": "A first action that opens or marks a domain.",
       "keeper_line": "Creation begins as a boundary action.",
       "key": "BOUNDARY_ACTION",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 288,
       "definition": "A created inside before stable internal grammar.",
       "keeper_line": "The deep is the first unassigned inside.",
       "key": "UNASSIGNED_SUBSTRATE",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 3740,
       "definition": "The first relation by which difference becomes noticed.",
       "keeper_line": "The thinkable other noticed the difference.",
       "key": "FIRST_WITNESS_RELATION",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 8865,
       "definition": "A readable trace of difference.",
       "keeper_line": "Light is the first receipt.",
       "key": "FIRST_RECEIPT",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 22622,
       "definition": "A record judged stable enough to continue as distinction.",
       "keeper_line": "The record was considered, admitted, and allowed to continue.",
       "key": "ADMITTED_DISTINCTION",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 26273,
       "definition": "The first assignment of names, tokens, and cycle.",
       "keeper_line": "The admitted difference received a grammar.",
       "key": "FIRST_GRAMMAR",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 11595,
       "definition": "The first architecture that separates regions.",
       "keeper_line": "Heaven is the first chamber.",
       "key": "FIRST_CHAMBER",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 28466,
       "definition": "A surface or field where form can acquire body.",
       "keeper_line": "Earth is the first field where grammar can acquire body.",
       "key": "FIELD_OF_EMBODIED_GRAMMAR",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 10347,
       "definition": "Form carrying continuation after its kind.",
       "keeper_line": "Seed is the first recursive memory.",
       "key": "RECURSIVE_MEMORY",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 4665,
       "definition": "Readable recurrence that orders signs, seasons, days, and years.",
       "keeper_line": "The lights are the first clock.",
       "key": "RECURRENCE_CLOCK",
       "status": "draft"
     },
     {
-      "b32k_symbol_index": null,
+      "b32k_assignment_lane": "b32k.structural_key.v1",
+      "b32k_assignment_status": "provisional_hash_assignment",
+      "b32k_symbol_index": 7788,
       "definition": "Living motion admitted into the chamber.",
       "keeper_line": "Life is the first moving witness.",
       "key": "MOVING_WITNESS",
@@ -88,5 +116,6 @@
   ],
   "project": "b32k",
   "role": "stable key registry for B32K Concordance Ledger structural extraction",
-  "status": "draft_registry"
+  "status": "draft_registry_with_provisional_b32k_indices",
+  "updated": "2026-07-08T13:05:09"
 }
