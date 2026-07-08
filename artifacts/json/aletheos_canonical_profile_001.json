@@ -1,0 +1,103 @@
+{
+  "aletheos_binding_profile_is_cooling": true,
+  "aletheos_root_index": 1,
+  "b32k_public_scaffold_is_live": true,
+  "boundary": {
+    "claims_all_b32k": false,
+    "doctrine_engine": false,
+    "hidden_code_claim": false,
+    "physics_claim": false,
+    "ratified": false
+  },
+  "commercial_reliance_allowed": false,
+  "components": [
+    {
+      "id": "b32k_aletheos_canonical_index_001",
+      "path": "artifacts/json/b32k_aletheos_canonical_index_001.json",
+      "role": "Root constitution: 0 NULL_WELL and 1 ALETHEOS_ROOT."
+    },
+    {
+      "id": "aletheos_minimal_apparatus_001",
+      "path": "artifacts/json/aletheos_minimal_apparatus_001.json",
+      "role": "Boundary before body apparatus grammar."
+    },
+    {
+      "id": "aletheos_operator_profile_001",
+      "path": "artifacts/json/aletheos_operator_profile_001.json",
+      "role": "A, M, M^T, Q operator discipline."
+    },
+    {
+      "id": "aletheos_instruction_grammar_001",
+      "path": "artifacts/json/aletheos_instruction_grammar_001.json",
+      "role": "Callable instruction grammar."
+    },
+    {
+      "id": "aletheos_execution_state_model_001",
+      "path": "artifacts/json/aletheos_execution_state_model_001.json",
+      "role": "Object state model from NULL to VERIFIED or failure."
+    },
+    {
+      "id": "aletheos_ratification_checklist_001",
+      "path": "artifacts/json/aletheos_ratification_checklist_001.json",
+      "role": "Checklist for moving from pre-ratification to ratified."
+    },
+    {
+      "id": "b32k_aletheos_sovereign_trust_registry_agreement_003",
+      "path": "artifacts/json/b32k_aletheos_sovereign_trust_registry_agreement_003.json",
+      "role": "Conceptual contract scaffold."
+    }
+  ],
+  "created": "2026-07-08T14:23:37",
+  "document_path": "docs/spec/aletheos_canonical_profile_001.md",
+  "execution_states": [
+    "NULL",
+    "MARKED",
+    "ADMITTED",
+    "RETURNED",
+    "RECEIPTED",
+    "BOUND",
+    "VERIFIED",
+    "REJECTED",
+    "REVOKED"
+  ],
+  "id": "aletheos_canonical_profile_001",
+  "instruction_set": [
+    "NOOP",
+    "MARK",
+    "ADMIT",
+    "RETURN",
+    "RECEIPT",
+    "REJECT",
+    "BIND",
+    "VERIFY"
+  ],
+  "keeper_lines": [
+    "The scaffold is live.",
+    "The binding is cooling.",
+    "The parts exist.",
+    "This profile names the machine.",
+    "Ratification is the moment the address becomes promise."
+  ],
+  "minimal_apparatus_order": [
+    "boundary",
+    "state",
+    "logic",
+    "language",
+    "sequence",
+    "memory",
+    "input_output",
+    "receipt",
+    "body"
+  ],
+  "null_well_index": 0,
+  "primary_receipt_law": "Q = M M^T",
+  "project": "b32k",
+  "ratification_status": "pre_ratification",
+  "ratified": false,
+  "reference_identity": "Q = M M^T = A^3 + 2A^2 + 2I",
+  "role": "Top-level orientation profile naming the current Aletheos machine.",
+  "root_lane": "b32k.aletheos.bound.v1",
+  "sovereign_reliance_allowed": false,
+  "status": "pre_ratification_canonical_profile",
+  "title": "Aletheos Canonical Profile"
+}

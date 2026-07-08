@@ -1,6 +1,13 @@
 {
-  "artifact_count": 16,
+  "artifact_count": 17,
   "artifacts": [
+    {
+      "id": "aletheos_canonical_profile_001",
+      "path": "artifacts/json/aletheos_canonical_profile_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Top-level orientation profile naming the current Aletheos machine.",
+      "status": "pre_ratification_canonical_profile"
+    },
     {
       "id": "aletheos_execution_state_model_001",
       "path": "artifacts/json/aletheos_execution_state_model_001.json",
@@ -118,5 +125,5 @@
   "project": "b32k",
   "ratification_status": "pre_ratification",
   "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:22:45"
+  "updated": "2026-07-08T14:23:37"
 }
