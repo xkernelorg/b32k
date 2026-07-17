@@ -55,6 +55,15 @@ def registered_sources(home=None):
             ),
             branch="main",
         ),
+        "xitadel": ComponentSource(
+            component="xitadel",
+            repository_url="git@github.com:xkernelorg/xaether-v2.git",
+            local_path=(
+                root
+                / "dev/cori/research/computing/xaether"
+            ),
+            branch="pq",
+        ),
     }
 
 
@@ -102,10 +111,12 @@ def inspect_component_update(
         )
 
     origin = _git(root, ["remote", "get-url", "origin"])
-    accepted_origins = {
-        source.repository_url,
-        "https://github.com/xkernelorg/xkernel.git",
-    }
+    accepted_origins = {source.repository_url}
+    if source.repository_url.startswith("git@github.com:"):
+        repository_path = source.repository_url.split(":", 1)[1]
+        accepted_origins.add(
+            f"https://github.com/{repository_path}"
+        )
     if origin not in accepted_origins:
         raise B32KUpdateInspectionError(
             "component origin does not match its registration"

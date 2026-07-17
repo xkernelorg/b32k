@@ -151,3 +151,9 @@ Runtime helpers are available through `b32k.packet`.
 ## Read-only component update discovery
 
 B32K 0.7.0 registers the local xkernel source and can refresh its remote Git metadata to report whether an update is available. Discovery performs no checkout, merge, installation, authority change, or RookOS state mutation. RookOS remains responsible for deciding whether a discovered revision may be staged or admitted.
+
+### Xitadel technology discovery
+
+B32K 0.8.0 registers the Xaether `pq` source as the `xitadel` component. This source represents the Xitadel custody profile, verifier, and action implementation—not the immutable contents of any Xitadel. Update discovery may fetch Git metadata but cannot rewrite custody, check out a revision, merge, install, or confer authority.
+
+The first registered immutable-custody implementation is Xaether commit `951dfcc42b33600bdc09de11ceaf2a5d5583905d`.

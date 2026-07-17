@@ -27,6 +27,32 @@ class UpdateInspectorTests(unittest.TestCase):
             ),
         )
 
+    def test_xitadel_registration_pins_xaether_branch(self):
+        source = registered_sources(Path("/home/test"))["xitadel"]
+        self.assertEqual(source.component, "xitadel")
+        self.assertEqual(source.branch, "pq")
+        self.assertEqual(
+            source.repository_url,
+            "git@github.com:xkernelorg/xaether-v2.git",
+        )
+        self.assertEqual(
+            source.local_path,
+            Path(
+                "/home/test/dev/cori/research/computing/xaether"
+            ),
+        )
+
+    def test_xitadel_and_kernel_are_separate_sources(self):
+        sources = registered_sources(Path("/home/test"))
+        self.assertNotEqual(
+            sources["kernel"].repository_url,
+            sources["xitadel"].repository_url,
+        )
+        self.assertNotEqual(
+            sources["kernel"].local_path,
+            sources["xitadel"].local_path,
+        )
+
     def test_unknown_component_fails_closed(self):
         with self.assertRaises(B32KUpdateInspectionError):
             inspect_component_update("unknown", fetch=False)
