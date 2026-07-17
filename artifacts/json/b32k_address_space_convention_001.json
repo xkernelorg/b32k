@@ -1,0 +1,61 @@
+{
+  "$schema": "../schema/b32k_address_space_convention.schema.json",
+  "created": "2026-07-17T17:06:41.263362+00:00",
+  "finite_catalogue": {
+    "catalogue_address_maximum": 32768,
+    "catalogue_address_minimum": 1,
+    "registered_index_maximum": 32767,
+    "registered_index_minimum": 0,
+    "registered_position_count": 32768
+  },
+  "id": "b32k_address_space_convention_001",
+  "lane_context_model": {
+    "countably_many_lane_or_context_declarations_may_descend_from_a_registered_position": true,
+    "finite_catalogue_exhausts_entry_points_not_objects": true,
+    "lanes_or_contexts_may_be_unbounded": true,
+    "registered_positions_are_entry_points": true
+  },
+  "nonclaims": {
+    "addressability_confers_authority": false,
+    "entry_point_exhausts_descendant_context": false,
+    "organization_root_confers_constitutional_authority": false,
+    "unsigned_addressability_confers_trust": false
+  },
+  "profile_dependency": {
+    "artifact_id": "b32k_indexing_profile_002",
+    "profile_id": "b32k.indexing.current-repo.002",
+    "profile_sha256": "341ddac255e7390118e0485be739c717fee76351361323329eb0e86f5cc525c3"
+  },
+  "project": "b32k",
+  "schema_version": "1.0.0",
+  "status": "derived_current_repository_contract",
+  "successor_convention": {
+    "actual_null": {
+      "catalogue_address": null,
+      "registered_index": null,
+      "registry_status": "outside_registry"
+    },
+    "b32k_bootloader": {
+      "catalogue_address": 2,
+      "key": "B32K_BOOTLOADER",
+      "registered_index": 1
+    },
+    "ordinary_allocatable_positions": {
+      "catalogue_address_maximum": 32768,
+      "catalogue_address_minimum": 4,
+      "position_count": 32765,
+      "registered_index_maximum": 32767,
+      "registered_index_minimum": 3
+    },
+    "organization_root": {
+      "catalogue_address": 3,
+      "key": "ORGANIZATION_ROOT",
+      "registered_index": 2
+    },
+    "registered_null": {
+      "catalogue_address": 1,
+      "key": "NULL_WELL",
+      "registered_index": 0
+    }
+  }
+}

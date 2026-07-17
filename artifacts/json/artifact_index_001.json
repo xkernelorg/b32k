@@ -1,5 +1,5 @@
 {
-  "artifact_count": 22,
+  "artifact_count": 23,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -154,11 +154,18 @@
       "ratification_status": "pre_ratification",
       "role": "Global boot sequence separating NULL_WELL, the B32K bootloader, and user address space.",
       "status": "derived_current_repository_contract"
+    },
+    {
+      "id": "b32k_address_space_convention_001",
+      "path": "artifacts/json/b32k_address_space_convention_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "finite entry point and unbounded lane/context convention",
+      "status": "derived_current_repository_contract"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
   "ratification_status": "pre_ratification",
-  "status": "artifact_index_refreshed_with_b32k_indexing_profile_002",
-  "updated": "2026-07-17T15:30:19.973760+00:00"
+  "status": "artifact_index_refreshed_with_b32k_address_space_convention",
+  "updated": "2026-07-17T17:06:41.263362+00:00"
 }

@@ -94,3 +94,8 @@ Catalogue address 32768 maps to the maximum fifteen-bit wire index,
 The machine-readable contract is
 `artifacts/json/b32k_indexing_profile_001.json`. The explanatory
 profile is `docs/spec/b32k_indexing_profile_001.md`.
+
+
+## Address Space Convention 001
+
+Package `0.3.0` records the finite-entry-point convention: actual null is outside the registry; catalogue 1/index 0 is `NULL_WELL`; catalogue 2/index 1 is `B32K_BOOTLOADER`; catalogue 3/index 2 is `ORGANIZATION_ROOT`; catalogue 4..32768 are remaining typed entry points into lanes or contexts.

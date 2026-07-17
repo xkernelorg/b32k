@@ -1,0 +1,24 @@
+{
+  "$id": "b32k_address_space_convention.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "const": "b32k_address_space_convention_001"
+    },
+    "project": {
+      "const": "b32k"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "schema_version",
+    "profile_dependency",
+    "finite_catalogue",
+    "successor_convention",
+    "lane_context_model",
+    "nonclaims"
+  ],
+  "type": "object"
+}
