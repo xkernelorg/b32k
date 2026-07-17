@@ -7,6 +7,56 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 
+CATALOGUE_ADDRESS_MIN = 1
+CATALOGUE_ADDRESS_MAX = 32768
+WIRE_INDEX_MIN = 0
+WIRE_INDEX_MAX = 32767
+WIRE_INDEX_BITS = 15
+
+
+def catalogue_address_to_wire_index(
+    catalogue_address: int,
+) -> int:
+    """
+    Convert a registered one-based catalogue address to its
+    zero-based fifteen-bit wire index.
+
+    Catalogue address 1 is the registered null boundary and maps
+    to wire index 0. Catalogue address 0 is outside the registry.
+    """
+    if (
+        isinstance(catalogue_address, bool)
+        or not isinstance(catalogue_address, int)
+        or catalogue_address < CATALOGUE_ADDRESS_MIN
+        or catalogue_address > CATALOGUE_ADDRESS_MAX
+    ):
+        raise ValueError(
+            "catalogue_address must be an integer from 1 to 32768"
+        )
+
+    return catalogue_address - 1
+
+
+def wire_index_to_catalogue_address(
+    wire_index: int,
+) -> int:
+    """
+    Convert a zero-based fifteen-bit wire index to its registered
+    one-based catalogue address.
+    """
+    if (
+        isinstance(wire_index, bool)
+        or not isinstance(wire_index, int)
+        or wire_index < WIRE_INDEX_MIN
+        or wire_index > WIRE_INDEX_MAX
+    ):
+        raise ValueError(
+            "wire_index must be an integer from 0 to 32767"
+        )
+
+    return wire_index + 1
+
+
 def _symbols_from_alphabet_rows(rows: list) -> List[str]:
     """
     Compile the 32768-symbol alphabet from canonical b32k.json alphabet.rows.

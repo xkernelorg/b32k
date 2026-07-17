@@ -67,3 +67,28 @@ Reports go in:
     reports/
 
 The filesystem is the first ledger.
+
+## Indexing contract
+
+The current repository distinguishes three coordinates:
+
+- catalogue addresses are one-based, from 1 through 32768;
+- wire indices are zero-based, from 0 through 32767;
+- lane indices are zero-based and scoped to a named lane.
+
+The exact conversion is:
+
+    wire_index = catalogue_address - 1
+    catalogue_address = wire_index + 1
+
+Catalogue address 0 is outside the registry. Catalogue address 1 maps
+to wire and lane index 0. In the Aletheos-bound lane this is the
+registered `NULL_WELL` boundary and carries no positive authority.
+
+Catalogue address 2 maps to Aletheos lane index 1, `ALETHEOS_ROOT`.
+Catalogue address 32768 maps to the maximum fifteen-bit wire index,
+32767.
+
+The machine-readable contract is
+`artifacts/json/b32k_indexing_profile_001.json`. The explanatory
+profile is `docs/spec/b32k_indexing_profile_001.md`.

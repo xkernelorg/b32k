@@ -1,5 +1,5 @@
 {
-  "artifact_count": 20,
+  "artifact_count": 21,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -140,11 +140,18 @@
       "ratification_status": "pre_ratification",
       "role": "stable key registry for B32K Concordance Ledger structural extraction",
       "status": "pre_ratification_draft_registry_with_genesis_1_day6_keys"
+    },
+    {
+      "id": "b32k_indexing_profile_001",
+      "path": "artifacts/json/b32k_indexing_profile_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Derived contract separating one-based catalogue addresses from zero-based wire and lane indices.",
+      "status": "derived_current_repository_contract"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
   "ratification_status": "pre_ratification",
-  "status": "artifact_index_refreshed_pre_ratification",
-  "updated": "2026-07-08T14:30:08"
+  "status": "artifact_index_refreshed_with_b32k_indexing_profile",
+  "updated": "2026-07-17T14:28:41.946663+00:00"
 }

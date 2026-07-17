@@ -1,0 +1,97 @@
+{
+  "$id": "b32k_indexing_profile.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "aletheos_root": {
+      "properties": {
+        "catalogue_address": {
+          "const": 2
+        },
+        "key": {
+          "const": "ALETHEOS_ROOT"
+        },
+        "lane_index": {
+          "const": 1
+        },
+        "wire_index": {
+          "const": 1
+        }
+      },
+      "required": [
+        "catalogue_address",
+        "wire_index",
+        "lane_index",
+        "key"
+      ],
+      "type": "object"
+    },
+    "coordinates": {
+      "type": "object"
+    },
+    "id": {
+      "const": "b32k_indexing_profile_001"
+    },
+    "invariants": {
+      "type": "object"
+    },
+    "mapping": {
+      "type": "object"
+    },
+    "nonclaims": {
+      "type": "object"
+    },
+    "profile_id": {
+      "const": "b32k.indexing.current-repo.001"
+    },
+    "reserved_boundary": {
+      "properties": {
+        "catalogue_address": {
+          "const": 1
+        },
+        "key": {
+          "const": "NULL_WELL"
+        },
+        "lane_index": {
+          "const": 0
+        },
+        "wire_index": {
+          "const": 0
+        }
+      },
+      "required": [
+        "catalogue_address",
+        "wire_index",
+        "lane_index",
+        "key"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "source": {
+      "type": "object"
+    },
+    "status": {
+      "const": "derived_current_repository_contract"
+    }
+  },
+  "required": [
+    "id",
+    "schema_version",
+    "profile_id",
+    "status",
+    "coordinates",
+    "mapping",
+    "reserved_boundary",
+    "aletheos_root",
+    "invariants",
+    "nonclaims"
+  ],
+  "title": "B32K Indexing Profile",
+  "type": "object"
+}

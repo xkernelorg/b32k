@@ -32766,3 +32766,4 @@ index,hex,unicode_point,plane,r,c,anchor_domain,anchor_label
 32765,0x7FFD,U+7FFD,31,31,28,A05,Logical/Algorithmic
 32766,0x7FFE,U+7FFE,31,31,29,A06,Biological/Adaptive
 32767,0x7FFF,U+7FFF,31,31,30,A07,Conscious/Observational
+32768,0x8000,U+8000,31,31,31,A08,Eidronic/Reflective

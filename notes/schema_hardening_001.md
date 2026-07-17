@@ -19,7 +19,7 @@ Checks:
     JSON parsing
     artifact ids
     structural key uniqueness
-    B32K index range 0..32767
+    B32K wire/lane index range 0..32767; catalogue address range 1..32768
     Genesis/KJV entry id uniqueness
     known structural keys
     entry index matches registry index
