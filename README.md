@@ -117,3 +117,16 @@ The B32K bootloader verifies and receipts a claimed B32K packet. Its sole extern
 The organization API at `b32k.3.1.2` remains separately authenticated and admitted. Public shell access and API discovery confer neither trust nor authority.
 
 See `artifacts/json/b32k_bootstrap_map_001.json` and `docs/spec/b32k_bootstrap_map_001.md`.
+
+## Orientation CLI
+
+Package `0.5.0` provides the local B32K orientation CLI.
+
+    b32k orient
+    b32k resolve org.api
+    b32k get b32k.2.1
+    b32k mount rookos
+
+Bootstrap Map 002 adds the permanent public organization label at `b32k.3.1`, the public cryptographic disclosure at `b32k.3.1.2`, and the organization API at `b32k.3.2.1`.
+
+The local mount adapter invokes an installed `rookos.cli` entry point. Mounting does not authenticate a principal, grant authority, select a hat, or mutate RookOS by itself.

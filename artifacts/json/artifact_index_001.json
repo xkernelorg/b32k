@@ -1,5 +1,5 @@
 {
-  "artifact_count": 24,
+  "artifact_count": 25,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -167,12 +167,19 @@
       "path": "artifacts/json/b32k_bootstrap_map_001.json",
       "ratification_status": "pre_ratification",
       "role": "Universal bootstrap shell, organization handoff, and organization API descendant-handle map.",
+      "status": "superseded_by_b32k_bootstrap_map_002"
+    },
+    {
+      "id": "b32k_bootstrap_map_002",
+      "path": "artifacts/json/b32k_bootstrap_map_002.json",
+      "ratification_status": "pre_ratification",
+      "role": "Current permanent orientation, public organization surface, execution surface, alias, and local mount map.",
       "status": "derived_current_repository_contract"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
   "ratification_status": "pre_ratification",
-  "status": "artifact_index_refreshed_with_b32k_bootstrap_map",
-  "updated": "2026-07-17T18:14:11.319520+00:00"
+  "status": "artifact_index_refreshed_with_b32k_bootstrap_map_002",
+  "updated": "2026-07-17T18:59:45.887516+00:00"
 }

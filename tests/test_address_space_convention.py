@@ -32,7 +32,7 @@ class B32KAddressSpaceConventionTests(unittest.TestCase):
 
     def test_version_bump(self):
         data = tomllib.loads((ROOT / 'pyproject.toml').read_text())
-        self.assertEqual(data['project']['version'], '0.4.0')
+        self.assertEqual(data['project']['version'], '0.5.0')
 
 if __name__ == '__main__':
     unittest.main()

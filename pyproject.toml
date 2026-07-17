@@ -4,9 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "b32k"
-version = "0.4.0"
+version = "0.5.0"
 description = "Canonical Base32768 (B32K) lattice + codec"
 requires-python = ">=3.10"
+
+[project.scripts]
+b32k = "b32k.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
