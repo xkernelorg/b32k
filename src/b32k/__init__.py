@@ -33,3 +33,11 @@ from b32k.packet import (
     inspect_public_packet,
     public_packet_id,
 )
+
+from .update import (
+    B32KUpdateInspectionError,
+    ComponentSource,
+    ComponentUpdate,
+    inspect_component_update,
+    registered_sources,
+)

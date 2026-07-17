@@ -127,7 +127,7 @@ class B32KBootstrapMapTests(unittest.TestCase):
         project = tomllib.loads(
             (ROOT / "pyproject.toml").read_text()
         )
-        self.assertEqual(project["project"]["version"], "0.6.0")
+        self.assertEqual(project["project"]["version"], "0.7.0")
 
 
 if __name__ == "__main__":

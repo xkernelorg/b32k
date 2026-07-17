@@ -147,3 +147,7 @@ Reusable passwords are never transmitted. Internal labels and protected
 fields may remain inside an opaque payload.
 
 Runtime helpers are available through `b32k.packet`.
+
+## Read-only component update discovery
+
+B32K 0.7.0 registers the local xkernel source and can refresh its remote Git metadata to report whether an update is available. Discovery performs no checkout, merge, installation, authority change, or RookOS state mutation. RookOS remains responsible for deciding whether a discovered revision may be staged or admitted.

@@ -102,7 +102,7 @@ class PublicPacketEnvelopeTests(unittest.TestCase):
         )
         self.assertEqual(
             project["project"]["version"],
-            "0.6.0",
+            "0.7.0",
         )
 
 
