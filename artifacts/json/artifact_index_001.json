@@ -1,5 +1,5 @@
 {
-  "artifact_count": 25,
+  "artifact_count": 26,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -175,11 +175,18 @@
       "ratification_status": "pre_ratification",
       "role": "Current permanent orientation, public organization surface, execution surface, alias, and local mount map.",
       "status": "derived_current_repository_contract"
+    },
+    {
+      "id": "b32k_public_packet_envelope_001",
+      "path": "artifacts/json/b32k_public_packet_envelope_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Permanent non-secret B32K packet recognition and handshake envelope.",
+      "status": "derived_current_repository_contract"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
   "ratification_status": "pre_ratification",
-  "status": "artifact_index_refreshed_with_b32k_bootstrap_map_002",
-  "updated": "2026-07-17T18:59:45.887516+00:00"
+  "status": "artifact_index_refreshed_with_public_packet_envelope",
+  "updated": "2026-07-17T20:58:27.471186+00:00"
 }

@@ -134,3 +134,16 @@ The local mount adapter invokes an installed `rookos.cli` entry point. Mounting 
 ## RookOS Mount Context
 
 `b32k mount rookos` supplies a scoped `b32k.mount.v1` context at `b32k.3.2.1`. The context provides orientation only and confers no authority.
+
+## Public Packet Envelope 001
+
+Package `0.6.0` defines a permanent non-secret B32K packet envelope. A packet
+can declare its B32K version, destination handle, canonical packet identity,
+handshake phase, payload visibility, payload encoding, and extensions.
+
+The default handshake has `hello`, `challenge`, and `proof` phases. It binds
+freshness and packet identities but does not itself authenticate a caller.
+Reusable passwords are never transmitted. Internal labels and protected
+fields may remain inside an opaque payload.
+
+Runtime helpers are available through `b32k.packet`.

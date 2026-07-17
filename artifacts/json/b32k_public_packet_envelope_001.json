@@ -1,0 +1,145 @@
+{
+  "$schema": "../schema/b32k_public_packet_envelope.schema.json",
+  "created": "2026-07-17T20:58:27.471186+00:00",
+  "dependencies": {
+    "bootstrap_map_id": "b32k_bootstrap_map_002",
+    "indexing_profile_id": "b32k.indexing.current-repo.002",
+    "indexing_profile_sha256": "341ddac255e7390118e0485be739c717fee76351361323329eb0e86f5cc525c3",
+    "organization_api_handle": "b32k.3.2.1",
+    "orientation_shell_handle": "b32k.2.1"
+  },
+  "handshake": {
+    "challenge_transcript_fields": [
+      "b32k packet profile",
+      "destination handle",
+      "hello_packet_id",
+      "challenge_packet_id",
+      "client_nonce",
+      "server_nonce",
+      "session_id",
+      "authentication_profile"
+    ],
+    "freshness_required": true,
+    "password_authentication_requires_a_future_vetted_profile": true,
+    "phases": {
+      "challenge": {
+        "meaning": "Server freshness challenge and declaration of supported authentication profiles.",
+        "required": [
+          "profile",
+          "phase",
+          "hello_packet_id",
+          "client_nonce",
+          "server_nonce",
+          "session_id",
+          "authentication_profiles"
+        ]
+      },
+      "hello": {
+        "meaning": "Structurally valid client greeting requesting a challenge.",
+        "required": [
+          "profile",
+          "phase",
+          "client_nonce"
+        ]
+      },
+      "proof": {
+        "meaning": "Opaque proof bound to the complete challenge transcript.",
+        "required": [
+          "profile",
+          "phase",
+          "hello_packet_id",
+          "challenge_packet_id",
+          "client_nonce",
+          "server_nonce",
+          "session_id",
+          "authentication_profile",
+          "proof"
+        ]
+      }
+    },
+    "profile": "b32k.handshake.challenge.001",
+    "proof_semantics_are_profile_defined": true,
+    "reusable_password_transmitted": false
+  },
+  "id": "b32k_public_packet_envelope_001",
+  "nonclaims": {
+    "b32k_addressability_confers_authority": false,
+    "handshake_transmits_a_reusable_password": false,
+    "opaque_payload_is_necessarily_encrypted": false,
+    "packet_id_is_a_signature": false,
+    "packet_id_is_encryption": false,
+    "valid_shape_confers_authentication": false,
+    "valid_shape_confers_authority": false,
+    "valid_shape_confers_trust": false
+  },
+  "project": "b32k",
+  "public_envelope": {
+    "extensions": {
+      "type": "object",
+      "unknown_extensions_must_not_confer_authority": true
+    },
+    "packet_id": {
+      "algorithm": "sha256",
+      "canonicalization": "UTF-8 JSON with sorted keys, no insignificant whitespace, and ensure_ascii disabled",
+      "input": "canonical JSON object containing every envelope field except packet_id",
+      "prefix": "sha256:",
+      "transport_identity_is_separate": true
+    },
+    "payload": {
+      "encoding_values": [
+        "json",
+        "b32k-alphabet",
+        "opaque"
+      ],
+      "encrypted_fields_may_be_carried": true,
+      "encryption_is_not_implied": true,
+      "internal_labels_may_remain_opaque": true,
+      "visibility_values": [
+        "public",
+        "mixed",
+        "opaque"
+      ]
+    },
+    "profile": "b32k.packet.public-envelope.001",
+    "recognition_field": {
+      "name": "b32k",
+      "value": "1"
+    },
+    "required_fields": [
+      "b32k",
+      "profile",
+      "handle",
+      "packet_id",
+      "handshake",
+      "payload",
+      "extensions"
+    ]
+  },
+  "purpose": "Define the permanent non-secret B32K packet recognition and handshake envelope while leaving internal labels and protected field semantics extensible.",
+  "schema_version": "1.0.0",
+  "status": "derived_current_repository_contract",
+  "validation_layers": [
+    {
+      "claim": "packet matches the public B32K envelope",
+      "confers_authentication": false,
+      "confers_authority": false,
+      "layer": "structural"
+    },
+    {
+      "claim": "packet participates in a recognized exchange",
+      "confers_authentication": false,
+      "confers_authority": false,
+      "layer": "handshake"
+    },
+    {
+      "claim": "a vetted profile verified a credential proof",
+      "confers_authority": false,
+      "layer": "authentication"
+    },
+    {
+      "claim": "the mounted organization admitted an action",
+      "confers_authority_only_as_explicitly_recorded": true,
+      "layer": "organizational_admission"
+    }
+  ]
+}

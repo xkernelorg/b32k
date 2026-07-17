@@ -1,0 +1,219 @@
+{
+  "$defs": {
+    "challenge": {
+      "additionalProperties": false,
+      "properties": {
+        "authentication_profiles": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "client_nonce": {
+          "$ref": "#/$defs/token"
+        },
+        "hello_packet_id": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "phase": {
+          "const": "challenge"
+        },
+        "profile": {
+          "const": "b32k.handshake.challenge.001"
+        },
+        "server_nonce": {
+          "$ref": "#/$defs/token"
+        },
+        "session_id": {
+          "$ref": "#/$defs/token"
+        }
+      },
+      "required": [
+        "profile",
+        "phase",
+        "hello_packet_id",
+        "client_nonce",
+        "server_nonce",
+        "session_id",
+        "authentication_profiles"
+      ],
+      "type": "object"
+    },
+    "hello": {
+      "additionalProperties": false,
+      "properties": {
+        "client_nonce": {
+          "$ref": "#/$defs/token"
+        },
+        "phase": {
+          "const": "hello"
+        },
+        "profile": {
+          "const": "b32k.handshake.challenge.001"
+        }
+      },
+      "required": [
+        "profile",
+        "phase",
+        "client_nonce"
+      ],
+      "type": "object"
+    },
+    "proof": {
+      "additionalProperties": false,
+      "properties": {
+        "authentication_profile": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "challenge_packet_id": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "client_nonce": {
+          "$ref": "#/$defs/token"
+        },
+        "hello_packet_id": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "phase": {
+          "const": "proof"
+        },
+        "profile": {
+          "const": "b32k.handshake.challenge.001"
+        },
+        "proof": {
+          "$ref": "#/$defs/token"
+        },
+        "server_nonce": {
+          "$ref": "#/$defs/token"
+        },
+        "session_id": {
+          "$ref": "#/$defs/token"
+        }
+      },
+      "required": [
+        "profile",
+        "phase",
+        "hello_packet_id",
+        "challenge_packet_id",
+        "client_nonce",
+        "server_nonce",
+        "session_id",
+        "authentication_profile",
+        "proof"
+      ],
+      "type": "object"
+    },
+    "token": {
+      "additionalProperties": false,
+      "properties": {
+        "encoding": {
+          "enum": [
+            "base64url",
+            "b32k-alphabet",
+            "opaque"
+          ]
+        },
+        "value": {
+          "minLength": 16,
+          "type": "string"
+        }
+      },
+      "required": [
+        "encoding",
+        "value"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "b32k_packet_envelope_001.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "b32k": {
+      "const": "1"
+    },
+    "extensions": {
+      "type": "object"
+    },
+    "handle": {
+      "pattern": "^b32k\\\\.[1-9][0-9]*(?:\\\\.[1-9][0-9]*)*$",
+      "type": "string"
+    },
+    "handshake": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/hello"
+        },
+        {
+          "$ref": "#/$defs/challenge"
+        },
+        {
+          "$ref": "#/$defs/proof"
+        }
+      ]
+    },
+    "packet_id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "payload": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "encoding": {
+          "enum": [
+            "json",
+            "b32k-alphabet",
+            "opaque"
+          ]
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "mixed",
+            "opaque"
+          ]
+        }
+      },
+      "required": [
+        "visibility",
+        "encoding",
+        "content"
+      ],
+      "type": "object"
+    },
+    "profile": {
+      "const": "b32k.packet.public-envelope.001"
+    }
+  },
+  "required": [
+    "b32k",
+    "profile",
+    "handle",
+    "packet_id",
+    "handshake",
+    "payload",
+    "extensions"
+  ],
+  "title": "B32K Public Packet Envelope 001",
+  "type": "object"
+}

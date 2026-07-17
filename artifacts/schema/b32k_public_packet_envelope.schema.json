@@ -1,0 +1,28 @@
+{
+  "$id": "b32k_public_packet_envelope.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "const": "b32k_public_packet_envelope_001"
+    },
+    "project": {
+      "const": "b32k"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "schema_version",
+    "purpose",
+    "dependencies",
+    "public_envelope",
+    "handshake",
+    "validation_layers",
+    "nonclaims"
+  ],
+  "type": "object"
+}

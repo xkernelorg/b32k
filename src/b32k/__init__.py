@@ -24,3 +24,12 @@ __all__ = [
     "load_b32k_alphabet",
     "wire_index_to_catalogue_address",
 ]
+
+from b32k.packet import (
+    B32KPacketInadmissible,
+    B32KPublicPacket,
+    build_public_hello,
+    canonical_packet_body,
+    inspect_public_packet,
+    public_packet_id,
+)
