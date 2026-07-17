@@ -1,0 +1,79 @@
+{
+  "$schema": "../schema/b32k_indexing_profile_002.schema.json",
+  "b32k_bootloader": {
+    "catalogue_address": 2,
+    "key": "B32K_BOOTLOADER",
+    "lane_index": 1,
+    "meaning": "B32K bootstrap anchor reserved before user-space allocation.",
+    "reassignment_allowed": false,
+    "wire_index": 1
+  },
+  "coordinates": {
+    "catalogue_address": {
+      "maximum": 32768,
+      "minimum": 1,
+      "zero_status": "outside_registry"
+    },
+    "lane_index": {
+      "maximum": 32767,
+      "minimum": 0,
+      "scope": "lane_local"
+    },
+    "wire_index": {
+      "bit_width": 15,
+      "maximum": 32767,
+      "minimum": 0
+    }
+  },
+  "id": "b32k_indexing_profile_002",
+  "invariants": {
+    "addresses_must_not_drift": true,
+    "catalogue_address_count": 32768,
+    "catalogue_address_two_reserved_for_b32k": true,
+    "catalogue_address_zero_is_legal": false,
+    "definitions_may_mature": true,
+    "registered_null_has_positive_authority": false,
+    "user_space_begins_at_catalogue_address": 3,
+    "user_space_begins_at_wire_index": 2,
+    "wire_index_count": 32768,
+    "wire_index_one_reserved_for_b32k": true,
+    "wire_index_zero_is_legal": true
+  },
+  "mapping": {
+    "catalogue_address_from_wire_index": "wire_index + 1",
+    "direct_lane_to_catalogue_mapping": "catalogue_address = lane_index + 1",
+    "wire_index_from_catalogue_address": "catalogue_address - 1"
+  },
+  "nonclaims": {
+    "aletheos_lane_root_is_global_b32k_root": false,
+    "glyph_confers_authority": false,
+    "semantic_definition_changes_address": false,
+    "user_space_may_reassign_bootloader_index": false,
+    "wire_index_is_catalogue_address": false
+  },
+  "profile_id": "b32k.indexing.current-repo.002",
+  "reserved_boundary": {
+    "catalogue_address": 1,
+    "key": "NULL_WELL",
+    "lane_index": 0,
+    "meaning": "Registered null. Unbound socket. No positive authority.",
+    "wire_index": 0
+  },
+  "schema_version": "1.1.0",
+  "source": {
+    "canonical_alphabet": "src/b32k/b32k.json",
+    "canonical_index": "artifacts/json/b32k_aletheos_canonical_index_001.json",
+    "derivation_note": "Separates the global B32K bootstrap reservation from Aletheos-bound lane terminology.",
+    "repository_head_at_derivation": "005929aaadf221d6592fc4342a0b7b67c8aa47ed"
+  },
+  "status": "derived_current_repository_contract",
+  "supersedes": "b32k_indexing_profile_001",
+  "user_space": {
+    "catalogue_address_maximum": 32768,
+    "catalogue_address_minimum": 3,
+    "lane_index_maximum": 32767,
+    "lane_index_minimum": 2,
+    "wire_index_maximum": 32767,
+    "wire_index_minimum": 2
+  }
+}

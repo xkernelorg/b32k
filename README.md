@@ -85,7 +85,9 @@ Catalogue address 0 is outside the registry. Catalogue address 1 maps
 to wire and lane index 0. In the Aletheos-bound lane this is the
 registered `NULL_WELL` boundary and carries no positive authority.
 
-Catalogue address 2 maps to Aletheos lane index 1, `ALETHEOS_ROOT`.
+Catalogue address 2 maps to wire/lane index 1, `B32K_BOOTLOADER`, and is reserved for B32K itself.
+
+User space begins at catalogue address 3, wire/lane index 2. Aletheos root language elsewhere in this repository is lane-bound and pre-ratification.
 Catalogue address 32768 maps to the maximum fifteen-bit wire index,
 32767.
 

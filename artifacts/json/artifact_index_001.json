@@ -1,5 +1,5 @@
 {
-  "artifact_count": 21,
+  "artifact_count": 22,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -146,12 +146,19 @@
       "path": "artifacts/json/b32k_indexing_profile_001.json",
       "ratification_status": "pre_ratification",
       "role": "Derived contract separating one-based catalogue addresses from zero-based wire and lane indices.",
+      "status": "superseded_by_b32k_indexing_profile_002"
+    },
+    {
+      "id": "b32k_indexing_profile_002",
+      "path": "artifacts/json/b32k_indexing_profile_002.json",
+      "ratification_status": "pre_ratification",
+      "role": "Global boot sequence separating NULL_WELL, the B32K bootloader, and user address space.",
       "status": "derived_current_repository_contract"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
   "ratification_status": "pre_ratification",
-  "status": "artifact_index_refreshed_with_b32k_indexing_profile",
-  "updated": "2026-07-17T14:28:41.946663+00:00"
+  "status": "artifact_index_refreshed_with_b32k_indexing_profile_002",
+  "updated": "2026-07-17T15:30:19.973760+00:00"
 }

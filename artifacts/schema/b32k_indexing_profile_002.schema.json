@@ -1,0 +1,117 @@
+{
+  "$id": "b32k_indexing_profile_002.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "b32k_bootloader": {
+      "properties": {
+        "catalogue_address": {
+          "const": 2
+        },
+        "key": {
+          "const": "B32K_BOOTLOADER"
+        },
+        "lane_index": {
+          "const": 1
+        },
+        "reassignment_allowed": {
+          "const": false
+        },
+        "wire_index": {
+          "const": 1
+        }
+      },
+      "required": [
+        "catalogue_address",
+        "wire_index",
+        "lane_index",
+        "key",
+        "reassignment_allowed"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "const": "b32k_indexing_profile_002"
+    },
+    "profile_id": {
+      "const": "b32k.indexing.current-repo.002"
+    },
+    "reserved_boundary": {
+      "properties": {
+        "catalogue_address": {
+          "const": 1
+        },
+        "key": {
+          "const": "NULL_WELL"
+        },
+        "lane_index": {
+          "const": 0
+        },
+        "wire_index": {
+          "const": 0
+        }
+      },
+      "required": [
+        "catalogue_address",
+        "wire_index",
+        "lane_index",
+        "key"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "supersedes": {
+      "const": "b32k_indexing_profile_001"
+    },
+    "user_space": {
+      "properties": {
+        "catalogue_address_maximum": {
+          "const": 32768
+        },
+        "catalogue_address_minimum": {
+          "const": 3
+        },
+        "lane_index_maximum": {
+          "const": 32767
+        },
+        "lane_index_minimum": {
+          "const": 2
+        },
+        "wire_index_maximum": {
+          "const": 32767
+        },
+        "wire_index_minimum": {
+          "const": 2
+        }
+      },
+      "required": [
+        "catalogue_address_minimum",
+        "catalogue_address_maximum",
+        "wire_index_minimum",
+        "wire_index_maximum",
+        "lane_index_minimum",
+        "lane_index_maximum"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "profile_id",
+    "schema_version",
+    "status",
+    "supersedes",
+    "coordinates",
+    "reserved_boundary",
+    "b32k_bootloader",
+    "user_space",
+    "mapping",
+    "invariants",
+    "nonclaims",
+    "source"
+  ],
+  "title": "B32K Indexing Profile 002",
+  "type": "object"
+}

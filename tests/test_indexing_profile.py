@@ -21,7 +21,7 @@ class B32KIndexingProfileTests(unittest.TestCase):
             (
                 PROJECT
                 / "artifacts/json/"
-                "b32k_indexing_profile_001.json"
+                "b32k_indexing_profile_002.json"
             ).read_text(encoding="utf-8")
         )
         cls.canon = json.loads(
@@ -110,24 +110,30 @@ class B32KIndexingProfileTests(unittest.TestCase):
         self.assertEqual(null_rows[0]["key"], "NULL_WELL")
         self.assertFalse(null_rows[0]["positive_authority"])
 
-    def test_aletheos_root_boundary(self):
-        root = self.profile["aletheos_root"]
-
-        self.assertEqual(root["catalogue_address"], 2)
-        self.assertEqual(root["wire_index"], 1)
-        self.assertEqual(root["lane_index"], 1)
-        self.assertEqual(root["key"], "ALETHEOS_ROOT")
-
-        root_rows = [
-            row for row in self.aletheos["entries"]
-            if row.get("lane") == "b32k.aletheos.bound.v1"
-            and row.get("index") == 1
-        ]
-
-        self.assertEqual(len(root_rows), 1)
+    def test_b32k_bootloader_boundary(self):
+        bootloader = self.profile["b32k_bootloader"]
         self.assertEqual(
-            root_rows[0]["key"],
-            "ALETHEOS_ROOT",
+            bootloader["catalogue_address"], 2
+        )
+        self.assertEqual(bootloader["wire_index"], 1)
+        self.assertEqual(bootloader["lane_index"], 1)
+        self.assertEqual(
+            bootloader["key"], "B32K_BOOTLOADER"
+        )
+        self.assertFalse(
+            bootloader["reassignment_allowed"]
+        )
+
+    def test_user_space_begins_at_index_two(self):
+        user_space = self.profile["user_space"]
+        self.assertEqual(
+            user_space["catalogue_address_minimum"], 3
+        )
+        self.assertEqual(
+            user_space["wire_index_minimum"], 2
+        )
+        self.assertEqual(
+            user_space["lane_index_minimum"], 2
         )
 
     def test_codec_positions_are_wire_indices(self):
