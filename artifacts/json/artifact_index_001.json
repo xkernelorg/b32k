@@ -1,5 +1,5 @@
 {
-  "artifact_count": 23,
+  "artifact_count": 24,
   "artifacts": [
     {
       "id": "aletheos_canonical_profile_001",
@@ -161,11 +161,18 @@
       "ratification_status": "pre_ratification",
       "role": "finite entry point and unbounded lane/context convention",
       "status": "derived_current_repository_contract"
+    },
+    {
+      "id": "b32k_bootstrap_map_001",
+      "path": "artifacts/json/b32k_bootstrap_map_001.json",
+      "ratification_status": "pre_ratification",
+      "role": "Universal bootstrap shell, organization handoff, and organization API descendant-handle map.",
+      "status": "derived_current_repository_contract"
     }
   ],
   "id": "artifact_index_001",
   "project": "b32k",
   "ratification_status": "pre_ratification",
-  "status": "artifact_index_refreshed_with_b32k_address_space_convention",
-  "updated": "2026-07-17T17:06:41.263362+00:00"
+  "status": "artifact_index_refreshed_with_b32k_bootstrap_map",
+  "updated": "2026-07-17T18:14:11.319520+00:00"
 }

@@ -1,0 +1,26 @@
+{
+  "$id": "b32k_bootstrap_map.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "const": "b32k_bootstrap_map_001"
+    },
+    "project": {
+      "const": "b32k"
+    }
+  },
+  "required": [
+    "id",
+    "project",
+    "schema_version",
+    "address_space_dependency",
+    "surface_notation",
+    "handles",
+    "bootstrap_law",
+    "packet_wizard",
+    "organization_boundary",
+    "nonclaims"
+  ],
+  "type": "object"
+}

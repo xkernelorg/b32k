@@ -1,0 +1,121 @@
+{
+  "$schema": "../schema/b32k_bootstrap_map.schema.json",
+  "address_space_dependency": {
+    "artifact_id": "b32k_address_space_convention_001",
+    "profile_artifact_id": "b32k_indexing_profile_002",
+    "profile_id": "b32k.indexing.current-repo.002",
+    "profile_sha256": "341ddac255e7390118e0485be739c717fee76351361323329eb0e86f5cc525c3"
+  },
+  "bootstrap_law": {
+    "accepted_input": "packet_claimed_as_b32k",
+    "failure_mode": "fail_closed",
+    "internal_duties": [
+      "verify_b32k_packet_envelope",
+      "verify_b32k_profile_binding",
+      "preserve_packet_identity",
+      "issue_bootstrap_receipt"
+    ],
+    "packet_identity_preserved": true,
+    "public_entry_handle": "b32k.2.1",
+    "sole_external_action": {
+      "action": "pipe_packet_unchanged",
+      "authority_scope": "transport_only",
+      "target": "b32k.3.1.1"
+    }
+  },
+  "created": "2026-07-17T18:14:11.319520+00:00",
+  "handles": {
+    "b32k.1": {
+      "catalogue_address": 1,
+      "key": "NULL_WELL",
+      "registered_index": 0,
+      "role": "null_indexer",
+      "top_level_registered_position": true
+    },
+    "b32k.2": {
+      "catalogue_address": 2,
+      "key": "B32K_BOOTLOADER",
+      "registered_index": 1,
+      "role": "self_referencing_bootloader",
+      "top_level_registered_position": true
+    },
+    "b32k.2.1": {
+      "ancestor_handle": "b32k.2",
+      "descendant_context": true,
+      "path_segments": [
+        2,
+        1
+      ],
+      "registered_position_consumed": false,
+      "role": "public_b32k_shell"
+    },
+    "b32k.3": {
+      "catalogue_address": 3,
+      "key": "ORGANIZATION_ROOT",
+      "registered_index": 2,
+      "role": "organization_root",
+      "top_level_registered_position": true
+    },
+    "b32k.3.1.1": {
+      "ancestor_handle": "b32k.3",
+      "descendant_context": true,
+      "path_segments": [
+        3,
+        1,
+        1
+      ],
+      "registered_position_consumed": false,
+      "role": "organization_bootloader"
+    },
+    "b32k.3.1.2": {
+      "ancestor_handle": "b32k.3",
+      "descendant_context": true,
+      "path_segments": [
+        3,
+        1,
+        2
+      ],
+      "registered_position_consumed": false,
+      "role": "organization_api"
+    },
+    "b32k.4": {
+      "catalogue_address": 4,
+      "registered_index": 3,
+      "role": "first_ordinary_lane",
+      "top_level_registered_position": true
+    }
+  },
+  "id": "b32k_bootstrap_map_001",
+  "nonclaims": {
+    "api_discovery_confers_authority": false,
+    "bootloader_allocates_ordinary_lanes": false,
+    "bootloader_interprets_organization_authority": false,
+    "bootloader_invokes_organization_api": false,
+    "bootloader_mutates_packet": false,
+    "public_shell_access_confers_authority": false,
+    "public_shell_access_confers_trust": false
+  },
+  "organization_boundary": {
+    "api_handle": "b32k.3.1.2",
+    "api_requires_separate_authentication_and_admission": true,
+    "global_bootloader_knows_organization_in_advance": false,
+    "organization_bootloader_handle": "b32k.3.1.1",
+    "organization_identity_is_supplied_by_packet_binding": true
+  },
+  "packet_wizard": {
+    "launched_by": "b32k.2.1",
+    "may_mutate_packet": false,
+    "output_target": "b32k.3.1.1",
+    "purpose": "present verification and prepare the unchanged organization handoff"
+  },
+  "project": "b32k",
+  "schema_version": "1.0.0",
+  "status": "derived_current_repository_contract",
+  "surface_notation": {
+    "descendant_contexts_consume_registered_positions": false,
+    "prefix": "b32k",
+    "registered_index_mapping_remains_profile_defined": true,
+    "segments_after_top_level_are_descendant_contexts": true,
+    "top_level_segment_uses_catalogue_address": true
+  }
+}

@@ -87,7 +87,7 @@ registered `NULL_WELL` boundary and carries no positive authority.
 
 Catalogue address 2 maps to wire/lane index 1, `B32K_BOOTLOADER`, and is reserved for B32K itself.
 
-User space begins at catalogue address 3, wire/lane index 2. Aletheos root language elsewhere in this repository is lane-bound and pre-ratification.
+Organization space begins at catalogue address 3, wire/lane index 2. Ordinary allocatable positions begin at catalogue address 4, wire/lane index 3. Aletheos root language elsewhere in this repository is lane-bound and pre-ratification.
 Catalogue address 32768 maps to the maximum fifteen-bit wire index,
 32767.
 
@@ -99,3 +99,21 @@ profile is `docs/spec/b32k_indexing_profile_001.md`.
 ## Address Space Convention 001
 
 Package `0.3.0` records the finite-entry-point convention: actual null is outside the registry; catalogue 1/index 0 is `NULL_WELL`; catalogue 2/index 1 is `B32K_BOOTLOADER`; catalogue 3/index 2 is `ORGANIZATION_ROOT`; catalogue 4..32768 are remaining typed entry points into lanes or contexts.
+
+## Bootstrap Map 001
+
+Package `0.4.0` defines the stable hierarchical bootstrap map:
+
+    b32k.1          null indexer
+    b32k.2          self-referencing B32K bootloader
+    b32k.2.1        public B32K shell
+    b32k.3          organization root
+    b32k.3.1.1      organization bootloader
+    b32k.3.1.2      organization API
+    b32k.4          first ordinary lane
+
+The B32K bootloader verifies and receipts a claimed B32K packet. Its sole external action is to pipe the packet unchanged from `b32k.2.1` to `b32k.3.1.1`.
+
+The organization API at `b32k.3.1.2` remains separately authenticated and admitted. Public shell access and API discovery confer neither trust nor authority.
+
+See `artifacts/json/b32k_bootstrap_map_001.json` and `docs/spec/b32k_bootstrap_map_001.md`.
