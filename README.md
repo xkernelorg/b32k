@@ -130,3 +130,7 @@ Package `0.5.0` provides the local B32K orientation CLI.
 Bootstrap Map 002 adds the permanent public organization label at `b32k.3.1`, the public cryptographic disclosure at `b32k.3.1.2`, and the organization API at `b32k.3.2.1`.
 
 The local mount adapter invokes an installed `rookos.cli` entry point. Mounting does not authenticate a principal, grant authority, select a hat, or mutate RookOS by itself.
+
+## RookOS Mount Context
+
+`b32k mount rookos` supplies a scoped `b32k.mount.v1` context at `b32k.3.2.1`. The context provides orientation only and confers no authority.

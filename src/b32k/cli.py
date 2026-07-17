@@ -1,6 +1,7 @@
 """Human-facing B32K orientation and mount CLI."""
 
 from __future__ import annotations
+from b32k.mount import rookos_mount_environment
 
 import argparse
 import importlib
@@ -98,7 +99,8 @@ def mount_target(target: str, argv: Sequence[str]) -> int:
     forwarded = list(argv)
     if forwarded and forwarded[0] == "--":
         forwarded = forwarded[1:]
-    return mount_rookos(forwarded)
+    with rookos_mount_environment():
+        return mount_rookos(forwarded)
 
 
 def interactive_shell() -> int:
