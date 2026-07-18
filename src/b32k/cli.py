@@ -90,16 +90,20 @@ def mount_rookos(argv: Sequence[str]) -> int:
 
 
 def mount_target(target: str, argv: Sequence[str]) -> int:
-    if target.lower() != "rookos":
+    if target not in {"rookos", "organization"}:
         print("status: target_unavailable")
         print(f"target: {target}")
         print("reason: no B32K mount adapter is registered")
-        return EXIT_TARGET_UNAVAILABLE
+        return 3
 
     forwarded = list(argv)
     if forwarded and forwarded[0] == "--":
         forwarded = forwarded[1:]
-    with rookos_mount_environment():
+
+    if target == "organization":
+        forwarded = ["organization", *forwarded]
+
+    with rookos_mount_environment(forwarded):
         return mount_rookos(forwarded)
 
 
